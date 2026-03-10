@@ -1,0 +1,63 @@
+title: Wouter Compiles IT
+description: >-
+  Personal blog by Wouter Fennis — Software Engineer and Scrum Master.
+  Posts about Microsoft/.NET development, Azure, CI/CD, architecture, and Scrum.
+url: "https://wouterfennis.github.io"
+baseurl: "/blog"
+
+author:
+  name: Wouter Fennis
+  linkedin: https://www.linkedin.com/in/wouter-fennis/
+  github: https://github.com/wouterfennis
+
+theme: minima
+
+# Minima theme settings
+minima:
+  skin: auto
+  social_links:
+    - { platform: github, user_url: "https://github.com/wouterfennis" }
+    - { platform: linkedin, user_url: "https://www.linkedin.com/in/wouter-fennis/" }
+
+# Pagination (optional, requires jekyll-paginate plugin)
+# paginate: 5
+# paginate_path: "/page:num/"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Permalinks matching original WordPress URL structure
+permalink: /:year/:month/:day/:title/
+
+# Collections / defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Wouter Fennis"
+
+# Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Sass warning controls for Ruby 3.4 + minima 2.5 (theme internals still use deprecated APIs)
+sass:
+  quiet_deps: true
+  silence_deprecations:
+    - import
+    - global-builtin
+    - color-functions
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - .github
+  - vendor
