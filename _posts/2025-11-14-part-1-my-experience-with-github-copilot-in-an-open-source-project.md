@@ -27,6 +27,8 @@ Scott Hanselman was also present in Lisbon with very inspiring talks. During one
 
 During the end of the day, when I work from the office, I always monitor the traffic situation for the journey back home. Why not build an extension that does that for me? I don't know the Oh My Posh library, I do not write code specifically for the terminal all that often. But with Copilot on my side, and with my general knowledge and experience as a software developer. I must be able to do this and learn along the way.
 
+![Azure dev summit]({{ '/assets/images/2025/11/azure-dev-summit.png' | relative_url }})
+
 ## Project kick-off and Planning
 
 I wanted to work in a structured way, not only for myself but because Large Language Models (LLM's) thrive at context and well built up descriptions. So, every change or idea must be a GitHub Issue first.
