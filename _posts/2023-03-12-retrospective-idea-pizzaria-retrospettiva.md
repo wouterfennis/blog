@@ -37,13 +37,11 @@ With the preparation now complete we can now start the session. Invite your coll
 4. The colleague that owns the card has to explain some context to the rest of the group but also state the reason for the chosen pizza, ingredient or other Italian dish. Hopefully lighten the mood within the group and start curiosity why these Italian associations are made.
 
 > "I've struggled with X in the last sprint, it was just as disappointing as a tuna pizza"
-
 > "I really enjoyed working on Y, wake me up anytime for a margarita pizza"
-
 > "I had to wait a long time on Z but we got there in the end, it's like cold pizza. It gets better as time passes."
 
-5. The discussion starts as with any retrospective and the group decides what to do with each card on the next iterations. Either by creating action points or leaving it at that.
-6. Conclude the retrospective with some of the highlights discussed and ask everyone to rate this Pizzaria with one to five stars. Use that feedback if these types of playful retrospectives align with the team members.
+1. The discussion starts as with any retrospective and the group decides what to do with each card on the next iterations. Either by creating action points or leaving it at that.
+2. Conclude the retrospective with some of the highlights discussed and ask everyone to rate this Pizzaria with one to five stars. Use that feedback if these types of playful retrospectives align with the team members.
 
 ## Conclusion
 

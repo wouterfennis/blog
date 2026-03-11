@@ -199,7 +199,3 @@ If you do plan to implement it in ASP.NET, it is at least simple to configure an
 
 - [GitHub example repository](https://github.com/wouterfennis/blogExamples/tree/main/ClientCertificates)
 - [Configure certificate authentication in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/certauth?view=aspnetcore-8.0)
-
-
-
-

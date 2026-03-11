@@ -15,7 +15,7 @@ Jekyll is a static site generator that converts Markdown files into a complete H
 
 ## Repository structure
 
-```
+```text
 _posts/          # All blog posts as Markdown files
 _config.yml      # Jekyll site configuration (theme, plugins, permalink pattern)
 Gemfile          # Ruby gems (jekyll ~4.3, minima theme, feed/seo/sitemap plugins)
@@ -34,6 +34,23 @@ bundle exec jekyll serve --livereload
 # Site available at http://localhost:4000/blog
 ```
 
+## Markdown linting
+
+This repository uses `markdownlint-cli` to keep all Markdown files consistent.
+
+```bash
+npm install
+npm run lint:md
+```
+
+To auto-fix issues that are fixable:
+
+```bash
+npm run lint:md:fix
+```
+
+Markdown linting runs in CI on every push to `main` and on every pull request.
+
 ## Deployment
 
 Push to `main` → GitHub Actions builds with Jekyll and deploys to GitHub Pages automatically.
@@ -44,7 +61,7 @@ Enable GitHub Pages in the repo settings under **Pages → Source → GitHub Act
 
 Create a file in `_posts/` following the naming convention:
 
-```
+```text
 _posts/YYYY-MM-DD-slug-from-title.md
 ```
 

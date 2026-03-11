@@ -70,3 +70,11 @@ Using the default **minima** theme (`~> 2.5`). Skin is set to `auto` (follows sy
 - Images are stored locally in `assets/images/YYYY/MM/` and referenced with paths like `![alt](/assets/images/2023/02/filename.png)`.
   When adding images for new posts, place them in `assets/images/YYYY/MM/` matching the post date and update the src accordingly.
 - Posts that are part of a series use a `Part N:` prefix in the title.
+
+## Markdown quality gate
+
+- All `.md` file changes must pass `npm run lint:md` before completion.
+- Prefer fixing lint violations over adding ignore directives.
+- Keep Jekyll front matter intact and valid YAML.
+- Keep ordered list numbering style consistent to satisfy markdownlint rules.
+

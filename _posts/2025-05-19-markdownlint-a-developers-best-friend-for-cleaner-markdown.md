@@ -11,7 +11,6 @@ Markdown has become a common language among developers for its simplicity and ef
 
 ![Featured image for 2025-05-19-markdownlint-a-developers-best-friend-for-cleaner-markdown]({{ '/assets/images/2025/05/5feac392-d10a-4354-8313-c34c56087cdf.jpg' | relative_url }})
 
-
 ## What is Markdownlint?
 
 [Markdownlint](https://github.com/DavidAnson/markdownlint) is an open-source tool designed to improve the quality and consistency of Markdown documents. It enforces rules and best practices for Markdown syntax, ensuring that your files are not only readable but also maintainable.
@@ -109,7 +108,3 @@ To make the most of Markdownlint, consider adopting the following best practices
 Markdownlint is more than just a linter — it's a tool that empowers you to create cleaner, more consistent, and professional Markdown documents. By incorporating it into your workflow, you can save time, reduce errors, and produce high-quality content that stands out.
 
 Whether you're a seasoned developer or just getting started with Markdown, Markdownlint is a must-have tool that will elevate your writing and documentation to new heights. So why wait? Install Markdownlint today and embrace the power of perfectly linted Markdown!
-
-
-
-

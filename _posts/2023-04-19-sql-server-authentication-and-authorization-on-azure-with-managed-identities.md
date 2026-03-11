@@ -172,7 +172,7 @@ resource appService 'Microsoft.Web/sites@2021-03-01' = {
 
 The connection string of the App Service should look like this:
 
-```
+```text
 Server=tcp:dbserver.database.windows.net,1433;Initial Catalog=BlogDb;User Id=GUID-OF-MANAGED-IDENTITY;Authentication=Active Directory Managed Identity;
 ```
 

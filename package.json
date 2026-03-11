@@ -1,0 +1,11 @@
+{
+  "name": "wouter-compiles-it-blog",
+  "private": true,
+  "scripts": {
+    "lint:md": "markdownlint \"**/*.md\" --ignore node_modules --ignore _site --ignore vendor",
+    "lint:md:fix": "markdownlint \"**/*.md\" --fix --ignore node_modules --ignore _site --ignore vendor"
+  },
+  "devDependencies": {
+    "markdownlint-cli": "^0.45.0"
+  }
+}

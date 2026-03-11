@@ -59,7 +59,3 @@ Diagrams like these don't have to be static, but they should reflect a long runn
 
 - [ArchiMate® 2.1 Specification](https://pubs.opengroup.org/architecture/archimate2-doc/)
 - [Archi – Open Source ArchiMate Modelling](https://www.archimatetool.com/)
-
-
-
-
