@@ -11,7 +11,6 @@ Have you ever programmed something that had to output a string or file into a sp
 
 ![Featured image for 2023-03-27-snapshot-testing-with-verify]({{ '/assets/images/2023/03/archive-1024x577.png' | relative_url }})
 
-
 ## What is snapshot testing?
 
 Snapshot testing can be seen as a form of output testing. But that comparison is still too generic, whenever you test something you prepare an input, activate something and in the end compare the received output (A.K.A Triple A testing). So what makes snapshot testing different?
@@ -45,7 +44,3 @@ Snapshot testing has really opened my eyes to a new tool to use when developing 
 ## References
 
 - [Verify library](https://github.com/VerifyTests/Verify)
-
-
-
-

@@ -11,7 +11,6 @@ Authentication is often a broad, difficult and not straightforward topic to work
 
 ![Featured image for 2024-06-16-client-certificates-in-asp-net]({{ '/assets/images/2024/06/client-certificate-blog.jpg' | relative_url }})
 
-
 One aspect of security which I find interesting is Client Certificate Authentication. It may sound a bit old school to send along a certificate with your request, with the JWT authentication methods that are in fashion for the past years. However I think it still has a valuable purpose to fulfill.
 
 ## What is Client Certificate Authentication?
@@ -180,9 +179,15 @@ After the certificate has been generated we can extract the thumbprint and confi
 
 If we startup the API it will open the browser and, depending on your browser, a prompt will show asking for a Client Certificate to send along to the local running server. This is the first sign that our adjustment of the Kestrel server is actually working.
 
+![Select certificate]({{ '/assets/images/2024/06/client-certificate-blog.png' | relative_url }})
+
 The browser will look into your personal certificate store to see if there are any certificates suitable for client authentication. Because the PowerShell script has loaded it in previously, you're able to select it. Making API calls from this point onwards will succeed because the browser will make sure the certificate is passed along.
 
+![200 response]({{ '/assets/images/2024/06/image-3.png' | relative_url }})
+
 If you would not select the certificate and go in without any, the request will be blocked as expected.
+
+![403 response]({{ '/assets/images/2024/06/image-2.png' | relative_url }})
 
 ## Conclusion
 

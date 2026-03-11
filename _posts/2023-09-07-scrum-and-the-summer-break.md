@@ -11,7 +11,6 @@ It's something people can look forward to months in advance: Good weather, nice 
 
 ![Featured image for 2023-09-07-scrum-and-the-summer-break]({{ '/assets/images/2023/09/camping-1024x682.jpg' | relative_url }})
 
-
 ## Preparation is half of the work
 
 This is probably the most difficult part, but there are a few subjects to keep in mind.
@@ -48,7 +47,3 @@ It's important that the team comes out of this stronger and more confident as be
 ## Post Summer Blues
 
 Vacations are fun! So returning to work can be a sobering experience (literally). Of course work you and others left behind didn't all get finished by the skeleton crew. But if you all prepared accordingly, the really important stuff should be taken care of. Make sure there is an informal moment preferably at a location where the whole team can come together and talk about everyone's Summer Break stories. In the following Sprint Planning discuss how the team should organize itself with the hopefully new insights and shared knowledge to bring into practice. Don't try to get the team back into the setting it was a few months ago, but move forward!
-
-
-
-

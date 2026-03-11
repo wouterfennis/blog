@@ -7,6 +7,8 @@ image: /assets/images/2023/06/Wheel_of_Fortune_logo-3.png
 tags: [brainstorming, devops, incidents, operations, problem solving, wheel of misfortune]
 ---
 
+![Featured image for wheel of misfortune]({{ '/assets/images/2023/06/Wheel_of_Fortune_logo-3.png' | relative_url }})
+
 Getting software to production is one thing, maintaining it however is a whole other ball game. In your local development environment everything is always running smooth, network issues? Shortage on storage? Slow performance? Those issues often arise when your application is running on a server somewhere with actual production load and data. As developers we cannot be ignorant anymore and leave it to a system engineer to keep the system running for us. That ship has long sailed, we have to reinvent our way of working to develop new software and think ahead of the challenges of running it.
 
 Nobody likes to be called in the middle of the night to be confronted with a failing system without a clear symptom on what is going on. So why wait until problems arise before you tackle them? There is often only so much that can go wrong, and if you already have a mitigating plan ready you'll be back in your bed in no time.

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Part 1: My experience with GitHub Copilot in an open-source project"
+title: "My experience with GitHub Copilot in an open-source project"
 date: 2025-11-14
 categories: [Architecture, Programming]
 image: /assets/images/2025/11/banner-1024x534.png
@@ -10,7 +10,6 @@ tags: [agentic ai, artificial intelligence, azure dev conference, cli extensions
 It is amazing how fast AI developments have led to fundamental changes in the development process of IT projects. It is difficult for me to imagine generative AI and AI agents disappearing from my day-to-day work anytime soon.
 
 ![Featured image for 2025-11-14-part-1-my-experience-with-github-copilot-in-an-open-source-project]({{ '/assets/images/2025/11/banner-1024x534.png' | relative_url }})
-
 
 Recently especially the agentic AI is a popular step in programming functionality in new and existing software or even executing the functionality directly. Because developments are going so fast, I wanted to assess some of these new tools myself in a new experimental project, starting from nothing.
 
@@ -74,7 +73,3 @@ Copilot will do its best to serve you but will try to introduce scope creep in i
 - [GitHub Copilot Extensions Documentation](https://code.visualstudio.com/docs/copilot/overview)
 - [Oh My Posh CLI Extension](https://github.com/JanDeDobbeleer/oh-my-posh)
 - [Project Repository: omp-travel-time](https://github.com/wouterfennis/omp-travel-time)
-
-
-
-

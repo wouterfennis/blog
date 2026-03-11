@@ -11,10 +11,11 @@ Deploying infrastructure to Azure is easy enough these days with Azure Powershel
 
 ![Featured image for 2023-04-19-sql-server-authentication-and-authorization-on-azure-with-managed-identities]({{ '/assets/images/2023/04/Azure-SQL-MI.png' | relative_url }})
 
-
 ## Context
 
 For this post we need to place ourselves in a context where there is a database and some (web) application involved that need to communicate with each other in a secure way. Because Managed Identities is a promoted solution within Azure for secure interaction for all kinds of Azure products, we want to use that as well. We rather not have separate credentials for just the database connection. Connection Strings with secrets in them are also out of the question, because our imaginary company states that that is not compliant.
+
+![The landscape]({{ '/assets/images/2023/04/mi-landschape.png' | relative_url }})
 
 In this scenario we've already set up a connection with a Service Bus that uses a managed identity + a role assignment to exclusively give access to the app service. Now we want to do something similar for the SQL Server connection.
 
@@ -134,6 +135,12 @@ The last important step is to execute the above PowerShell under the identity wh
     azurePowerShellVersion: latestVersion
 ```
 
+The end result is a registered managed identity in SQL Server:
+
+![Query result]({{ '/assets/images/2023/04/query-result.png' | relative_url }})
+
+In this example two external users have been added, which are Managed Identities registered in Azure AD.
+
 ## Connecting to the database
 
 On the application side, things now got simpler. There are only two things needed:
@@ -184,7 +191,3 @@ Because other blogposts on this topic are in my view not in depth enough, I had 
 - [Managed identity in Azure AD for Azure SQL](https://learn.microsoft.com/en-us/azure/azure-sql/database/authentication-azure-ad-user-assigned-managed-identity?view=azuresql)
 - [Connect to Azure SQL with Azure AD authentication and SqlClient](https://learn.microsoft.com/en-us/sql/connect/ado-net/sql/azure-active-directory-authentication?view=sql-server-ver16)
 - [AzurePowerShell@5 – Azure PowerShell v5 task](https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/azure-powershell-v5?view=azure-pipelines)
-
-
-
-

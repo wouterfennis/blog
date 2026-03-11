@@ -11,7 +11,6 @@ Infrastructure as code, the eternal promise of stability, shared understanding a
 
 ![Featured image for 2023-05-21-bicep-and-environment-specific-requirements]({{ '/assets/images/2023/05/bicep.png' | relative_url }})
 
-
 You have to restrict access way more on production, and you forgot to turn on the back-up strategy that isn't needed on dev. Did I tell you the landscape in production has to be zone redundant as well?
 
 And so the conditional logic seeps in like with a leaky roof. Parameters start popping up everywhere in your neatly separated bicep files. From module to module flags, enums have to be passed along for a suddenly important piece of production configuration three levels down. Shamefully you have to explain to your team member the end result contains not so loosely coupled modules. So what goes wrong here?
@@ -80,7 +79,3 @@ Using this technique we were able to cut-out a lot of parameters of each module 
 ## References
 
 - [Bicep functions – files – Azure Resource Manager](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/bicep-functions-files#loadjsoncontent)
-
-
-
-

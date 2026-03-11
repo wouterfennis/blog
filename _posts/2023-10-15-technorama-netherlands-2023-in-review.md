@@ -11,7 +11,6 @@ During and initially after COVID I kind of lost track of IT conferences. Working
 
 ![Featured image for 2023-10-15-technorama-netherlands-2023-in-review]({{ '/assets/images/2023/10/technorama-2023-1-1024x285.jpg' | relative_url }})
 
-
 Technorama is a "Deep knowledge IT Conference" as the event is described on the website. And that is definitely true, I wouldn't describe the sessions as entry level. Most of the presentations given by the large list of speakers require knowledge and experience of working in the field. And for me, that makes it worth spending two days hopping between 14(!) different cinema rooms.
 
 For Dutch standards, the scale of the event was big. Every hour you could choose between 10 different speakers each with their own interesting insight on architecture, cloud computing, data, developer trends, self-improvement, front end development and of course Artificial Intelligence.
@@ -47,7 +46,3 @@ When it comes to mocking, you should aim to only mock IO. Breaking up the applic
 ## Conclusion
 
 Following speaker sessions close to 8 hours a day for two days is a bit intense, especially if you don't make notes along the way. However it is a great opportunity to break out your usual professional circle and talk to complete strangers that happen to do the same job as yourself. For me the conference confirmed things I already do on a day to day basis. But every speaker gave me a hint to look something up or try something at a later moment. There is always something to learn by just listening.
-
-
-
-

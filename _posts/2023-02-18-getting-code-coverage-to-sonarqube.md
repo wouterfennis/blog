@@ -109,12 +109,27 @@ Now this is interesting, when running the `dotnet test` command locally the TRX 
 
 There are two things we can do, either stop publishing to Azure Devops and make sure the files are present in the source directory. Or we point SonarQube in the right direction and make a reference to the (unique) temporary directory. Personally I would like to keep using both features so pointing SonarQube to the right folder makes sense. Luckily SonarQube has just the sonar property settings we need:
 
-```
+```txt
 sonar.cs.vstest.reportsPaths=$(Agent.TempDirectory)/**/*.trx
 sonar.cs.vscoveragexml.reportsPaths=$(Agent.TempDirectory)/**/*.xml
 ```
 
-Using these in the SonarQube preparation step will make sure that SonarQube will notice these files. Our final YAML pipeline file now looks like this:
+Using these in the SonarQube preparation step will make sure that SonarQube will notice these files.
+This can be confirmed by looking at the logs of SonarQube during analyzation.
+
+```txt
+INFO: Adding this code coverage report to the cache for later reuse: /azp/_work/_temp/_376750b5e2a9_2023-02-17_15_12_50/In/376750b5e2a9/_376750b5e2a9_2023-02-17.15_12_44.xml
+
+...
+
+INFO: Parsing the Visual Studio Test Results file '/azp/_work/_temp/_376750b5e2a9_2023-02-17_15_12_31.trx'.
+```
+
+And now we can finally see our Coverage Metric in SonarQube server
+
+![SonarQube coverage showing up in report.]({{ '/assets/images/2023/02/sonarQube-coverage.png' | relative_url }})
+
+ Our final YAML pipeline file now looks like this:
 
 ```yaml
 - task: SonarQubePrepare@5

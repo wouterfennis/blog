@@ -11,7 +11,6 @@ Retrospectives have a tendency to sometimes be repetitive and less fruitful. How
 
 ![Featured image for 2023-03-12-retrospective-idea-pizzaria-retrospettiva]({{ '/assets/images/2023/03/Pizza-1024x483.png' | relative_url }})
 
-
 ## Scrum Rituals going digital
 
 In the last few years, digital retrospectives have become more and more common in my experience. The most common reason is that it isn't granted anymore that everyone is in the office on the same day anymore. Forcing your colleagues to be physically present for Scrum rituals isn't a good start of shared openness in the team. So we as Scrum Masters have to adapt our methods to still have these precious moments of self-reflection.
@@ -22,7 +21,11 @@ In this blogpost I'll explain the retrospective from a digital point of view. Ho
 
 So how to bring pizza and self-reflection together? Well it might be easier than you think. First, draw a circle and use a background of a pizza with slight transparency as a background.
 
+![Pizza canvas in Miro]({{ '/assets/images/2023/02/retrospective-pizza-blank.png' | relative_url }})
+
 The background will set the atmosphere and will be eye candy for colleagues used to a standard grid layout. As with any pizza before eating, we first have to slice it. So let's divide the background in a few sections where we can put our discussion topics that are actual. These topics can of course be anything you want, but the example below can be used as inspiration.
+
+![Canvas with slices and example cards]({{ '/assets/images/2023/02/retrospective-pizza-filled.png' | relative_url }})
 
 ## Start the retrospective
 
@@ -47,7 +50,3 @@ With the preparation now complete we can now start the session. Invite your coll
 In my experience, changing the scenery of a retrospective in the atmosphere of a Pizzaria can lighten up the mood, change people's perspectives and, above all, get team members to know each other just a little bit better. Creating more shared security amongst them in the long run.
 
 I hope you try out this format in one of your upcoming retrospectives. Leave your experiences in the comments below so I can perhaps finetune this even further.
-
-
-
-
