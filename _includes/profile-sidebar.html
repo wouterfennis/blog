@@ -1,0 +1,22 @@
+<aside class="profile-sidebar">
+  <img
+    src="{{ '/assets/images/wouter.jpg' | relative_url }}"
+    alt="{{ site.author.name | escape }}"
+    class="profile-sidebar__image">
+  <p class="profile-sidebar__name">{{ site.author.name | escape }}</p>
+  {%- if site.author.role -%}
+  <p class="profile-sidebar__bio">{{ site.author.role | escape }}</p>
+  {%- endif -%}
+  <div class="profile-sidebar__social">
+    {%- if site.author.linkedin -%}
+    <a href="{{ site.author.linkedin }}" class="social-link" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+      <img src="{{ '/assets/images/linkedin.svg' | relative_url }}" alt="LinkedIn" class="social-link__icon">
+    </a>
+    {%- endif -%}
+    {%- if site.author.github -%}
+    <a href="{{ site.author.github }}" class="social-link" title="GitHub" target="_blank" rel="noopener noreferrer">
+      <img src="{{ '/assets/images/github.svg' | relative_url }}" alt="GitHub" class="social-link__icon">
+    </a>
+    {%- endif -%}
+  </div>
+</aside>

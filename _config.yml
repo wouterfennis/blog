@@ -7,10 +7,18 @@ baseurl: "/blog"
 
 author:
   name: Wouter Fennis
+  role: "Software Engineer and Scrum Master"
   linkedin: https://www.linkedin.com/in/wouter-fennis/
   github: https://github.com/wouterfennis
 
 theme: minima
+
+header_pages:
+  - about.md
+  - category/programming.md
+  - category/ci-cd.md
+  - category/scrum.md
+  - category/architecture.md
 
 # Minima theme settings
 minima:
