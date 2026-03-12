@@ -10,26 +10,14 @@ layout: default
   </div>
   {%- endif -%}
 
-  {%- if content != "" -%}
-  <div class="home-intro">
-    {{ content }}
-  </div>
-  {%- endif -%}
-
-  {%- if site.author.linkedin or site.author.github -%}
-  <div class="social-links">
-    {%- if site.author.linkedin -%}
-    <a href="{{ site.author.linkedin }}" class="social-link" title="LinkedIn" target="_blank" rel="noopener noreferrer">
-      <img src="{{ '/assets/images/linkedin.svg' | relative_url }}" alt="LinkedIn" class="social-link__icon">
-    </a>
+  <div class="home-columns">
+    {%- if content != "" -%}
+    <div class="home-intro">
+      {{ content }}
+    </div>
     {%- endif -%}
-    {%- if site.author.github -%}
-    <a href="{{ site.author.github }}" class="social-link" title="GitHub" target="_blank" rel="noopener noreferrer">
-      <img src="{{ '/assets/images/github.svg' | relative_url }}" alt="GitHub" class="social-link__icon">
-    </a>
-    {%- endif -%}
+    {%- include profile-sidebar.html -%}
   </div>
-  {%- endif -%}
 
   {%- if site.posts.size > 0 -%}
   <div class="latest-posts">
