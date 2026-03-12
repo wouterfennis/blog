@@ -97,3 +97,22 @@
   line-height: 1.5;
   flex: 1;
 }
+
+/* Social icon links (home intro + about page) */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.social-link__icon {
+  width: 36px;
+  height: 36px;
+  display: block;
+  transition: opacity 0.2s;
+}
+
+.social-link:hover .social-link__icon {
+  opacity: 0.75;
+}

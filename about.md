@@ -13,7 +13,7 @@ Such a waste actually to let all those hours of work be forgotten like that. So 
 I hope this blog can help you and others with the technical or team challenges we daily face in the IT.
 Don’t hesitate to leave your feedback or ideas on the blogposts themselves. Enjoy!
 
----
-
-- [LinkedIn](https://www.linkedin.com/in/wouter-fennis/)
-- [GitHub](https://github.com/wouterfennis)
+<div class="social-links">
+  <a href="{{ site.author.linkedin }}" class="social-link" title="LinkedIn" target="_blank" rel="noopener noreferrer"><img src="{{ '/assets/images/linkedin.svg' | relative_url }}" alt="LinkedIn" class="social-link__icon"></a>
+  <a href="{{ site.author.github }}" class="social-link" title="GitHub" target="_blank" rel="noopener noreferrer"><img src="{{ '/assets/images/github.svg' | relative_url }}" alt="GitHub" class="social-link__icon"></a>
+</div>
