@@ -8,12 +8,20 @@
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
+          <li class="p-name">
+            {%- if site.author.name -%}
+              {{ site.author.name | escape }}
+            {%- elsif site.author -%}
+              {{ site.author | escape }}
+            {%- else -%}
+              {{ site.title | escape }}
+            {%- endif -%}
+          </li>
           {%- for node in site.header_pages -%}
-            {%- for p in site.pages -%}
-              {%- if p.path == node -%}
-              <li><a href="{{ p.url | relative_url }}">{{ p.title | escape }}</a></li>
-              {%- endif -%}
-            {%- endfor -%}
+            {%- assign current = site.pages | where: "path", node | first -%}
+            {%- if current -%}
+              <li><a href="{{ current.url | relative_url }}">{{ current.title | escape }}</a></li>
+            {%- endif -%}
           {%- endfor -%}
         </ul>
       </div>

@@ -4,6 +4,8 @@ layout: default
 
 <div class="home">
 
+  <h1 class="visually-hidden">{{ site.title | escape }}</h1>
+
   {%- if page.hero_image -%}
   <div class="hero-image">
     <img src="{{ page.hero_image | relative_url }}" alt="{{ page.hero_alt | default: site.title | escape }}">
