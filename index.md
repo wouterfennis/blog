@@ -1,6 +1,6 @@
 ---
 layout: home
-hero_image: /assets/images/2025/11/banner-1024x534.png
+hero_image: /assets/images/blog-banner.png
 hero_alt: "Wouter Compiles IT — Software Engineering Blog"
 ---
 
