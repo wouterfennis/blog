@@ -8,16 +8,13 @@
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
-          <li class="p-name">
-            {%- if site.author -%}
-              {{ site.author.name | default: site.author | escape }}
-            {%- else -%}
-              {{ site.title | escape }}
-            {%- endif -%}
-            </li>
-            {%- if site.email -%}
-            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            {%- endif -%}
+          {%- for node in site.header_pages -%}
+            {%- for p in site.pages -%}
+              {%- if p.path == node -%}
+              <li><a href="{{ p.url | relative_url }}">{{ p.title | escape }}</a></li>
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endfor -%}
         </ul>
       </div>
 
