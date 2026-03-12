@@ -11,15 +11,15 @@ It is amazing how fast AI developments have led to fundamental changes in the de
 
 ![Featured image for 2025-11-14-part-1-my-experience-with-github-copilot-in-an-open-source-project]({{ '/assets/images/2025/11/banner-1024x534.png' | relative_url }})
 
-Recently especially the agentic AI is a popular step in programming functionality in new and existing software or even executing the functionality directly. Because developments are going so fast, I wanted to assess some of these new tools myself in a new experimental project, starting from nothing.
+Recently, agentic AI in particular has become a popular step in programming functionality in new and existing software or even executing the functionality directly. Because developments are going so fast, I wanted to assess some of these new tools myself in a new experimental project, starting from nothing.
 
-For this project I wanted to put myself primarily into the position of 'architect' and 'requirements engineer.' Not as the programmer writing every line of code in this case, but Copilot agents taking the initiative of building the project.
+For this project I wanted to put myself primarily into the position of 'architect' and 'requirements engineer.' Not as the programmer writing every line of code, but with Copilot agents taking the initiative of building the project.
 
 Both the GitHub Copilot Reviewer and I will review any software that is generated. This blogpost is part of a series where I will recount the journey that I've made, things I have discovered and looking back each part of the way with my learnings.
 
 ## Project inspiration
 
-I've visited the Azure Dev Conference 2025 in Lisbon. Although named Azure, almost every talk on site had 'AI' in it. I saw how presenters build up entire code bases from just prompting and accepting every suggestion that Copilot made, because of the limited time during the talks. But putting it into perspective it is still an incredibly powerful tool.
+I visited the Azure Dev Conference 2025 in Lisbon. Although named Azure, almost every talk on site had 'AI' in it. I saw how presenters build up entire code bases from just prompting and accepting every suggestion that Copilot made, because of the limited time during the talks. But putting it into perspective it is still an incredibly powerful tool.
 
 I wanted to do something similar, primarily working from the prompt, minimal code adjustments from me directly.
 

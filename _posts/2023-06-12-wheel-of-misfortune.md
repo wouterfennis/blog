@@ -15,7 +15,7 @@ Nobody likes to be called in the middle of the night to be confronted with a fai
 
 A tool I've been using to help teams think openly about this is the Wheel of Misfortune. It contains all the scenarios you would rather not encounter on a Friday afternoon. The team spins the wheel and one of the scenarios will be picked at random, the team will then sit together and determine what steps they would do to mitigate. This may sound easier than it is. Because there are often more variables involved once you start brainstorming about a specific scenario.
 
-## Phase 1: collecting scenario's
+## Phase 1: collecting scenarios
 
 A wheel is just an empty wheel without any unfortunate scenarios. So to have a successful session we first have to collect situations that are fitting to the specific application or context the team works in. A way to approach this is to organize a brainstorm session with post-its and a blank whiteboard. Split the team up into groups of two and tell everyone to think about everything that can go wrong. Nothing is too crazy, there is always some truth behind every problem written down.
 

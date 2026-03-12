@@ -9,7 +9,7 @@ tags: [archi, archimate, architecture, examples, motivation layer]
 
 How often did you ask yourself during a project: "Why am I doing this again?". You have to take a step back, zoom out of the technicalities and look at the written requirements or talk with the stakeholders of your project. Often discovering that you had made an assumption about the underlying reasons some work had to be done or in a certain way — halting the workflow of a team member to get the reasoning behind a change or addition.
 
-How nice would it be if there would be an 'architecture' diagram of the stakeholders in the project. What their needs, drivers and priorities are. To help you make important decisions on a day to day basis. Archimate might have the solution!
+How nice it would be if there were an 'architecture' diagram of the stakeholders in the project. What their needs, drivers and priorities are. To help you make important decisions on a day to day basis. Archimate might have the solution!
 
 Archimate is a very large modeling language. Too large to fit in a single blog post obviously. There are interesting aspects that I can pick out and use individually to gain insight or generate more impact in a project. The Motivation layer from Archimate is a level of architecture that doesn't look at systems, applications or functionality for that matter. Only people, their roles in the project and what they find important.
 
