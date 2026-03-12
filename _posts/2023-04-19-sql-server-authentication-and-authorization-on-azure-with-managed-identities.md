@@ -13,25 +13,25 @@ Deploying infrastructure to Azure is easy enough these days with Azure Powershel
 
 ## Context
 
-For this post we need to place ourselves in a context where there is a database and some (web) application involved that need to communicate with each other in a secure way. Because Managed Identities is a promoted solution within Azure for secure interaction for all kinds of Azure products, we want to use that as well. We rather not have separate credentials for just the database connection. Connection Strings with secrets in them are also out of the question, because our imaginary company states that that is not compliant.
+For this post we need to place ourselves in a context where there is a database and some (web) application involved that need to communicate with each other in a secure way. Because Managed Identities is a promoted solution within Azure for secure interaction for all kinds of Azure products, we want to use that as well. We'd rather not have separate credentials for just the database connection. Connection Strings with secrets in them are also out of the question, because our imaginary company states that that is not compliant.
 
 ![The landscape]({{ '/assets/images/2023/04/mi-landschape.png' | relative_url }})
 
 In this scenario we've already set up a connection with a Service Bus that uses a managed identity + a role assignment to exclusively give access to the app service. Now we want to do something similar for the SQL Server connection.
 
-As said in the introduction, SQL Server doesn't have Role Assignment functionality to give access to a specific database, let alone limit the actions the connection may perform on the database. Users and authorizations are configured in the Security section of the database. Our goal is to add our Managed Identity as a user and provide it with the `db_owner` role.
+As mentioned in the introduction, SQL Server doesn't have Role Assignment functionality to give access to a specific database, let alone limit the actions the connection may perform on the database. Users and authorizations are configured in the Security section of the database. Our goal is to add our Managed Identity as a user and provide it with the `db_owner` role.
 
 ## Register users in SQL Server
 
 A Managed Identity source of truth is within Azure AD. If we want to add a Managed Identity as a user to a SQL database we are not making a copy, we are just making a reference where the incoming identity can be looked up.
 
-To add users to a database, we have to perform a SQL command in the database itself. There is simply no other way. This will cause a classic Chicken and Egg problem. When a database is created it's completely empty including the registered users. So who is allowed to add the first user when no one is allowed access? When the SQL Server itself is configured an administrator has to be appointed to perform the initial actions. This can be a basic username and password combination, or an existing Azure AD user can be assigned as administrator. This will be our entry point to configure the application-level authorizations.
+To add users to a database, we have to perform a SQL command in the database itself. There is simply no other way. This will cause a classic Chicken and Egg problem. When a database is created it's completely empty including the registered users. So who is allowed to add the first user when no one is allowed access? When the SQL Server itself is configured, an administrator has to be appointed to perform the initial actions. This can be a basic username and password combination, or an existing Azure AD user can be assigned as administrator. This will be our entry point to configure the application-level authorizations.
 
 A SQL Command can be executed through multiple routes. But we don't want to give this responsibility to a human. Everything should be automated by design. During my own implementation I've noticed that there are two types of commands that can be executed that will have the same end result.
 
 ### Option 1: From External
 
-This approach is the most 'smooth' looking way of adding a user that originates from Azure AD:
+This approach is the **smoothest** looking way of adding a user that originates from Azure AD:
 
 ```sql
 CREATE USER [NameOfManagedIdentity] FROM EXTERNAL PROVIDER;
@@ -39,12 +39,12 @@ CREATE USER [NameOfManagedIdentity] FROM EXTERNAL PROVIDER;
 
 What happens under the hood is that basically we're saying to SQL Server "Here is a name of a managed identity, it originates from in an external provider (read, Azure AD). Go look it up and store the details internally."
 
-There are a few pre-requisites to get this working though:
+There are a few prerequisites to get this working though:
 
 - The SQL Command itself has to be performed under a session of an identity in Azure AD
 - The identity performing the query needs to have the 'Azure Active Directory Graph > Directory.ReadAll' permission
 
-Unfortunately, I didn't get this implementation working properly myself at first. Although I executed the command under an identity registered in Azure AD, with the required permissions and even more as described in [Microsoft's own documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/authentication-azure-ad-user-assigned-managed-identity?view=azuresql#permissions). It didn't have enough permission to lookup the details of the Managed Identity during the execution of the command. It kept falling with the same error message.
+Unfortunately, I didn't get this implementation working properly myself at first. Although I executed the command under an identity registered in Azure AD, with the required permissions and even more as described in [Microsoft's own documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/authentication-azure-ad-user-assigned-managed-identity?view=azuresql#permissions). It didn't have enough permission to lookup the details of the Managed Identity during the execution of the command. It kept failing with the same error message.
 
 After a while I discovered that it doesn't matter what privileges the identity has that executes the SQL command, the identity of the SQL Server itself has to be granted Directory Reader access in order to lookup the AD user and register it within SQL Server.
 
@@ -119,7 +119,7 @@ Write-host "Close connection"
 $conn.Close()
 ```
 
-The last important step is to execute the above PowerShell under the identity which is also administrator of the SQL Server. What worked for me is to create a Service Principal to assign this role and to store its credentials in an Azure Devops Service Connection. This way you can create a pipeline in Azure Devops with the AzurePowershell Task that can run the above PowerShell using the service connection:
+The last important step is to execute the above PowerShell under the identity which is also administrator of the SQL Server. What worked for me is to create a Service Principal to assign this role and to store its credentials in an Azure DevOps Service Connection. This way you can create a pipeline in Azure DevOps with the AzurePowershell Task that can run the above PowerShell using the service connection:
 
 ```yaml
 - task: AzurePowerShell@5
@@ -182,7 +182,7 @@ Now your app service should be able to retrieve an Azure AD access token by itse
 
 In the end, I'm very satisfied that it is possible to use a Managed Identity also for SQL Server integration. One less secret to worry about in either Key Vault or the App settings of the application. What struck me during the implementation is the amount of disclaimers, warnings and not always obvious instructions in the Microsoft documentation. It still doesn't feel mature enough to qualify it as 'Plug 'n Play'. I'm glad I've got both approaches working in order to get the project I was working on moving.
 
-Because other blogposts on this topic are in my view not in depth enough, I had the urge to write this article to help others struggling with this. I hope this will help!
+Because other blog posts on this topic are in my view not in-depth enough, I had the urge to write this article to help others struggling with this. I hope this will help!
 
 ## References
 

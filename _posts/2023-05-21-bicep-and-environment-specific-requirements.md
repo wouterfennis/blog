@@ -13,7 +13,7 @@ Infrastructure as code, the eternal promise of stability, shared understanding a
 
 You have to restrict access way more on production, and you forgot to turn on the back-up strategy that isn't needed on dev. Did I tell you the landscape in production has to be zone redundant as well?
 
-And so the conditional logic seeps in like with a leaky roof. Parameters start popping up everywhere in your neatly separated bicep files. From module to module flags, enums have to be passed along for a suddenly important piece of production configuration three levels down. Shamefully you have to explain to your team member the end result contains not so loosely coupled modules. So what goes wrong here?
+And so the conditional logic seeps in like water through a leaky roof. Parameters start popping up everywhere in your neatly separated bicep files. From module to module, flags and enums have to be passed along for a suddenly important piece of production configuration three levels down. Shamefully you have to explain to your team member the end result contains not so loosely coupled modules. So what goes wrong here?
 
 ## Infrastructure is never the same
 
@@ -21,7 +21,7 @@ The first problem is ignoring the fact that infrastructure as code rarely applie
 
 ## Introducing environment stage variables
 
-A solution that I find fitting is introducing environment stage variables as I call it. This pattern extracts all differences between environments to one hardcoded JSON file. Each environment has to be mentioned in the file, declaring what the requirement is for back-up strategy, zone redundancy etc…
+A solution that I find fitting is introducing environment stage variables as I call it. This pattern extracts all differences between environments into one hardcoded JSON file. Each environment has to be mentioned in the file, declaring what the requirement is for back-up strategy, zone redundancy etc…
 
 ```json
 {
@@ -42,9 +42,9 @@ A solution that I find fitting is introducing environment stage variables as I c
 }
 ```
 
-These requirements or declarations are known far before each of the environments are created, they often come from non-functional requirements already agreed upon in the company. They will also not change during the rollout because of that reason. Making it less applicable for parameters in my opinion.
+These requirements or declarations are known long before each of the environments is created, they often come from non-functional requirements already agreed upon in the company. They will also not change during the rollout, for that reason. Making it less applicable for parameters in my opinion.
 
-The next step is making use of these settings during the execution of Bicep. To prevent passing along this information through parameters from module to module, we read-in these settings wherever they are needed.
+The next step is making use of these settings during the execution of Bicep. To prevent passing along this information through parameters from module to module, we load these settings wherever they are needed.
 
 ```bicep
 @allowed([
@@ -70,11 +70,11 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2021-09-01' = {
 }
 ```
 
-Whenever an environment is added where different rules apply the JSON file needs to be extended on all previously added settings. A great reminder to let the developer answer important non-functional questions on availability and recoverability for the new environment.
+Whenever an environment is added where different rules apply the JSON file needs to be extended to cover all previously added settings. A great reminder to let the developer answer important non-functional questions on availability and recoverability for the new environment.
 
 ## Conclusion
 
-Using this technique we were able to cut-out a lot of parameters of each module in our project. They are still there of course in a way, only now the information can be read directly from the low level modules.
+Using this technique we were able to cut out a lot of parameters of each module in our project. They are still there of course in a way, only now the information can be read directly from the low level modules.
 
 ## References
 
