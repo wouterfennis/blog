@@ -1,0 +1,99 @@
+---
+---
+
+@import "minima";
+
+/* Hero image */
+.hero-image {
+  margin-bottom: 2rem;
+}
+
+.hero-image img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Home intro */
+.home-intro {
+  margin-bottom: 2.5rem;
+}
+
+/* Latest posts section */
+.latest-posts__heading {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 0.5rem;
+}
+
+/* Post tiles grid */
+.post-tiles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .post-tiles {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Individual post tile */
+.post-tile {
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-tile__image-link {
+  display: block;
+}
+
+.post-tile__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.post-tile__body {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-tile__meta {
+  font-size: 0.85rem;
+  color: #828282;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.post-tile__title {
+  font-size: 1.1rem;
+  margin: 0 0 0.75rem;
+  line-height: 1.4;
+}
+
+.post-tile__title .post-link {
+  text-decoration: none;
+}
+
+.post-tile__title .post-link:hover {
+  text-decoration: underline;
+}
+
+.post-tile__excerpt {
+  font-size: 0.9rem;
+  color: #828282;
+  margin: 0;
+  line-height: 1.5;
+  flex: 1;
+}
