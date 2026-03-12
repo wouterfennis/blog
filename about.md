@@ -4,19 +4,16 @@ title: About
 permalink: /about/
 ---
 
-Welcome to my personal blog website! This is the area where I put my thoughts down whenever I encounter something during my daily work as a Software Engineer and Scrum Master that is worth writing about.
+Hi there! I’m a Software Enthousiast that always had a interest in computers from a young age. When I finished high school I had to make a choice what I wanted to be and if I needed to study in order to achieve it. I went to different computer science try-out days in the Netherlands and decided that this is something I can excel at but more importantly having fun doing it as a fulltime job.
 
-I will admit I'm Microsoft oriented when it comes to technologies and experience, so blog posts about programming and CI/CD will always have that as a starting point.
+Now, almost ten years since I got my degree at the university of applied sciences and I’ve been happily working in IT ever since. I noticed more and more that most of the time as a Software Engineer I’m researching and explaining a lot of the things I’m working on. Most of the time the information is shared only within my team or part the company and then gets lost once a solution is working as expected.
 
-Since a couple of years I'm also practicing the role as Scrum Master in different teams. Working with people in that way is equivalent for an endless supply of blog inspiration.
+Such a waste actually to let all those hours of work be forgotten like that. So one way to contribute back to the IT community is through this blog. I’ve never done anything like this before, so I can only learn from it, right?
 
-For all the subjects I'm professionally interested in I will always try to achieve the corresponding certification for it. That way I can test myself if I have the minimum required knowledge to properly use it.
-
-Take your time browsing through the different pages, feedback is always welcome. Enjoy!
+I hope this blog can help you and others with the technical or team challenges we daily face in the IT.
+Don’t hesitate to leave your feedback or ideas on the blogposts themselves. Enjoy!
 
 ---
-
-Hi, I'm **Wouter Fennis** — Software Engineer and Scrum Master.
 
 - [LinkedIn](https://www.linkedin.com/in/wouter-fennis/)
 - [GitHub](https://github.com/wouterfennis)
