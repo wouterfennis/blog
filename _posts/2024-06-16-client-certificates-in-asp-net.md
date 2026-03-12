@@ -7,15 +7,15 @@ image: /assets/images/2024/06/client-certificate-blog.jpg
 tags: [api, asp.net, client certificates, security]
 ---
 
-Authentication is often a broad, difficult and not straightforward topic to work on as a software engineer. There are endless options to secure your application and a multiplication of that in ways to implement it. And once your team has it all worked out, the business wants to onboard a new client that doesn't want or can follow the previously built secure route. Just as with functional requirements, security requirements often don't stay still or require continuous maintenance and upgrading.
+Authentication is often a broad, difficult and not straightforward topic to work on as a software engineer. There are endless options to secure your application and just as many ways to implement each option. And once your team has it all worked out, the business wants to onboard a new client that doesn't want to or cannot follow the previously built secure route. Just as with functional requirements, security requirements are rarely static or require continuous maintenance and upgrading.
 
 ![Featured image for 2024-06-16-client-certificates-in-asp-net]({{ '/assets/images/2024/06/client-certificate-blog.jpg' | relative_url }})
 
-One aspect of security which I find interesting is Client Certificate Authentication. It may sound a bit old school to send along a certificate with your request, with the JWT authentication methods that are in fashion for the past years. However I think it still has a valuable purpose to fulfill.
+One aspect of security which I find interesting is Client Certificate Authentication. It may sound a bit old school to send along a certificate with your request, with the JWT authentication methods that are in fashion for the past years. However, I think it still has a valuable purpose to fulfill.
 
 ## What is Client Certificate Authentication?
 
-When you navigate to a public website for example through your browser, the server of that website will present itself and show a SSL certificate to let you know that further traffic should be encrypted using this method. Your computer will check if the presented certificate is trusted directly and indirectly through a certificate authority. The client is in the end in control whether or not this website is to be trusted. The server however doesn't have that same luxury, it has to accept every client that calls it. And often, that is fine. For public websites or applications the server doesn't need to be picky about which clients to accept or not. Everyone is welcome to visit.
+When you navigate to a public website for example through your browser, the server of that website will present itself and show an SSL certificate to let you know that further traffic should be encrypted using this method. Your computer will check if the presented certificate is trusted directly and indirectly through a certificate authority. The client is in the end in control whether or not this website is to be trusted. The server, however, doesn't have that same luxury, it has to accept every client that calls it. And often, that is fine. For public websites or applications the server doesn't need to be picky about which clients to accept or not. Everyone is welcome to visit.
 
 But in other scenarios it might be wise to add this mutual trust between client and server. When a back-end system is calling another back-end system for example. The server will now also request the client to present some sort of identification, a certificate for example.
 
@@ -55,7 +55,7 @@ The next steps depend on the hosting model your API is running on. In an Azure A
 
 #### Extra steps required for certificate forwarding
 
-Certificate exchanges happen on a transport layer level. So we need to configure the kestrel server to request client certificates on incoming requests:
+Certificate exchanges happen at a transport layer level. So we need to configure the kestrel server to request client certificates on incoming requests:
 
 ```csharp
 public class Program
@@ -177,11 +177,11 @@ In a production scenario, you should use an actual certificate authority to sign
 
 After the certificate has been generated we can extract the thumbprint and configure it in the App settings of the API for later comparison. The self-signed root and client certificate are loaded into the keystore of your windows machine.
 
-If we startup the API it will open the browser and, depending on your browser, a prompt will show asking for a Client Certificate to send along to the local running server. This is the first sign that our adjustment of the Kestrel server is actually working.
+If we start up the API it will open the browser and, depending on your browser, a prompt will show asking for a Client Certificate to send along to the local running server. This is the first sign that our adjustment of the Kestrel server is actually working.
 
 ![Select certificate]({{ '/assets/images/2024/06/client-certificate-blog.png' | relative_url }})
 
-The browser will look into your personal certificate store to see if there are any certificates suitable for client authentication. Because the PowerShell script has loaded it in previously, you're able to select it. Making API calls from this point onwards will succeed because the browser will make sure the certificate is passed along.
+The browser will look into your personal certificate store to see if there are any certificates suitable for client authentication. Because the PowerShell script has already loaded it in, you're able to select it. Making API calls from this point onwards will succeed because the browser will make sure the certificate is passed along.
 
 ![200 response]({{ '/assets/images/2024/06/image-3.png' | relative_url }})
 
@@ -191,9 +191,9 @@ If you would not select the certificate and go in without any, the request will 
 
 ## Conclusion
 
-Client certificates can provide additional security between client and server. Especially when a back-end system is calling another back-end system, this mechanic can perfectly fit in your security architecture. I would not recommend it when the number of clients and potentially the manual maintenance is taking too much of your operations capacity.
+Client certificates can provide additional security between client and server. Especially when a back-end system is calling another back-end system, this mechanism can perfectly fit in your security architecture. I would not recommend it when the number of clients and potentially the manual maintenance is taking too much of your operations capacity.
 
-If you do plan to implement it in ASP.NET, it is at least simple to configure and well enough documented at Microsoft to find more details about specific implementations. It is also an industry standard for years, so either client and server libraries and frameworks will have to provide support when targeting enterprise companies.
+If you do plan to implement it in ASP.NET, it is at least simple to configure and well enough documented at Microsoft to find more details about specific implementations. It is also an industry standard for years, so both client and server libraries and frameworks will have to provide support when targeting enterprise companies.
 
 ## References
 

@@ -7,7 +7,7 @@ image: /assets/images/2025/05/5feac392-d10a-4354-8313-c34c56087cdf.jpg
 tags: [ci cd, content, documentation, example, linting, markdown, markdownlint, readme]
 ---
 
-Markdown has become a common language among developers for its simplicity and effectiveness in creating formatted text. Whether you're crafting a README file for your open source project, writing technical documentation, or drafting a blog post, Markdown provides an elegant and efficient way to write content. However, as straightforward as it may seem, writing clean and consistent Markdown can sometimes be a challenge — this is where Markdownlint becomes an indispensable tool.
+Markdown has become a common language among developers for its simplicity and effectiveness in creating formatted text. Whether you're crafting a README file for your open-source project, writing technical documentation, or drafting a blog post, Markdown provides an elegant and efficient way to write content. However, as straightforward as it may seem, writing clean and consistent Markdown can sometimes be a challenge — this is where Markdownlint becomes an indispensable tool.
 
 ![Featured image for 2025-05-19-markdownlint-a-developers-best-friend-for-cleaner-markdown]({{ '/assets/images/2025/05/5feac392-d10a-4354-8313-c34c56087cdf.jpg' | relative_url }})
 
@@ -35,7 +35,7 @@ Markdownlint integrates seamlessly with popular text editors like Visual Studio 
 
 ### 4. Command-Line Interface
 
-For those who prefer working in the terminal, Markdownlint offers a robust command-line interface (CLI). This makes it easy to lint multiple files at once, automate tasks, and use Markdownlint into your CI/CD pipeline.
+For those who prefer working in the terminal, Markdownlint offers a robust command-line interface (CLI). This makes it easy to lint multiple files at once, automate tasks, and integrate Markdownlint into your CI/CD pipeline.
 
 ## Why Use Markdownlint?
 
@@ -43,7 +43,7 @@ If you're wondering why you should incorporate Markdownlint into your workflow, 
 
 ### 1. Improved Readability
 
-Markdownlint ensures that your documents are consistently formatted, making them easier to read and understand. Clean Markdown is not just visually appealing but also more accessible to contributors and collaborators, increasing the likeliness of up to date documents.
+Markdownlint ensures that your documents are consistently formatted, making them easier to read and understand. Clean Markdown is not just visually appealing but also more accessible to contributors and collaborators, increasing the likelihood of up-to-date documents.
 
 ### 2. Enhanced Collaboration
 
@@ -51,7 +51,7 @@ When multiple team members are working on a project, consistency is key. Markdow
 
 ### 3. Error Detection
 
-Even experienced Markdown writers can make mistakes. Markdownlint acts as a second pair of eyes, catching errors that might otherwise go unnoticed or hard to find.
+Even experienced Markdown writers can make mistakes. Markdownlint acts as a second pair of eyes, catching errors that might otherwise go unnoticed or be hard to find.
 
 ### 4. Time Savings
 
@@ -99,7 +99,7 @@ Markdownlint will output a list of issues, complete with line numbers and descri
 To make the most of Markdownlint, consider adopting the following best practices:
 
 - **Use a Configuration File**: Adjust the rules to meet your project's specific requirements, ensuring that the linter aligns with your style guide.
-- **Integrate Early**: Add Markdownlint to your project from the start to maintain consistent formatting throughout the development process. Also to prevent technical-debt building up in your content files.
+- **Integrate Early**: Add Markdownlint to your project from the start to maintain consistent formatting throughout the development process. This also prevents technical debt from building up in your content files.
 - **Educate Your Team**: Ensure that all contributors understand the importance of clean Markdown and how to use Markdownlint effectively.
 - **Automate with CI/CD**: Include Markdownlint in your continuous integration pipeline to catch issues before they make it into production.
 

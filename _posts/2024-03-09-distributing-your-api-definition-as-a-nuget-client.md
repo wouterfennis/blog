@@ -11,7 +11,7 @@ Creating APIs is quite simple nowadays. You can have a functional API up and run
 
 ## Designing the distribution
 
-In this article I won't explore all possible options to serialize and distribute an API definition. There are however three stages that I will touch on:
+In this article I won't explore all possible options to serialize and distribute an API definition. There are, however, three stages that I will touch on:
 
 1. Serializing the API definition, using Swagger
 2. Generating a client, using NSwag
@@ -19,19 +19,19 @@ In this article I won't explore all possible options to serialize and distribute
 
 ## Swagger
 
-Swagger is a powerful library when it comes to designing and distributing an API for different potential systems. It can be used to generate or design OpenApi definitions from the ground up. Even if you already have an existing API built in ASP.NET for example it can still be used to generate an OpenApi definition, even if it doesn't uphold all the design conventions.
+Swagger is a powerful library when it comes to designing and distributing an API for different potential systems. It can be used to generate or design OpenApi definitions from the ground up. Even if you already have an existing API built in ASP.NET for example it can still be used to generate an OpenAPI definition, even if it doesn't uphold all the design conventions.
 
-By attaching the Swagger NuGet package and making use of a few Attributes a so-called `swagger.json` file can be generated at compilation time. Distributing this file by hosting it close to your API or indirectly offline can help a third-party implement the interface in minutes.
+By attaching the Swagger NuGet package and making use of a few Attributes a so-called `swagger.json` file can be generated at compilation time. Distributing this file by hosting it close to your API or indirectly offline can help a third party implement the interface in minutes.
 
 ## NSwag
 
-NSwag is the counterpart of the Swagger library. It can be used to generate code from an OpenApi definition. This library is typically used by a consumer of an API. Code that makes HTTP calls and processes the response is in most situations just a boilerplate implementation that works the same for any system. Only the programming language itself might have its specific quirks, but often a language specific code generator exists for OpenApi definitions.
+NSwag is the counterpart of the Swagger library. It can be used to generate code from an OpenApi definition. This library is typically used by a consumer of an API. Code that makes HTTP calls and processes the response is in most situations just a boilerplate implementation that works the same for any system. Only the programming language itself might have its specific quirks, but often a **language-specific** code generator exists for OpenAPI definitions.
 
-NSwag is a .NET specific library used in these situations. It can generate a C# class that uses a HTTP Client for the specific endpoints and can supply an interface that can be used in an infrastructure layer of your software, it won't limit you from applying patterns like Dependency Injection to swap it with a Mock during testing.
+NSwag is a .NET specific library used in these situations. It can generate a C# class that uses an HTTP Client for the specific endpoints and can supply an interface that can be used in an infrastructure layer of your software, it won't limit you from applying patterns like Dependency Injection to swap it with a Mock during testing.
 
-As an API publisher there is a choice of leaving this step up to the consumers or by generating these files beforehand. By generating clients and distributing them pro-actively it can be seen as some sort of service for your consumers, but it can also give a hook to make sure that clients calling your API uphold some non-functional requirement. API Consumers won't have the inside knowledge you might have as the maintainer. Every detail left out, will probably come back as a support ticket in your team.
+As an API publisher there is a choice of leaving this step up to the consumers or by generating these files beforehand. By generating clients and distributing them pro-actively it can be seen as some sort of service for your consumers, but it can also give a hook to make sure that clients calling your API uphold some non-functional requirement. API consumers won't have the inside knowledge you might have as the maintainer. Every detail left out, will probably come back as a support ticket in your team.
 
-Documenting your API is always a good practice, but won't guarantee consumers of using your API as expected. For example, imagine the API is secured with OAuth 2.0 or MTLS. You might want to prepare the HTTP Client to make sure it always authenticates the HTTP calls. The consumer only has to point to the specific credentials or certificate. Dependency Injection can also be prepared with an extension method.
+Documenting your API is always a good practice, but won't guarantee that consumers will use your API as expected. For example, imagine the API is secured with OAuth 2.0 or MTLS. You might want to prepare the HTTP Client to make sure it always authenticates the HTTP calls. The consumer only has to point to the specific credentials or certificate. Dependency Injection can also be prepared with an extension method.
 
 ## NuGet package
 
@@ -72,7 +72,7 @@ First the swagger tooling is restored when this project is built for the first t
 
 ### Generating the CSharp Client
 
-Here we will use NSwag to generate a CSharp class from the previously generated `swagger.json`. Specifically the `NSwag.ApiDescription.Client` will do the job for us in the Client project.
+Here we will use NSwag to generate a C# class from the previously generated `swagger.json`. Specifically, the `NSwag.ApiDescription.Client` will do the job for us in the Client project.
 
 ```bash
 dotnet add package NSwag.ApiDescription.Client
@@ -88,9 +88,9 @@ With the library installed it can also be executed when the Client project is be
 </ItemGroup>
 ```
 
-Notice how the `OpenApiReference` assumes the `swagger.json` is already present in the Client project. Build order has become important at this stage, make sure that the projects are always built in the order that the Clients are last in line.
+Notice how the `OpenApiReference` assumes the `swagger.json` is already present in the Client project. Build order has become important at this stage. Make sure that the projects are always built in the order that the Clients are last in line.
 
-When the solution is built, you should see no compilation errors. However, no CSharp client is popping up in the IDE. That is because it is placed in the output directory of the build, it shouldn't be manually adjusted as it is generated code.
+When the solution is built, you should see no compilation errors. However, no C# client is popping up in the IDE. That is because it is placed in the output directory of the build, it shouldn't be manually adjusted as it is generated code.
 
 If you want to change configuration however, there are hooks to change the default generated behavior of the client. By introducing a partial class, sections can be overwritten:
 
@@ -151,7 +151,7 @@ services.AddApiClient(apiBaseUri);
 
 ## Conclusion
 
-With this setup as your distribution model you can still work on your API as usual, but now you can version a client with semantic versioning by the side. Consumers only have to update the package to make use of the latest definition, this makes the hurdle of updating quicker.
+With this setup as your distribution model you can still work on your API as usual, but now you can version a client with semantic versioning alongside it. Consumers only have to update the package to make use of the latest definition, this makes the hurdle of updating quicker.
 
 ## References
 
