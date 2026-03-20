@@ -2,6 +2,7 @@
 layout: page
 title: About
 description: "About Wouter Fennis — Software Engineer and Scrum Master from the Netherlands, sharing practical insights on .NET, Azure, CI/CD, and Scrum."
+image: /assets/images/blog-banner.png
 permalink: /about/
 ---
 
