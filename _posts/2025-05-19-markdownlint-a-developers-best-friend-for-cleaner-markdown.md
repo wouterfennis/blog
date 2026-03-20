@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "Markdownlint: A Developer's Best Friend for Cleaner Markdown"
+title: "Markdownlint: a developer's best friend for cleaner Markdown"
+description: "How Markdownlint helps enforce consistent Markdown quality across developer projects — including setup, custom rules, and CI/CD integration."
 date: 2025-05-19
 categories: [CI CD]
 image: /assets/images/2025/05/5feac392-d10a-4354-8313-c34c56087cdf.jpg

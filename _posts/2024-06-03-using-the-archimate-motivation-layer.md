@@ -1,13 +1,16 @@
 ---
 layout: post
 title: "Using the ArchiMate motivation layer"
+description: "How to use the ArchiMate motivation layer to map stakeholder goals, drivers, and priorities before making architecture decisions in a project."
 date: 2024-06-03
 categories: [Architecture]
 image: /assets/images/2024/05/Organisational-chart-lego.jpg
-tags: [archi, archimate, architecture, examples, motivation layer]
+tags: [archi, archimate, architecture, enterprise architecture, examples, motivation layer, stakeholders]
 ---
 
 How often did you ask yourself during a project: "Why am I doing this again?". You have to take a step back, zoom out of the technicalities and look at the written requirements or talk with the stakeholders of your project. Often discovering that you had made an assumption about the underlying reasons some work had to be done or in a certain way — halting the workflow of a team member to get the reasoning behind a change or addition.
+
+![Featured image for 2024-06-03-using-the-archimate-motivation-layer]({{ '/assets/images/2024/05/Organisational-chart-lego.jpg' | relative_url }})
 
 How nice it would be if there were an 'architecture' diagram of the stakeholders in the project. What their needs, drivers and priorities are. To help you make important decisions on a day to day basis. Archimate might have the solution!
 

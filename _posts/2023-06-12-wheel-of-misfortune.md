@@ -1,13 +1,14 @@
 ---
 layout: post
 title: "Wheel of Misfortune"
+description: "Prepare your DevOps team for production incidents with the Wheel of Misfortune — a Scrum exercise for disaster scenario planning and brainstorming."
 date: 2023-06-12
 categories: [Scrum]
 image: /assets/images/2023/06/Wheel_of_Fortune_logo-3.png
 tags: [brainstorming, devops, incidents, operations, problem solving, wheel of misfortune]
 ---
 
-![Featured image for wheel of misfortune]({{ '/assets/images/2023/06/Wheel_of_Fortune_logo-3.png' | relative_url }})
+![Featured image for 2023-06-12-wheel-of-misfortune]({{ '/assets/images/2023/06/Wheel_of_Fortune_logo-3.png' | relative_url }})
 
 Getting software to production is one thing, maintaining it however is a whole other ball game. In your local development environment everything is always running smoothly, network issues? Shortage on storage? Slow performance? Those issues often arise when your application is running on a server somewhere with actual production load and data. As developers we cannot be ignorant anymore and leave it to a system engineer to keep the system running for us. That ship has long since sailed, we have to reinvent our way of working to develop new software and think ahead about the challenges of running it.
 

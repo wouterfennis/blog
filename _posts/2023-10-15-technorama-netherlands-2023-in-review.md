@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Technorama Netherlands 2023 in review"
+description: "My personal review of Technorama Netherlands 2023 — two days of deep-dive sessions on AI, Azure cloud, architecture, and modern software development."
 date: 2023-10-15
 categories: [Programming]
 image: /assets/images/2023/10/technorama-2023-1-1024x285.jpg

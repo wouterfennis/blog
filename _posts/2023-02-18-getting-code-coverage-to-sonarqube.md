@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "Getting Code Coverage to SonarQube"
+description: "How to get .NET code coverage and unit test results into SonarQube using Azure DevOps YAML pipelines with TRX and XML coverage files."
 date: 2023-02-18
 categories: [CI CD]
-tags: [.NET, Azure DevOps, C#, CI CD, Code Coverage, SonarQube, trx, Unit tests, xml, YAML]
+tags: [.net, azure devops, c#, ci cd, code coverage, sonarqube, trx, unit tests, xml, yaml]
 image: /assets/images/2023/02/Sonarqube.webp
 ---
 

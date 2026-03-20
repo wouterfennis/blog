@@ -1,13 +1,16 @@
 ---
 layout: post
 title: "Distributing your API definition as a NuGet client"
+description: "How to serialize an ASP.NET API definition with Swagger, generate a C# client with NSwag, and distribute it as a NuGet package."
 date: 2024-03-09
 categories: [Programming]
 image: /assets/images/2024/03/distributingAPIs-Klein.jpg
-tags: [api, client, distributing, nswag, nuget, swagger]
+tags: [.net, api, asp.net, c#, client, distributing, nswag, nuget, openapi, swagger]
 ---
 
 Creating APIs is quite simple nowadays. You can have a functional API up and running in the Azure cloud within minutes. By using an OpenAPI library like Swagger to publish your API's definition, other systems can easily integrate and utilize its functionality. The real challenge, as with many programming aspects, lies in maintaining the software once other parties start using your API. To help your customers integrate with your API, but also to have some influence over the way the API is called, a client can be created on the maintainer side and distributed using a NuGet package.
+
+![Featured image for 2024-03-09-distributing-your-api-definition-as-a-nuget-client]({{ '/assets/images/2024/03/distributingAPIs-Klein.jpg' | relative_url }})
 
 ## Designing the distribution
 
@@ -31,7 +34,7 @@ NSwag is a .NET specific library used in these situations. It can generate a C# 
 
 As an API publisher there is a choice of leaving this step up to the consumers or by generating these files beforehand. By generating clients and distributing them pro-actively it can be seen as some sort of service for your consumers, but it can also give a hook to make sure that clients calling your API uphold some non-functional requirement. API consumers won't have the inside knowledge you might have as the maintainer. Every detail left out, will probably come back as a support ticket in your team.
 
-Documenting your API is always a good practice, but won't guarantee that consumers will use your API as expected. For example, imagine the API is secured with OAuth 2.0 or MTLS. You might want to prepare the HTTP Client to make sure it always authenticates the HTTP calls. The consumer only has to point to the specific credentials or certificate. Dependency Injection can also be prepared with an extension method.
+Documenting your API is always a good practice, but won't guarantee that consumers will use your API as expected. For example, imagine the API is secured with OAuth 2.0 or [MTLS](/2024/06/16/client-certificates-in-asp-net/). You might want to prepare the HTTP Client to make sure it always authenticates the HTTP calls. The consumer only has to point to the specific credentials or certificate. Dependency Injection can also be prepared with an extension method.
 
 ## NuGet package
 
