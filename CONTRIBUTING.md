@@ -70,6 +70,20 @@ This PR contains the version bump in `_data/version.yml`, `.release-please-manif
 
 Editing these files manually will cause release-please to behave unexpectedly.
 
+## Repository secrets
+
+The Release Please workflow requires a Personal Access Token (PAT) stored as a repository secret.
+
+| Secret name | Purpose |
+| --- | --- |
+| `RELEASE_PLEASE_TOKEN` | Allows the Release Please GitHub Action to create and update the Release PR. A classic PAT with `repo` scope (or a fine-grained token with **Contents** read/write and **Pull requests** read/write permissions on this repository) is required because the default `GITHUB_TOKEN` is blocked from creating pull requests by the repository's workflow-permission settings. |
+
+To set this up:
+
+1. Go to your GitHub account **Settings > Developer settings > Personal access tokens**.
+2. Generate a new token with at least `repo` scope (classic) or the fine-grained permissions listed above.
+3. In this repository go to **Settings > Secrets and variables > Actions** and create a secret named `RELEASE_PLEASE_TOKEN` with the token value.
+
 ## Local development
 
 ```bash
