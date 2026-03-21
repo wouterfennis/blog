@@ -2,6 +2,7 @@
 layout: home
 hero_image: /assets/images/blog-banner.png
 hero_alt: "Wouter Compiles IT — Software Engineering Blog"
+image: /assets/images/blog-banner.png
 ---
 
 I'm Wouter Fennis — a Software Engineer and Scrum Master from the Netherlands.

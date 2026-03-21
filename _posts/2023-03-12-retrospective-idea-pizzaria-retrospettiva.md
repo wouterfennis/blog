@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "Retrospective Idea: Pizzaria Retrospettiva"
+title: "Retrospective idea: Pizzaria Retrospettiva"
+description: "A fun Scrum retrospective format inspired by pizza — ideal for remote and in-person Agile teams looking to refresh their self-reflection ritual."
 date: 2023-03-12
 categories: [Scrum]
 image: /assets/images/2023/03/Pizza-1024x483.png

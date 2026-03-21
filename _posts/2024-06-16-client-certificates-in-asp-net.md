@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Client certificates in ASP.NET"
+description: "How to implement Client Certificate Authentication in ASP.NET to secure back-end-to-back-end communication with mutual TLS in Azure."
 date: 2024-06-16
 categories: [Programming]
 image: /assets/images/2024/06/client-certificate-blog.jpg
-tags: [api, asp.net, client certificates, security]
+tags: [api, asp.net, authentication, client certificates, mutual tls, security]
 ---
 
 Authentication is often a broad, difficult and not straightforward topic to work on as a software engineer. There are endless options to secure your application and just as many ways to implement each option. And once your team has it all worked out, the business wants to onboard a new client that doesn't want to or cannot follow the previously built secure route. Just as with functional requirements, security requirements are rarely static or require continuous maintenance and upgrading.

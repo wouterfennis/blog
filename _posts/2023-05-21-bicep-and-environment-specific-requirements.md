@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Bicep and environment specific requirements"
+description: "Using environment stage variables in Bicep to manage environment-specific Azure infrastructure requirements without scattered conditional logic."
 date: 2023-05-21
 categories: [CI CD]
 image: /assets/images/2023/05/bicep.png
-tags: [bicep, environments, json]
+tags: [azure, bicep, environments, infrastructure as code, json]
 ---
 
 Infrastructure as code, the eternal promise of stability, shared understanding and high maintainability. Often it starts out that way. You start writing the first components, tie them together in a procedure. It runs excellently in the development environment. Just one click away from rolling it out in other environments. But then you realize you can't.

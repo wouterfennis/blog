@@ -1,13 +1,14 @@
 ---
 layout: post
 title: "SQL Server Authentication and Authorization on Azure with Managed Identities"
+description: "How to secure Azure SQL Server databases by adding Managed Identity users and roles through automated Azure DevOps pipelines."
 date: 2023-04-19
 categories: [CI CD, Programming]
 image: /assets/images/2023/04/Azure-SQL-MI.png
 tags: [authentication, authorization, azure, azure ad, azure devops, managed identities, security, sql, sql server]
 ---
 
-Deploying infrastructure to Azure is easy enough these days with Azure Powershell, CLI or Bicep. Making interactions between infrastructure components secure is also facilitated in Azure with Managed Identities for example. Databases however, often have their own authentication and authorization internally which is out of reach for Bicep and ARM templates. How can you secure your dynamically created SQL Server databases in Azure?
+Deploying infrastructure to Azure is easy enough these days with Azure Powershell, CLI or [Bicep](/2023/05/21/bicep-and-environment-specific-requirements/). Making interactions between infrastructure components secure is also facilitated in Azure with Managed Identities for example. Databases however, often have their own authentication and authorization internally which is out of reach for Bicep and ARM templates. How can you secure your dynamically created SQL Server databases in Azure?
 
 ![Featured image for 2023-04-19-sql-server-authentication-and-authorization-on-azure-with-managed-identities]({{ '/assets/images/2023/04/Azure-SQL-MI.png' | relative_url }})
 
