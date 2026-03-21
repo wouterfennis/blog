@@ -51,7 +51,7 @@ WordPress URL structure (e.g. `/2025/11/14/part-1-my-experience-with-github-copi
 ```bash
 bundle install
 bundle exec jekyll serve --livereload
-# Site available at http://localhost:4000/blog
+# Site available at http://localhost:4000
 ```
 
 ## Deployment
