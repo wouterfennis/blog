@@ -31,7 +31,7 @@ about.md         # About page
 ```bash
 bundle install
 bundle exec jekyll serve --livereload
-# Site available at http://localhost:4000/blog
+# Site available at http://localhost:4000
 ```
 
 ## Markdown linting

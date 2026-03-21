@@ -3,8 +3,8 @@ tagline: "Software Engineering Blog by Wouter Fennis"
 description: >-
   Personal blog by Wouter Fennis — Software Engineer and Scrum Master.
   Posts about Microsoft/.NET development, Azure, CI/CD, architecture, and Scrum.
-url: "https://wouterfennis.github.io"
-baseurl: "/blog"
+url: "https://woutercompiles.it"
+baseurl: ""
 
 author:
   name: Wouter Fennis
