@@ -5,7 +5,7 @@ description: "How to secure Azure SQL Server databases by adding Managed Identit
 date: 2023-04-19
 categories: [CI CD, Programming]
 image: /assets/images/2023/04/Azure-SQL-MI.png
-tags: [authentication, authorization, azure, azure ad, azure devops, managed identities, security, sql, sql server]
+tags: [authentication, authorization, azure, azure ad, azure devops, entra id, managed identities, powershell, role assignment, security, sql, sql server]
 ---
 
 Deploying infrastructure to Azure is easy enough these days with Azure Powershell, CLI or [Bicep](/2023/05/21/bicep-and-environment-specific-requirements/). Making interactions between infrastructure components secure is also facilitated in Azure with Managed Identities for example. Databases however, often have their own authentication and authorization internally which is out of reach for Bicep and ARM templates. How can you secure your dynamically created SQL Server databases in Azure?
@@ -30,7 +30,7 @@ To add users to a database, we have to perform a SQL command in the database its
 
 A SQL Command can be executed through multiple routes. But we don't want to give this responsibility to a human. Everything should be automated by design. During my own implementation I've noticed that there are two types of commands that can be executed that will have the same end result.
 
-### Option 1: From External
+### Option 1: From external
 
 This approach is the **smoothest** looking way of adding a user that originates from Azure AD:
 

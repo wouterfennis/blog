@@ -5,7 +5,7 @@ description: "How to use the ArchiMate motivation layer to map stakeholder goals
 date: 2024-06-03
 categories: [Architecture]
 image: /assets/images/2024/05/Organisational-chart-lego.jpg
-tags: [archi, archimate, architecture, enterprise architecture, examples, motivation layer, stakeholders]
+tags: [archi, archi tool, archimate, architecture, enterprise architecture, examples, modeling, motivation layer, requirements, stakeholders]
 ---
 
 How often did you ask yourself during a project: "Why am I doing this again?". You have to take a step back, zoom out of the technicalities and look at the written requirements or talk with the stakeholders of your project. Often discovering that you had made an assumption about the underlying reasons some work had to be done or in a certain way — halting the workflow of a team member to get the reasoning behind a change or addition.

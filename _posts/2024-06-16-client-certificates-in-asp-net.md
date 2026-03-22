@@ -5,7 +5,7 @@ description: "How to implement Client Certificate Authentication in ASP.NET to s
 date: 2024-06-16
 categories: [Programming]
 image: /assets/images/2024/06/client-certificate-blog.jpg
-tags: [api, asp.net, authentication, client certificates, mutual tls, security]
+tags: [api, asp.net, authentication, azure app service, client certificates, kestrel, mutual tls, security, ssl, x509]
 ---
 
 Authentication is often a broad, difficult and not straightforward topic to work on as a software engineer. There are endless options to secure your application and just as many ways to implement each option. And once your team has it all worked out, the business wants to onboard a new client that doesn't want to or cannot follow the previously built secure route. Just as with functional requirements, security requirements are rarely static or require continuous maintenance and upgrading.
@@ -14,13 +14,13 @@ Authentication is often a broad, difficult and not straightforward topic to work
 
 One aspect of security which I find interesting is Client Certificate Authentication. It may sound a bit old school to send along a certificate with your request, with the JWT authentication methods that are in fashion for the past years. However, I think it still has a valuable purpose to fulfill.
 
-## What is Client Certificate Authentication?
+## What is client certificate authentication?
 
 When you navigate to a public website for example through your browser, the server of that website will present itself and show an SSL certificate to let you know that further traffic should be encrypted using this method. Your computer will check if the presented certificate is trusted directly and indirectly through a certificate authority. The client is in the end in control whether or not this website is to be trusted. The server, however, doesn't have that same luxury, it has to accept every client that calls it. And often, that is fine. For public websites or applications the server doesn't need to be picky about which clients to accept or not. Everyone is welcome to visit.
 
 But in other scenarios it might be wise to add this mutual trust between client and server. When a back-end system is calling another back-end system for example. The server will now also request the client to present some sort of identification, a certificate for example.
 
-## Challenges with Client Certificates
+## Challenges with client certificates
 
 ### Certificate rotation
 
@@ -34,7 +34,7 @@ Similar to the previous point, the client is responsible for securely storing th
 
 Generating, rotating and distributing certificates signed by a root certificate authority for example, is a costly business. Depending on the organization size, this might already be in place.
 
-## Securing your API with Client Certificates
+## Securing your API with client certificates
 
 I'll use the default ASP.NET API example as a base. It has no authentication by default so I can add the required components step by step. We'll start off with the easy steps and then go deeper in the more complex and less intuitive adjustments. For the full working example, see the [Git repository](https://github.com/wouterfennis/blogExamples/tree/main/ClientCertificates).
 

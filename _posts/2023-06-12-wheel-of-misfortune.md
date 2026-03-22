@@ -5,14 +5,14 @@ description: "Prepare your DevOps team for production incidents with the Wheel o
 date: 2023-06-12
 categories: [Scrum]
 image: /assets/images/2023/06/Wheel_of_Fortune_logo-3.png
-tags: [brainstorming, devops, incidents, operations, problem solving, wheel of misfortune]
+tags: [brainstorming, devops, facilitation, incidents, operations, problem solving, production, sre, team exercise, wheel of misfortune]
 ---
-
-![Featured image for 2023-06-12-wheel-of-misfortune]({{ '/assets/images/2023/06/Wheel_of_Fortune_logo-3.png' | relative_url }})
 
 Getting software to production is one thing, maintaining it however is a whole other ball game. In your local development environment everything is always running smoothly, network issues? Shortage on storage? Slow performance? Those issues often arise when your application is running on a server somewhere with actual production load and data. As developers we cannot be ignorant anymore and leave it to a system engineer to keep the system running for us. That ship has long since sailed, we have to reinvent our way of working to develop new software and think ahead about the challenges of running it.
 
 Nobody likes to be called in the middle of the night to be confronted with a failing system without a clear symptom of what is going on. So why wait until problems arise before you tackle them? There is often only so much that can go wrong, and if you already have a mitigation plan ready you'll be back in your bed in no time.
+
+![Featured image for 2023-06-12-wheel-of-misfortune]({{ '/assets/images/2023/06/Wheel_of_Fortune_logo-3.png' | relative_url }})
 
 A tool I've been using to help teams think openly about this is the Wheel of Misfortune. It contains all the scenarios you would rather not encounter on a Friday afternoon. The team spins the wheel and one of the scenarios will be picked at random, the team will then sit together and determine what steps they would do to mitigate. This may sound easier than it is. Because there are often more variables involved once you start brainstorming about a specific scenario.
 
@@ -26,7 +26,7 @@ Using dot votes, each team member can now mark a limited number of categories to
 
 If everything has gone right you should now have a few categories to start future discussions about. These scenarios are apparently the first things that the team thought about, maybe the lack of confidence or knowledge about a problem led to these being written down. Very valuable information indeed!
 
-## Phase 2: Spin the wheel
+## Phase 2: spin the wheel
 
 At this stage we can add our scenarios to a spinning wheel. For the creative and handy ones out there, you might build something real that can be brought on site. But these days there are plenty of free online tools to use. For example [Wheel of Names](https://wheelofnames.com/).
 
@@ -53,7 +53,7 @@ As a facilitator you can divide the team into groups of two and assign each a ra
 
 All of this brainstorming can result in manuals, flow charts, requirements for monitoring, important contacts etc… Whatever can help the team, each hour spent on pre-solving these issues is a lot less stress and frustration when getting production back on track.
 
-## Phase 3: Reactions
+## Phase 3: reactions
 
 > "How am I ever going to solve this?!"
 
@@ -68,7 +68,7 @@ After just one session team members will often realise the following:
 
 All of these realizations are the perfect starting point for new discussions and follow up meetings.
 
-## Phase 4: Follow up
+## Phase 4: follow up
 
 Although one session can be helpful to realize what to do. It doesn't mean that those mitigations will actually work. You will have to try them out, finetune them and share the knowledge in your team. The goal should be that every team member is able to fix or assist in production issues. The Wheel of Misfortune can also be used as a training tool to try out certain mitigations under pressure. Problems of the past can also be put on the wheel to see if the team is actually able to verify whether the post-mortem at the time was fruitful.
 

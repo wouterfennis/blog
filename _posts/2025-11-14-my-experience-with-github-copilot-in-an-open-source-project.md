@@ -5,7 +5,7 @@ description: "My experience using GitHub Copilot agentic AI in an open-source pr
 date: 2025-11-14
 categories: [Architecture, Programming]
 image: /assets/images/2025/11/banner-1024x534.png
-tags: [agentic ai, artificial intelligence, azure dev conference, cli extensions, code review, collaboration, developer productivity, developer tools, experimental projects, generative ai, github copilot, github issues]
+tags: [agentic ai, ai agents, artificial intelligence, azure dev conference, cli extensions, code review, collaboration, developer productivity, developer tools, experimental projects, generative ai, github copilot, github issues, oh my posh, open source, prompt engineering]
 ---
 
 It is amazing how fast AI developments have led to fundamental changes in the development process of IT projects. It is difficult for me to imagine generative AI and AI agents disappearing from my day-to-day work anytime soon.
@@ -30,7 +30,7 @@ Towards the end of the day, when I work from the office, I always monitor the tr
 
 ![Azure dev summit]({{ '/assets/images/2025/11/azure-dev-summit.png' | relative_url }})
 
-## Project kick-off and Planning
+## Project kick-off and planning
 
 I wanted to work in a structured way, not only for myself but because LLMs thrive on context and well-structured descriptions. So, every change or idea must be a GitHub Issue first.
 
@@ -54,7 +54,7 @@ When I review these steps, I am impressed by the initial speed I can make as a s
 
 Was it fun? Yes, as a person that is normally not directly involved in extracting requirements it was an interesting experience. But there are things to consider.
 
-### Solo vs. Group Collaboration
+### Solo vs. group collaboration
 
 I was alone in this instance, if I were in a group of people also with opinions about the project I would want a group chat with Copilot as a participant. I am curious whether Copilot would be able to not satisfy everyone in the group but to point out conflicting requirements and provide pushback. For now, the initial proposal will be made between one person and Copilot in most cases. Other people will have to review the result and provide feedback but won't be in the discussion chat in the heat of the moment.
 

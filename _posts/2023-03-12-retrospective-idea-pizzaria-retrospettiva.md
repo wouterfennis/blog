@@ -5,14 +5,14 @@ description: "A fun Scrum retrospective format inspired by pizza — ideal for r
 date: 2023-03-12
 categories: [Scrum]
 image: /assets/images/2023/03/Pizza-1024x483.png
-tags: [fun, ingredients, learn, online, pizza, retrospective, ritual, scrum, self-reflection, slices, whiteboard]
+tags: [agile, facilitation, fun, ingredients, learn, miro, online, pizza, retrospective, ritual, scrum, self-reflection, slices, whiteboard]
 ---
 
 Retrospectives have a tendency to sometimes be repetitive and less fruitful. However sometimes just a simple change of scenery can already open up a new perspective of underlying problems or successes that a Scrum team has been through. One method I've tried in practice is bringing the retrospective in an authentic Italian vibe. And what is the first thing people associate with Italia? Pizza 🍕 of course!
 
 ![Featured image for 2023-03-12-retrospective-idea-pizzaria-retrospettiva]({{ '/assets/images/2023/03/Pizza-1024x483.png' | relative_url }})
 
-## Scrum Rituals going digital
+## Scrum rituals going digital
 
 In the last few years, digital retrospectives have become more and more common in my experience. The most common reason is that it is no longer guaranteed that everyone is in the office on the same day. Forcing your colleagues to be physically present for Scrum rituals isn't a good start of shared openness in the team. So we as Scrum Masters have to adapt our methods to still have these precious moments of self-reflection.
 

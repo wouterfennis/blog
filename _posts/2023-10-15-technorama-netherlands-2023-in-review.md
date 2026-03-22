@@ -5,7 +5,7 @@ description: "My personal review of Technorama Netherlands 2023 — two days of 
 date: 2023-10-15
 categories: [Programming]
 image: /assets/images/2023/10/technorama-2023-1-1024x285.jpg
-tags: [2023, ai, architecture, artificial intelligence, azure, cloud, development, netherlands, tdd, technorama, test driven development, testing]
+tags: [2023, ai, architecture, artificial intelligence, azure, bicep, cloud, conference, development, microservices, netherlands, pulumi, tdd, technorama, terraform, test driven development, testing]
 ---
 
 During and shortly after COVID I kind of lost track of IT conferences. Working more from home and occasionally visiting the office makes your professional circle increasingly smaller without you noticing. So when I was made aware that this month the Technorama conference would take place in the [Kinopolis](https://kinepolis.nl/bioscopen/kinepolis-jaarbeurs-utrecht/info/) in Utrecht, I signed up and went there.
@@ -16,7 +16,7 @@ Technorama is a "Deep knowledge IT Conference" as the event is described on the 
 
 By Dutch standards, the scale of the event was big. Every hour you could choose between 10 different speakers each with their own interesting insight on architecture, cloud computing, data, developer trends, self-improvement, front end development and of course Artificial Intelligence.
 
-## Artificial Intelligence
+## Artificial intelligence
 
 AI had special attention this year as ChatGPT and GitHub Copilot blasted their way into IT development. Jennifer Marsman, a principal engineer at Microsoft, flew over to explain the potential of AI and of course how the Azure platform can make it accessible to any business to hop onboard. AI was mentioned in almost every session I've attended during the day. How it could help solving the problems of businesses, to refactoring or explaining legacy code. Apart from marketing one liners there were actually speakers that showed some real use cases and weren't afraid to demo them live. Often the prompts didn't return the exact answer that was expected but that only confirmed the imperfection of the concept. You always have to review the suggestions or answers being presented by an AI model.
 
@@ -30,7 +30,7 @@ The problem isn't micro services themselves but the modeling and designing effor
 
 ## Cloud development
 
-Many sessions were also about the cloud in general. I've attended a session from [Erwin Staal](https://erwinstaal.nl/) where Bicep, Terraform and Pulumi were compared to each other as they all are tools that can deploy and maintain infrastructure in the cloud.
+Many sessions were also about the cloud in general. I've attended a session from [Erwin Staal](https://erwinstaal.nl/) where [Bicep](/2023/05/21/bicep-and-environment-specific-requirements/), Terraform and Pulumi were compared to each other as they all are tools that can deploy and maintain infrastructure in the cloud.
 
 Bicep is the most narrowly scoped tool as it can only be used to deploy to the Azure cloud. But when Azure is the only platform you have to use that is not really a problem. It's maintained by Microsoft directly and has the best integration in tools like Visual Studio Code.
 
