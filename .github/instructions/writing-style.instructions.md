@@ -72,7 +72,7 @@ Use it to verify that new posts are consistent with the existing style before pu
 
 ### Series posts
 
-- Title must include the part prefix: `"Part N: Actual Title Here"` (e.g. `"Part 1: My experience with GitHub Copilot in an open-source project"`).
+- Title must include the part prefix: `"Part N: Actual Title Here"` (e.g. `"Part 1: Building an Oh My Posh extension with Copilot"`).
 - The opening paragraph must state this is part of a series and what the series covers.
 
 ## References section

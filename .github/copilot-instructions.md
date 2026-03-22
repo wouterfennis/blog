@@ -44,7 +44,7 @@ Categories mirror the original WordPress categories exactly (capitalised as show
 ## Permalink pattern
 
 Configured in `_config.yml` as `/:year/:month/:day/:title/` to preserve the original
-WordPress URL structure (e.g. `/2025/11/14/part-1-my-experience-with-github-copilot-in-an-open-source-project/`).
+WordPress URL structure (e.g. `/2025/11/14/my-experience-with-github-copilot-in-an-open-source-project/`).
 
 ## Local development
 

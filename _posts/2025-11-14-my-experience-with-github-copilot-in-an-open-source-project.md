@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "My experience with GitHub Copilot in an open-source project"
-description: "Part 1 of my series on using GitHub Copilot agentic AI in an open-source project, acting as architect while Copilot agents write the code."
+description: "My experience using GitHub Copilot agentic AI in an open-source project, acting as architect while Copilot agents write the code."
 date: 2025-11-14
 categories: [Architecture, Programming]
 image: /assets/images/2025/11/banner-1024x534.png
@@ -10,7 +10,7 @@ tags: [agentic ai, artificial intelligence, azure dev conference, cli extensions
 
 It is amazing how fast AI developments have led to fundamental changes in the development process of IT projects. It is difficult for me to imagine generative AI and AI agents disappearing from my day-to-day work anytime soon.
 
-![Featured image for 2025-11-14-part-1-my-experience-with-github-copilot-in-an-open-source-project]({{ '/assets/images/2025/11/banner-1024x534.png' | relative_url }})
+![Featured image for 2025-11-14-my-experience-with-github-copilot-in-an-open-source-project]({{ '/assets/images/2025/11/banner-1024x534.png' | relative_url }})
 
 Recently, agentic AI in particular has become a popular step in programming functionality in new and existing software or even executing the functionality directly. Because developments are going so fast, I wanted to assess some of these new tools myself in a new experimental project, starting from nothing.
 

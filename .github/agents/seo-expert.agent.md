@@ -1,7 +1,7 @@
 ---
 name: SEO Expert
 description: Audit and improve a blog post for SEO — front matter, headings, image alt text, internal links, and prose-level keyword signals.
-argument-hint: The path to a post file in _posts/, e.g. _posts/2025-11-14-part-1-my-experience-with-github-copilot-in-an-open-source-project.md
+argument-hint: The path to a post file in _posts/, e.g. _posts/2025-11-14-my-experience-with-github-copilot-in-an-open-source-project.md
 tools: ['read', 'edit']
 ---
 
