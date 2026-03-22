@@ -153,6 +153,7 @@ title: "Exact title here"
 date: YYYY-MM-DD
 categories: [Category]
 image: /assets/images/YYYY/MM/filename.ext
+description: "1-2 sentence summary of the post."
 tags: [tag1, tag2, tag3]
 ---
 ```
@@ -161,6 +162,7 @@ tags: [tag1, tag2, tag3]
   A post may belong to multiple categories (e.g. `[Architecture, Programming]`).
 - `tags` are all lowercase with spaces between words (e.g. `client certificates`, not `ClientCertificates`).
 - `image` must point to the same image used as the feature image in the body.
+- `description` must be 1-2 sentences summarising the post. It appears as the search snippet and social preview text — do not copy the opening paragraph verbatim.
 
 ## What to avoid
 
