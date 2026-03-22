@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <g transform="translate(50,50) rotate(-45) translate(-50,-50)">
+    <!-- Cap -->
+    <rect x="38" y="5" width="24" height="18" rx="6" fill="#111111"/>
+    <!-- Body -->
+    <rect x="40" y="23" width="20" height="42" rx="2" fill="#404040"/>
+    <!-- Clip accent -->
+    <rect x="48" y="7" width="4" height="30" rx="2" fill="#111111"/>
+    <!-- Grip section -->
+    <rect x="42" y="65" width="16" height="8" rx="1" fill="#828282"/>
+    <!-- Nib -->
+    <polygon points="42,73 58,73 50,93" fill="#828282"/>
+    <!-- Ink tip -->
+    <circle cx="50" cy="92" r="2" fill="#111111"/>
+  </g>
+</svg>
