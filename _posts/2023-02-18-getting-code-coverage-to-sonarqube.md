@@ -4,7 +4,7 @@ title: "Getting Code Coverage to SonarQube"
 description: "How to get .NET code coverage and unit test results into SonarQube using Azure DevOps YAML pipelines with TRX and XML coverage files."
 date: 2023-02-18
 categories: [CI CD]
-tags: [.net, azure devops, c#, ci cd, code coverage, sonarqube, trx, unit tests, xml, yaml]
+tags: [.net, azure devops, c#, ci cd, code coverage, dotnet, pipeline, sonarqube, trx, unit tests, xml, yaml]
 image: /assets/images/2023/02/Sonarqube.webp
 ---
 
@@ -15,6 +15,8 @@ You finally managed to get your first SonarQube analysis published to the SonarQ
 No Coverage information is being displayed, not even your unit tests are being counted. What is going on here?
 
 Simply put, the information about your tests and the amount of code they cover isn't being read by the SonarQube analyser that runs during your pipeline. This can have multiple causes, but first let's zoom in on where this information is stored in the first place.
+
+![Featured image for 2023-02-18-getting-code-coverage-to-sonarqube]({{ '/assets/images/2023/02/Sonarqube.webp' | relative_url }})
 
 ## Scope of this article
 

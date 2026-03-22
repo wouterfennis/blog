@@ -5,7 +5,7 @@ description: "Practical advice for Scrum teams on preparing for the summer break
 date: 2023-09-07
 categories: [Scrum]
 image: /assets/images/2023/09/camping-1024x682.jpg
-tags: [knowledge, scrum, sprint, storming, summer break, team, velocity]
+tags: [agile, knowledge, scrum, sprint, sprint planning, storming, summer break, team, velocity]
 ---
 
 It's something people can look forward to months in advance: Good weather, nice scenery, not having to think about work, and always a bit on the short side once it's coming to an end. The Summer Break. Although let's not forget the heroic colleagues that stay behind, plowing on, waiting for the postcard you always forget to send from your destination. In this article I'll zoom in on how a team can prepare itself for this period and how to get back together in the original formation in the months that follow.
@@ -43,8 +43,8 @@ Although challenging, it is valuable information to process once the team comes 
 
 These new insights can push a team back into the Storming phase. Actually the team might go through multiple Storming phases as during the Summer Break the composition of the colleagues keeps changing as they come and go from vacation. In the end, the team probably won't be or act the same way as it did.
 
-It's important that the team comes out of this stronger and more confident than before. So keep performing the retrospective and planning sessions during and after the Summer Break, so people can express their difficulties and desires.
+It's important that the team comes out of this stronger and more confident than before. So keep performing [the retrospective](/2023/03/12/retrospective-idea-pizzaria-retrospettiva/) and planning sessions during and after the Summer Break, so people can express their difficulties and desires.
 
-## Post Summer Blues
+## Post summer blues
 
 Vacations are fun! So returning to work can be a sobering experience (literally). Of course work you and others left behind didn't all get finished by the skeleton crew. But if you all prepared accordingly, the really important stuff should be taken care of. Make sure there is an informal moment preferably at a location where the whole team can come together and talk about everyone's Summer Break stories. In the following Sprint Planning, discuss how the team should organise itself with the hopefully new insights and shared knowledge to put into practice. Don't try to get the team back into the setting it was a few months ago, but move forward!

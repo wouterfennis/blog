@@ -5,7 +5,7 @@ description: "How Markdownlint helps enforce consistent Markdown quality across 
 date: 2025-05-19
 categories: [CI CD]
 image: /assets/images/2025/05/5feac392-d10a-4354-8313-c34c56087cdf.jpg
-tags: [ci cd, content, documentation, example, linting, markdown, markdownlint, readme]
+tags: [ci cd, content, developer tools, documentation, example, github actions, linting, markdown, markdownlint, npm, readme, visual studio code]
 ---
 
 Markdown has become a common language among developers for its simplicity and effectiveness in creating formatted text. Whether you're crafting a README file for your open-source project, writing technical documentation, or drafting a blog post, Markdown provides an elegant and efficient way to write content. However, as straightforward as it may seem, writing clean and consistent Markdown can sometimes be a challenge — this is where Markdownlint becomes an indispensable tool.
@@ -18,51 +18,51 @@ Markdown has become a common language among developers for its simplicity and ef
 
 Developed with the goal of simplifying Markdown editing, Markdownlint can analyze your files and flag potential issues such as incorrect formatting, missing headers, or inconsistent spacing. By adhering to Markdownlint's recommended guidelines, you can produce cleaner, more professional documents that are easier to read, edit and share.
 
-## Key Features of Markdownlint
+## Key features of Markdownlint
 
 Markdownlint comes packed with features that make it an essential addition to any content creator or developer's toolbox.
 
-### 1. Rule-Based Validation
+### 1. Rule-based validation
 
 Markdownlint operates on a set of predefined rules that cover everything from proper heading structure to consistent list indentation. These rules help enforce best practices and prevent common mistakes, such as missing a blank line between elements or using the wrong heading levels.
 
-### 2. Customizable Rules
+### 2. Customizable rules
 
 No two projects are the same, and Markdownlint understands that. You can customize its rules to suit your specific needs by creating a configuration file. Whether you want stricter enforcement or more flexibility, Markdownlint allows you to tailor its behavior to fit your workflow.
 
-### 3. Editor Integration
+### 3. Editor integration
 
 Markdownlint integrates seamlessly with popular text editors like Visual Studio Code. This extension provides real-time feedback as you write, highlighting issues directly in your editor so you can fix them on the spot.
 
-### 4. Command-Line Interface
+### 4. Command-line interface
 
 For those who prefer working in the terminal, Markdownlint offers a robust command-line interface (CLI). This makes it easy to lint multiple files at once, automate tasks, and integrate Markdownlint into your CI/CD pipeline.
 
-## Why Use Markdownlint?
+## Why use Markdownlint?
 
 If you're wondering why you should incorporate Markdownlint into your workflow, here are some compelling reasons:
 
-### 1. Improved Readability
+### 1. Improved readability
 
 Markdownlint ensures that your documents are consistently formatted, making them easier to read and understand. Clean Markdown is not just visually appealing but also more accessible to contributors and collaborators, increasing the likelihood of up-to-date documents.
 
-### 2. Enhanced Collaboration
+### 2. Enhanced collaboration
 
 When multiple team members are working on a project, consistency is key. Markdownlint enforces standardized formatting, reducing conflicts and making collaboration smoother.
 
-### 3. Error Detection
+### 3. Error detection
 
 Even experienced Markdown writers can make mistakes. Markdownlint acts as a second pair of eyes, catching errors that might otherwise go unnoticed or be hard to find.
 
-### 4. Time Savings
+### 4. Time savings
 
 By automating the process of checking for syntax and formatting issues, Markdownlint saves you time and effort. You can focus on content creation rather than worrying about the finer details of Markdown syntax.
 
-### 5. Professional Output
+### 5. Professional output
 
 Whether you're creating documentation for an open-source project or writing a blog post, Markdownlint helps ensure that your output looks polished and professional.
 
-## Getting Started with Markdownlint
+## Getting started with Markdownlint
 
 ### 1. Installation
 
@@ -95,14 +95,14 @@ markdownlint example.md
 
 Markdownlint will output a list of issues, complete with line numbers and descriptions, making it easy to locate and fix problems.
 
-## Best Practices for Using Markdownlint
+## Best practices for using Markdownlint
 
 To make the most of Markdownlint, consider adopting the following best practices:
 
 - **Use a Configuration File**: Adjust the rules to meet your project's specific requirements, ensuring that the linter aligns with your style guide.
 - **Integrate Early**: Add Markdownlint to your project from the start to maintain consistent formatting throughout the development process. This also prevents technical debt from building up in your content files.
 - **Educate Your Team**: Ensure that all contributors understand the importance of clean Markdown and how to use Markdownlint effectively.
-- **Automate with CI/CD**: Include Markdownlint in your continuous integration pipeline to catch issues before they make it into production.
+- **Automate with CI/CD**: Include Markdownlint in your [continuous integration pipeline](/2023/02/18/getting-code-coverage-to-sonarqube/) to catch issues before they make it into production.
 
 ## Conclusion
 
