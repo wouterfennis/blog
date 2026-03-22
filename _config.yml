@@ -20,6 +20,7 @@ header_pages:
   - category/ci-cd.md
   - category/scrum.md
   - category/architecture.md
+  - archive.md
 
 # Minima theme settings
 minima:
