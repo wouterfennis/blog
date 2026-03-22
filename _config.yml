@@ -53,6 +53,9 @@ defaults:
       layout: "post"
       author: "Wouter Fennis"
 
+# Reading time estimate (words per minute)
+reading_speed: 200
+
 # Markdown
 markdown: kramdown
 kramdown:
