@@ -22,10 +22,7 @@ layout: default
       </a>
       {%- endif -%}
       <div class="post-tile__body">
-        {%- assign words = post.content | number_of_words -%}
-        {%- assign minutes = words | divided_by: site.reading_speed | round -%}
-        {%- if minutes == 0 -%}{%- assign minutes = 1 -%}{%- endif -%}
-        <span class="post-tile__meta post-meta">{{ post.date | date: date_format }} · {{ minutes }} min read</span>
+        <span class="post-tile__meta post-meta">{{ post.date | date: date_format }} · {% include reading-time.html post_content=post.content %}</span>
         <h2 class="post-tile__title">
           <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
         </h2>
