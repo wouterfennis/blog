@@ -1,0 +1,49 @@
+name: Feature request
+description: Propose a new feature or improvement for the blog.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What problem does this feature solve, or what improvement does it make?
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance criteria
+      description: List the observable conditions that must be true for this issue to be considered done.
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation-notes
+    attributes:
+      label: Implementation notes
+      description: Files to create or modify, existing patterns to reference, and concrete technical details.
+      placeholder: |
+        **Files to create / modify**
+        - `_layouts/example.html` — describe what changes
+        - `assets/main.scss` — add styles for X
+
+        **Patterns to reference**
+        - `_layouts/category.html` — shows the post filter pattern to adapt
+        - `_includes/google-analytics.html` — model for conditional script injection
+
+        **Technical details**
+        - Liquid snippet, JS approach, config keys, etc.
+    validations:
+      required: false
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: List any issues this depends on, or that depend on it (use #issue-number).
+    validations:
+      required: false
