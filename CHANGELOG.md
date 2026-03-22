@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/wouterfennis/blog/compare/v1.1.0...v1.1.1) (2026-03-22)
+
+
+### Bug Fixes
+
+* update local server URL and remove base URL from configuration ([#13](https://github.com/wouterfennis/blog/issues/13)) ([a509ad4](https://github.com/wouterfennis/blog/commit/a509ad435ba4e4c438689452ed82b4e363394e75))
+
 ## [1.1.0](https://github.com/wouterfennis/blog/compare/v1.0.0...v1.1.0) (2026-03-21)
 
 
