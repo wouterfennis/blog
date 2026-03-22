@@ -13,22 +13,8 @@ layout: default
   {%- assign filtered_posts = site.posts | where_exp: "post", "post.categories contains page.category" -%}
   {%- if filtered_posts.size > 0 -%}
   <div class="post-tiles">
-    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
     {%- for post in filtered_posts -%}
-    <article class="post-tile">
-      {%- if post.image -%}
-      <a href="{{ post.url | relative_url }}" class="post-tile__image-link" tabindex="-1" aria-hidden="true">
-        <img src="{{ post.image | relative_url }}" alt="Featured image for {{ post.title | escape }}" class="post-tile__image">
-      </a>
-      {%- endif -%}
-      <div class="post-tile__body">
-        <span class="post-tile__meta post-meta">{{ post.date | date: date_format }} · {% include reading-time.html post_content=post.content %}</span>
-        <h2 class="post-tile__title">
-          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        </h2>
-        <p class="post-tile__excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-      </div>
-    </article>
+    {%- include post-tile.html post=post -%}
     {%- endfor -%}
   </div>
   {%- else -%}
