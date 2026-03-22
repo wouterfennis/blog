@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<div class="archive">
+
+  <h1 class="archive__heading">{{ page.title | escape }}</h1>
+
+  {%- assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" -%}
+  {%- for year_group in posts_by_year -%}
+  <h2 class="archive__year">{{ year_group.name }}</h2>
+  <ul class="archive__list">
+    {%- for post in year_group.items -%}
+    <li class="archive__item">
+      <a href="{{ post.url | relative_url }}" class="archive__link">{{ post.title | escape }}</a>
+      <span class="archive__meta">{{ post.date | date: "%b %-d" }} &middot; {{ post.categories[0] }}</span>
+    </li>
+    {%- endfor -%}
+  </ul>
+  {%- endfor -%}
+
+</div>
