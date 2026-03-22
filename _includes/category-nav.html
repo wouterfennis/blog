@@ -24,11 +24,13 @@
     {%- if prev_post -%}
     <a class="category-nav__link category-nav__link--prev" href="{{ prev_post.url | relative_url }}">
       <span class="category-nav__direction" aria-hidden="true">←</span>
+      <span class="visually-hidden">Previous post: </span>
       <span class="category-nav__title">{{ prev_post.title | escape }}</span>
     </a>
     {%- endif -%}
     {%- if next_post -%}
     <a class="category-nav__link category-nav__link--next" href="{{ next_post.url | relative_url }}">
+      <span class="visually-hidden">Next post: </span>
       <span class="category-nav__title">{{ next_post.title | escape }}</span>
       <span class="category-nav__direction" aria-hidden="true">→</span>
     </a>
