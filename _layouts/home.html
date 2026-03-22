@@ -25,22 +25,8 @@ layout: default
   <div class="latest-posts">
     <h2 class="latest-posts__heading">Latest posts</h2>
     <div class="post-tiles">
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {%- for post in site.posts limit:4 -%}
-      <article class="post-tile">
-        {%- if post.image -%}
-        <a href="{{ post.url | relative_url }}" class="post-tile__image-link" tabindex="-1" aria-hidden="true">
-          <img src="{{ post.image | relative_url }}" alt="Featured image for {{ post.title | escape }}" class="post-tile__image">
-        </a>
-        {%- endif -%}
-        <div class="post-tile__body">
-          <span class="post-tile__meta post-meta">{{ post.date | date: date_format }}</span>
-          <h3 class="post-tile__title">
-            <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-          </h3>
-          <p class="post-tile__excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-        </div>
-      </article>
+      {%- include post-tile.html post=post heading_level="h3" -%}
       {%- endfor -%}
     </div>
   </div>

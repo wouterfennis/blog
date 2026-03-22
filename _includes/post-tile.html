@@ -1,0 +1,17 @@
+{%- assign _pt_post = include.post -%}
+{%- assign _pt_heading = include.heading_level | default: "h2" -%}
+{%- assign _pt_date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+<article class="post-tile">
+  {%- if _pt_post.image -%}
+  <a href="{{ _pt_post.url | relative_url }}" class="post-tile__image-link" tabindex="-1" aria-hidden="true">
+    <img src="{{ _pt_post.image | relative_url }}" alt="Featured image for {{ _pt_post.title | escape }}" class="post-tile__image">
+  </a>
+  {%- endif -%}
+  <div class="post-tile__body">
+    <span class="post-tile__meta post-meta">{{ _pt_post.date | date: _pt_date_format }} · {% include reading-time.html post_content=_pt_post.content %}</span>
+    <{{ _pt_heading }} class="post-tile__title">
+      <a class="post-link" href="{{ _pt_post.url | relative_url }}">{{ _pt_post.title | escape }}</a>
+    </{{ _pt_heading }}>
+    <p class="post-tile__excerpt">{{ _pt_post.excerpt | strip_html | truncatewords: 30 }}</p>
+  </div>
+</article>
