@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.2.0](https://github.com/wouterfennis/blog/compare/v1.1.1...v1.2.0) (2026-03-22)
+
+
+### Features
+
+* add archive layout and page for post organization ([#35](https://github.com/wouterfennis/blog/issues/35)) ([ce4fc85](https://github.com/wouterfennis/blog/commit/ce4fc85fceb991eef198aaa9e7e7236c7d0e7cd7))
+* add category navigation to post layout and styles ([#32](https://github.com/wouterfennis/blog/issues/32)) ([f3b2d43](https://github.com/wouterfennis/blog/commit/f3b2d43490eed7f12ab4788fdb0364e0416a8b7a))
+* add copy-to-clipboard button to code blocks ([#39](https://github.com/wouterfennis/blog/issues/39)) ([a35a45e](https://github.com/wouterfennis/blog/commit/a35a45e2d28d73f4596b262ae51cd6b5fb9c2ef3))
+* add head section and favicon for improved site structure and branding ([#38](https://github.com/wouterfennis/blog/issues/38)) ([df60e3b](https://github.com/wouterfennis/blog/commit/df60e3bc45135fb195d6827ccc4022496ee98667))
+* add LICENSE file with copyright and licensing information ([#41](https://github.com/wouterfennis/blog/issues/41)) ([42142a7](https://github.com/wouterfennis/blog/commit/42142a7229ec5ba2b62c59e7ccc792f136cf7c14))
+* display estimated reading time on each post ([#36](https://github.com/wouterfennis/blog/issues/36)) ([404d3b9](https://github.com/wouterfennis/blog/commit/404d3b97aa1c4454f83873e275abc8f91d80d8f0))
+
+
+### Bug Fixes
+
+* SEO improvements ([#40](https://github.com/wouterfennis/blog/issues/40)) ([e471638](https://github.com/wouterfennis/blog/commit/e4716380336b6e80aac9a32f2111f2477ce71dbf))
+
 ## [1.1.1](https://github.com/wouterfennis/blog/compare/v1.1.0...v1.1.1) (2026-03-22)
 
 
