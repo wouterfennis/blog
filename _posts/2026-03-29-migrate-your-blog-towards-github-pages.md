@@ -30,6 +30,35 @@ In my case, it is my own blog, so I can do a bit more experimenting and take a b
 **I want to use GitHub Copilot to do the migration.**
 I don't mean building a deterministic pipeline with Copilot. I mean Copilot itself crawling my existing website, gathering the data and building up the Git repository locally — in a sense, reverse-engineering my blog.
 
+```mermaid
+sequenceDiagram
+    participant Author
+    participant PlanAgent
+    participant AgentState
+    participant Agent
+    participant WouterCompiles.It
+    participant BlogRepo
+    participant Pipeline as "Website Artifact Pipeline"
+
+    Author->>PlanAgent: Make migration plan
+    PlanAgent-->>Author: Plan
+    Author->>PlanAgent: Review / iterate
+
+    PlanAgent->>AgentState: Store plan
+    AgentState->>Crew: Send plan (implementation phase)
+
+    Crew->>WouterCompiles.It: Generate website content
+    Crew->>BlogRepo: Store blog posts
+
+    WouterCompiles.It-->>BlogRepo: Sync content
+
+    BlogRepo->>Pipeline: Markdown content
+    Pipeline-->>Pipeline: Build website
+
+    Pipeline-->>Author: Built website
+
+    Note over Author,Pipeline: "go" signal triggers execution
+```
 
 ## Setting up Jekyll
 
