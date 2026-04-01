@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/wouterfennis/blog/compare/v1.2.1...v1.3.0) (2026-04-01)
+
+
+### Features
+
+* blog migration guide to GitHub pages ([#48](https://github.com/wouterfennis/blog/issues/48)) ([593adaf](https://github.com/wouterfennis/blog/commit/593adaff9334af66eea32ae5d25edccc9dbc3b36))
+
 ## [1.2.1](https://github.com/wouterfennis/blog/compare/v1.2.0...v1.2.1) (2026-03-24)
 
 
