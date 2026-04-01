@@ -76,3 +76,25 @@ categories: [Category]   # one of: Programming, Architecture, CI CD, Scrum
 tags: [tag1, tag2]
 ---
 ```
+
+To include a diagram, add `mermaid: true` to the front matter and use a fenced ` ```mermaid ` block in the post body:
+
+```yaml
+---
+layout: post
+title: "Post title here"
+date: YYYY-MM-DD
+categories: [Category]
+tags: [tag1, tag2]
+mermaid: true
+---
+```
+
+```markdown
+```mermaid
+sequenceDiagram
+    A->>B: Hello
+```
+```
+
+[Mermaid](https://mermaid.js.org/) is the standard diagram library for this blog. The `mermaid: true` flag is required to load the script on the page.

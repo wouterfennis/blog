@@ -88,6 +88,22 @@ Use it to verify that new posts are consistent with the existing style before pu
 - Use realistic, not toy, examples that map to the problems discussed in the post.
 - Inline code (backticks) is used for: file names, command names, class/method names, configuration keys, and short snippets.
 
+## Diagrams
+
+- Use **[Mermaid](https://mermaid.js.org/)** for all diagrams (sequence diagrams, flowcharts, architecture overviews, etc.).
+- Embed diagrams with a fenced ` ```mermaid ` code block inside the post body.
+- Add `mermaid: true` to the post's front matter — this is required to load the Mermaid.js script on the page.
+- Always follow the diagram with an italicised caption that describes what the diagram shows, including the main keywords relevant to the post topic.
+- Example front matter:
+
+  ```yaml
+  ---
+  layout: post
+  title: "My post title"
+  mermaid: true
+  ---
+  ```
+
 ## Language and punctuation
 
 - Use **British-influenced international English** (the blog author is Dutch): avoid American-only idioms.
