@@ -61,7 +61,7 @@ sequenceDiagram
     Pipeline-->>GithubPages: Built and publish website
 ```
 
-TODO: Footer? SEO compatible?
+*Sequence diagram of the GitHub Copilot-driven migration workflow: from crawling the existing WordPress blog, through content conversion, to building and publishing on GitHub Pages.*
 
 
 ## Setting up Jekyll
