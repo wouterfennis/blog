@@ -70,6 +70,7 @@ Using the default **minima** theme (`~> 2.5`). Skin is set to `auto` (follows sy
 - Images are stored locally in `assets/images/YYYY/MM/` and referenced with paths like `![alt](/assets/images/2023/02/filename.png)`.
   When adding images for new posts, place them in `assets/images/YYYY/MM/` matching the post date and update the src accordingly.
 - Posts that are part of a series use a `Part N:` prefix in the title.
+- **Diagrams** use [Mermaid](https://mermaid.js.org/) as the standard library. Use a fenced ` ```mermaid ` code block in the post body. Add `mermaid: true` to the post's front matter so the Mermaid.js script is loaded on that page.
 
 ## Markdown quality gate
 
