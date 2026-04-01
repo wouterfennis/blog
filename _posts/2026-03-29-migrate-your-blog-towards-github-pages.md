@@ -53,7 +53,7 @@ sequenceDiagram
     participant WouterCompiles.It
     participant BlogRepo
     participant Pipeline
-    participant GithubPages
+    participant GitHubPages
 
 
     Author->>PlanAgent: Make migration plan
@@ -70,7 +70,7 @@ sequenceDiagram
     Pipeline->>BlogRepo: Retrieve content
     Pipeline-->>Pipeline: Build new website
 
-    Pipeline-->>GithubPages: Built and publish website
+    Pipeline-->>GitHubPages: Build and publish the website
 ```
 
 *Sequence diagram of the GitHub Copilot-driven migration workflow: from crawling the existing WordPress blog, through content conversion, to building and publishing on GitHub Pages.*
