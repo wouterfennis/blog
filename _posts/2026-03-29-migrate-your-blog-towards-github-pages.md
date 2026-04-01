@@ -14,13 +14,24 @@ Running WordPress for a personal blog always felt like overkill. My site is most
 
 ## Why GitHub Pages?
 
-I came across GitHub Pages(TODO: Add link) a couple of times before. It offers a hosting service for static websites. You provide the source code for the website yourself, whether you write the HTML directly or generate it through a build process. It looked like exactly what I needed.
+I came across [GitHub Pages](https://docs.github.com/en/pages) a couple of times before. It offers a hosting service for static websites. You provide the source code for the website yourself, whether you write the HTML directly or generate it through a build process. It looked like exactly what I needed.
 
 - It offers a free hosting model.
 - The site is maintained using a Git-based workflow. You update the repository, the website is updated accordingly.
 - No server or CMS maintenance — the Git repository is the only thing to maintain.
 
 Would the migration be straightforward? Would it be lighter and cheaper? And how would I preserve all my existing content in the process?
+
+## Scope
+
+This post covers migrating a self-hosted WordPress blog to GitHub Pages using the following tools and environment:
+
+- **[Jekyll](https://jekyllrb.com/)** as the static site generator, with the Minima theme
+- **GitHub Actions** for automated builds and deployments
+- **GitHub Copilot** (agent mode in Visual Studio Code) to drive the migration
+- **Visual Studio Code** as the editing and authoring environment
+
+No manual HTML editing or custom plugins were involved. Everything runs on free-tier GitHub infrastructure.
 
 ## The migration plan
 
@@ -91,9 +102,11 @@ With large blocks of PowerShell it was trying to download the images and place t
 Yet often this didn't work out and we had to start over.
 In the end, I did this part manually.
 
-Most of the time the agent was running in the background while I was preparing follow up requests. I actually had the feeling of collaborating instead of directing.
+Most of the time the agent was running in the background while I was preparing follow-up requests. I actually had the feeling of collaborating instead of directing.
 
 ## Configuring GitHub Actions
+
+Once the content was migrated, I could start on automating the publication of the new blog website. The `main` branch should reflect the live website.
 
 Every push to `main` triggers a two-job pipeline: one job builds the Jekyll site, the other deploys the resulting artifact to GitHub Pages.
 
@@ -158,17 +171,23 @@ The `build` job checks out the repository, installs the correct Ruby version (wi
 ### Hallucinations
 
 As with any AI adventure, of course in this case I saw the LLM compensating for unexpected situations.
-I saw my original content being rewritten, ....
+I saw my original content being rewritten for example during the migration.
 I didn't try to prevent this necessarily, apart from creating plans upfront and reviewing them.
 Manually reviewing the content was always needed to build up confidence in the migration.
 
 ### Agents on strike
 
 More than once I encountered losing the attention of an agent at work. No more chat updates were coming in, and I had to repeat my last question in order to get the processing moving again.
+The migration was a long running process, perhaps I hit an internal timeout within the Visual Studio Code chat window.
+
+## The end result
+
+Once the first version of the website was running on GitHub Pages I was impressed by how quickly I went from an initial idea to running software. I have a new blog website with working navigation, SEO, and my original content preserved.
+You are reading this blog post from the new website right now!
 
 ## Conclusion
 
-I'm genuinely impressed by the power of GitHub Copilot in an experiment like this. Within two days I was able to migrate my blog towards a new hosting provider, a new CMS (blog as code) solution and a new workflow of writing blog posts more effectively with agents reviewing my texts for English grammar or SEO score. I would recommend letting Copilot build a deterministic migration pipeline in normal circumstances, but if the project allows it — give it a try yourself.
+I'm genuinely impressed by the power of GitHub Copilot in an experiment like this. Within two days I was able to migrate my blog towards a new hosting provider, a new CMS (blog as code) solution and a new workflow of writing blog posts more effectively with the help of Copilot. I would recommend letting Copilot build a deterministic migration pipeline in normal circumstances, but if the project allows it — give it a try yourself.
 
 ## References
 
