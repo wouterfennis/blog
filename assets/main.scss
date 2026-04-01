@@ -3,6 +3,48 @@
 
 @import "minima";
 
+/* Mermaid diagram + modal */
+.mermaid { cursor: zoom-in; }
+
+#mermaid-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.75);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+#mermaid-modal.open { display: flex; }
+
+#mermaid-modal-content {
+  background: var(--background-color, #fff);
+  border-radius: 6px;
+  padding: 1.5rem;
+  width: 95vw;
+  max-height: 90vh;
+  overflow: auto;
+  position: relative;
+}
+
+#mermaid-modal-body svg {
+  width: 100%;
+  height: auto;
+}
+
+#mermaid-modal-close {
+  position: absolute;
+  top: .5rem;
+  right: .75rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  line-height: 1;
+}
+
 /* Accessibility utility */
 .visually-hidden {
   position: absolute;
