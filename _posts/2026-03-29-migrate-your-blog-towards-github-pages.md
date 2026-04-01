@@ -3,14 +3,14 @@ layout: post
 title: "Migrate your blog towards GitHub Pages"
 date: 2026-03-29
 categories: [CI CD, Programming]
-image: /assets/images/2026/03/banner.png
+image: /assets/images/2026/03/featured-blog-migration.png
 description: "A practical guide to migrating a self-hosted blog to GitHub Pages using Jekyll, covering the decisions, challenges, and lessons learned along the way."
 tags: [blog, ci cd, deployment, github actions, github pages, jekyll, migration, static site]
 ---
 
 Running WordPress for a personal blog always felt like overkill. My site is mostly static — I write a new post, add some metadata, and hit publish. Yet there I was, managing a full CMS, keeping plugins up to date, and paying for hosting that did far more than I ever needed. One morning it struck me: could a free, Git-based hosting service like GitHub Pages give my readers the exact same result with far less overhead?
 
-![Featured image for 2026-03-29-migrate-your-blog-towards-github-pages]({{ '/assets/images/2026/03/banner.png' | relative_url }})
+![Featured image for 2026-03-29-migrate-your-blog-towards-github-pages]({{ '/assets/images/2026/03/featured-blog-migration.png' | relative_url }})
 
 ## Why GitHub Pages?
 
@@ -182,7 +182,7 @@ The migration was a long running process, perhaps I hit an internal timeout with
 
 ## The end result
 
-Once the first version of the website was running on GitHub Pages I was impressed by how quickly I went from an initial idea to running software. I have a new blog website with working navigation, SEO, and my original content preserved.
+Once the first version of the website was running on GitHub Pages I was impressed by how quickly I went from an initial idea to running software. I have a new blog website with working navigation, SEO, and my original content preserved. The full source code is available on [GitHub](https://github.com/wouterfennis/blog).
 You are reading this blog post from the new website right now!
 
 ## Conclusion
@@ -193,3 +193,4 @@ I'm genuinely impressed by the power of GitHub Copilot in an experiment like thi
 
 - [GitHub Pages documentation](https://docs.github.com/en/pages)
 - [Jekyll documentation](https://jekyllrb.com/docs/)
+- [Source code of this blog](https://github.com/wouterfennis/blog)
