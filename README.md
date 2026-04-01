@@ -90,11 +90,13 @@ mermaid: true
 ---
 ```
 
-```markdown
+To add a diagram, use a fenced `mermaid` code block in the post body:
+
+````markdown
 ```mermaid
 sequenceDiagram
     A->>B: Hello
 ```
-```
+````
 
 [Mermaid](https://mermaid.js.org/) is the standard diagram library for this blog. The `mermaid: true` flag is required to load the script on the page.
