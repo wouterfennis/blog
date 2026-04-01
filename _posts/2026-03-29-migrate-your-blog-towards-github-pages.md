@@ -8,7 +8,7 @@ description: "A practical guide to migrating a self-hosted blog to GitHub Pages 
 tags: [blog, ci cd, deployment, github actions, github pages, jekyll, migration, static site]
 ---
 
-Running WordPress for a personal blog always felt like overkill. My site is mostly static — I write a new post, add some metadata, and hit publish. Yet there I was, managing a full CMS, keeping plugins up to date, and paying for hosting that did far more than I ever needed. One morning it struck me: could a free, Git-based hosting service like GitHub Pages give my readers the exact same result with far less overhead?
+Running WordPress for a personal blog always felt like overkill. My site is mostly static — I write a new post, add some metadata, and hit publish. Yet there I was, managing a full CMS, keeping plugins up to date, and paying for hosting that did far more than I ever needed. One morning it struck me: could a free, Git-based hosting service like GitHub Pages give my readers the exact same result with far less overhead? And could Jekyll — a simple static site generator — replace the whole WordPress setup?
 
 ![Featured image for 2026-03-29-migrate-your-blog-towards-github-pages]({{ '/assets/images/2026/03/featured-blog-migration.png' | relative_url }})
 
@@ -22,7 +22,7 @@ I came across [GitHub Pages](https://docs.github.com/en/pages) a couple of times
 
 Would the migration be straightforward? Would it be lighter and cheaper? And how would I preserve all my existing content in the process?
 
-## Scope
+## Tools and environment
 
 This post covers migrating a self-hosted WordPress blog to GitHub Pages using the following tools and environment:
 
@@ -180,7 +180,7 @@ Manually reviewing the content was always needed to build up confidence in the m
 More than once I encountered losing the attention of an agent at work. No more chat updates were coming in, and I had to repeat my last question in order to get the processing moving again.
 The migration was a long running process, perhaps I hit an internal timeout within the Visual Studio Code chat window.
 
-## The end result
+## Migration result
 
 Once the first version of the website was running on GitHub Pages I was impressed by how quickly I went from an initial idea to running software. I have a new blog website with working navigation, SEO, and my original content preserved. The full source code is available on [GitHub](https://github.com/wouterfennis/blog).
 You are reading this blog post from the new website right now!
