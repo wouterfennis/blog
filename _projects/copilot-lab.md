@@ -29,7 +29,7 @@ For teams adopting Copilot beyond individual productivity, this repository is a 
 
 Clone the repository and open the first lab directory:
 
-```pwsh
+```powershell
 git clone https://github.com/wouterfennis/copilot-lab.git
 cd copilot-lab/labs/lab-01-basic-instructions
 ```
