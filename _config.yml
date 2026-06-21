@@ -16,6 +16,7 @@ theme: minima
 
 header_pages:
   - about.md
+  - projects.md
   - category/programming.md
   - category/ci-cd.md
   - category/scrum.md
@@ -45,6 +46,11 @@ plugins:
 permalink: /:year/:month/:day/:title/
 
 # Collections / defaults
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
 defaults:
   - scope:
       path: ""
@@ -52,6 +58,11 @@ defaults:
     values:
       layout: "post"
       author: "Wouter Fennis"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
 
 # Reading time estimate (words per minute)
 reading_speed: 200

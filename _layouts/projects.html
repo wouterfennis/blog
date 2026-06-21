@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<div class="projects-index">
+
+  <h1 class="projects-index__heading">{{ page.title | escape }}</h1>
+
+  {%- if page.description -%}
+  <p class="projects-index__description">{{ page.description | escape }}</p>
+  {%- endif -%}
+
+  {%- assign sorted_projects = site.projects | sort: "order" -%}
+  {%- if sorted_projects.size > 0 -%}
+  <div class="project-tiles">
+    {%- for project in sorted_projects -%}
+    <article class="project-tile">
+      <h2><a href="{{ project.url | relative_url }}">{{ project.title | escape }}</a></h2>
+      <p>{{ project.description | escape }}</p>
+      <a href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+    </article>
+    {%- endfor -%}
+  </div>
+  {%- else -%}
+  <p>No projects yet.</p>
+  {%- endif -%}
+
+</div>

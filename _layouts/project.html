@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<article class="project" itemscope itemtype="http://schema.org/SoftwareSourceCode">
+
+  <header class="project-header">
+    <h1 class="project-title" itemprop="name">{{ page.title | escape }}</h1>
+    <p class="project-meta">
+      <a href="{{ page.github_url }}" target="_blank" rel="noopener noreferrer">View repository on GitHub →</a>
+    </p>
+    {%- if page.tags and page.tags.size > 0 -%}
+    <ul class="project-tags">
+      {%- for tag in page.tags -%}
+      <li class="project-tag">{{ tag | escape }}</li>
+      {%- endfor -%}
+    </ul>
+    {%- endif -%}
+  </header>
+
+  <div class="project-content">
+    {{ content }}
+  </div>
+
+  {%- if page.related_posts and page.related_posts.size > 0 -%}
+  <section class="project-related-posts">
+    <h2>Related blog posts</h2>
+    <ul>
+      {%- for post_url in page.related_posts -%}
+        {%- assign related_post = site.posts | where: "url", post_url | first -%}
+        {%- if related_post -%}
+        <li><a href="{{ related_post.url | relative_url }}">{{ related_post.title | escape }}</a></li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  </section>
+  {%- endif -%}
+
+</article>
