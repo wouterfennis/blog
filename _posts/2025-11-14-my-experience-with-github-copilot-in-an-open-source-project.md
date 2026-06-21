@@ -70,6 +70,11 @@ I caught myself accepting suggestion after suggestion more quickly, thinking "I 
 
 Copilot will do its best to serve you but will try to introduce scope creep in its answers. You ask for A but will get A, B and a part of C for the same price. It is not Copilot's fault however, my instructions were too simple and without much context or examples in these cases. That takes some getting used to, as I did not have to 'program through the prompt' but switch to a more storytelling approach. Referencing examples or gaps within the repository.
 
+## See also
+
+- [Copilot Lab](/projects/copilot-lab/) — the hands-on lab series for learning GitHub Copilot responsibly, which grew out of experiences like the ones described in this post
+- [OMP Travel Time](/projects/omp-travel-time/) — the Oh My Posh extension project that was built during the experiment described in this post
+
 ## References
 
 - [Visual Studio Code](https://code.visualstudio.com/)
