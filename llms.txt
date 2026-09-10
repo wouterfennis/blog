@@ -1,0 +1,32 @@
+# Wouter Compiles IT
+
+> Personal software engineering blog by Wouter Fennis, a Software Engineer and Scrum Master from the Netherlands. Posts cover Microsoft/.NET development, Azure, CI/CD pipelines, software architecture, and Scrum/team collaboration, written from real project experience.
+
+Author: Wouter Fennis — Software Engineer and Scrum Master.
+LinkedIn: https://www.linkedin.com/in/wouter-fennis/
+GitHub: https://github.com/wouterfennis
+
+## Key pages
+
+- [About](https://woutercompiles.it/about/): Who Wouter Fennis is and what this blog covers.
+- [Wouter's Projects](https://woutercompiles.it/projects/): Personal and open-source projects.
+- [Archive](https://woutercompiles.it/archive/): Full chronological list of every post.
+- [RSS Feed](https://woutercompiles.it/feed.xml): Full-content feed of all posts.
+
+## Categories
+
+- [Programming](https://woutercompiles.it/category/programming/)
+- [CI/CD](https://woutercompiles.it/category/ci-cd/)
+- [Scrum](https://woutercompiles.it/category/scrum/)
+- [Architecture](https://woutercompiles.it/category/architecture/)
+
+## Recent posts
+
+- [Migrate your blog towards GitHub Pages](https://woutercompiles.it/2026/03/29/migrate-your-blog-towards-github-pages/): A practical guide to migrating a self-hosted WordPress blog to GitHub Pages using Jekyll, including a GitHub Copilot-driven migration workflow.
+- [My experience with GitHub Copilot in an open-source project](https://woutercompiles.it/2025/11/14/my-experience-with-github-copilot-in-an-open-source-project/): Practical observations on using GitHub Copilot inside a real open-source codebase.
+- [Markdownlint: a developer's best friend for cleaner Markdown](https://woutercompiles.it/2025/05/19/markdownlint-a-developers-best-friend-for-cleaner-markdown/): How and why to use markdownlint to keep Markdown content consistent across a project.
+- [Client certificates in ASP.NET](https://woutercompiles.it/2024/06/16/client-certificates-in-asp-net/): Implementing client certificate authentication in an ASP.NET application.
+
+## Optional
+
+- [Sitemap](https://woutercompiles.it/sitemap.xml): Full machine-readable list of every URL on the site.

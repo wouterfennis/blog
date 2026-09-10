@@ -1,0 +1,53 @@
+# https://woutercompiles.it/robots.txt
+# Wouter Compiles IT — robots & AI-crawler policy
+#
+# Default: allow everyone. This is a personal blog with no private
+# sections, and the goal is maximum discoverability — both in classic
+# search and in AI answer engines/citations.
+
+User-agent: *
+Allow: /
+
+# --- Search engines (explicit, though covered by the wildcard above) ---
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# --- AI crawlers ---
+# Allowed: these crawl for indexing/answering/citing, similar to a
+# search engine. Blocking them would mean the blog never gets
+# surfaced or cited in AI answers.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Blocked: these are primarily bulk dataset scrapers for model
+# training with no direct citation/traffic benefit back to the site.
+# Remove these blocks any time you change your mind — it's a policy
+# choice, not a technical necessity.
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+Sitemap: https://woutercompiles.it/sitemap.xml
