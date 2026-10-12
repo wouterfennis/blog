@@ -1,6 +1,10 @@
 ---
 ---
 
+// Slightly darker than the minima defaults (#6b6b6b, #2a7ae2) to reach WCAG AA contrast (4.5:1).
+$grey-color: #6b6b6b;
+$brand-color: #1f66c6;
+
 @import "minima";
 
 /* Mermaid diagram + modal */
@@ -126,7 +130,7 @@
 
 .post-tile__meta {
   font-size: 0.85rem;
-  color: #828282;
+  color: #6b6b6b;
   display: block;
   margin-bottom: 0.5rem;
 }
@@ -147,7 +151,7 @@
 
 .post-tile__excerpt {
   font-size: 0.9rem;
-  color: #828282;
+  color: #6b6b6b;
   margin: 0;
   line-height: 1.5;
   flex: 1;
@@ -288,7 +292,7 @@
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #828282;
+  color: #6b6b6b;
   margin-bottom: 0.75rem;
 }
 
@@ -319,7 +323,7 @@
 
 .category-nav__direction {
   flex-shrink: 0;
-  color: #828282;
+  color: #6b6b6b;
 }
 
 @media screen and (max-width: 600px) {
@@ -512,7 +516,6 @@
 .post-tags__item {
   border: 1px solid currentColor;
   border-radius: 1rem;
-  opacity: 0.85;
   padding: 0 0.6rem;
 }
 
@@ -607,3 +610,41 @@
   margin-top: 0.4rem;
   font-size: 0.9rem;
 }
+
+/* Accessibility: skip link, focus outlines, touch target size */
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: -4rem;
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  border: 2px solid #1f66c6;
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+a:focus-visible,
+button:focus-visible,
+pre:focus-visible,
+.nav-trigger:focus-visible + label {
+  outline: 3px solid #1f66c6;
+  outline-offset: 2px;
+}
+
+.site-nav .page-link,
+.site-footer a {
+  display: inline-block;
+  padding: 0.3rem 0;
+}
+
+/* Syntax highlighting: darker tokens for WCAG AA contrast on the code background */
+.highlight .c, .highlight .cm, .highlight .c1, .highlight .cs, .highlight .cp, .highlight .cd { color: #6a6a5a; }
+.highlight .bp, .highlight .vm { color: #5c5c5c; }
+.highlight .nv, .highlight .vc, .highlight .vg, .highlight .vi, .highlight .nb, .highlight .nn, .highlight .nl, .highlight .na, .highlight .ni, .highlight .ne, .highlight .nx { color: #006b6b; }
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s1, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .ss, .highlight .dl { color: #c4103d; }
+.highlight .nc, .highlight .nt, .highlight .nf, .highlight .no { color: #a31040; }
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .mo, .highlight .il { color: #007a7a; }

@@ -12,5 +12,9 @@ document.querySelectorAll('pre > code').forEach(function(codeEl) {
       setTimeout(function() { btn.textContent = 'Copy'; }, 1500);
     });
   });
+  // Scrollable code blocks must be reachable by keyboard.
+  codeEl.parentElement.setAttribute('tabindex', '0');
+  codeEl.parentElement.setAttribute('role', 'region');
+  codeEl.parentElement.setAttribute('aria-label', 'Code sample');
   codeEl.parentElement.insertAdjacentElement('afterend', btn);
 });

@@ -11,13 +11,14 @@ Status: `[ ]` open, `[x]` done, `[-]` skipped.
 - [x] 4. Article structure and first-hand experience for the remaining posts [8, 9]
 - [x] 5. Title and search-intent audit [10]
 - [x] 6. Performance: measure, heavy images, JavaScript, fonts [17]
-- [ ] 7. Accessibility audit and fixes [18]
+- [x] 7. Accessibility audit and fixes [18]
 - [ ] 8. External identity consistency and certification links [19]
 - [ ] 9. Content freshness review [21]
 - [ ] 10. Content gaps and topic ideas [14]
 - [ ] 11. Automated validation in CI [23]
 - [ ] 12. SEO and GEO documentation [24]
 - [ ] 13. Search Console and Bing monitoring baseline [20]
+- [ ] 14. Should we do something with this Lighthouse library inside a build pipeline etc?
 
 ## Working agreement
 
@@ -64,3 +65,10 @@ Findings and decisions are added below as each point is worked.
 - `technorama-2023-2.jpg` (312 KB) is referenced by no post; left untouched.
 - CSS now compressed (19 KB to 14 KB) and the two social icons got explicit width and height.
 - Not fixable here: GitHub Pages sets the cache headers (10 minutes) and Google Analytics script size.
+
+### Point 7 (done)
+
+- Lighthouse accessibility went from 91-92 to 100 on home, tag page, and three posts (managed identities, migrate, client certificates), measured locally.
+- Colours: `$grey-color` #6b6b6b and `$brand-color` #1f66c6 (minima variables, set before the import), darker syntax-highlighting tokens, no opacity on tag pills. The site is effectively light only (minima 2.5.2 has no dark skin, so `skin: auto` does nothing); no dark-mode work was needed.
+- Added: skip-to-content link (own `_layouts/default.html`, a copy of the minima layout), larger nav and footer link targets, visible `:focus-visible` outlines, keyboard-focusable code blocks (`code-copy.js`).
+- Not covered by Lighthouse, worth a manual check: keyboard walk-through and a screen reader pass.
