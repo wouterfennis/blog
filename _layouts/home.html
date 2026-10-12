@@ -8,7 +8,7 @@ layout: default
 
   {%- if page.hero_image -%}
   <div class="hero-image">
-    <img class="hero-image__img--light" src="{{ page.hero_image | relative_url }}" alt="{{ page.hero_alt | default: site.title | escape }}" width="1536" height="330">
+    <img class="hero-image__img--light" src="{{ page.hero_image | relative_url }}" alt="{{ page.hero_alt | default: site.title | escape }}" width="1536" height="330" fetchpriority="high">
     {%- if page.hero_image_dark -%}
     <img class="hero-image__img--dark" src="{{ page.hero_image_dark | relative_url }}" alt="" width="1536" height="331" loading="lazy">
     {%- endif -%}
