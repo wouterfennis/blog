@@ -24,11 +24,21 @@ const htmlFiles = [];
   }
 })(root);
 
+// Case-sensitive on every OS: GitHub Pages serves from a case-sensitive file system, Windows and macOS do not.
+const existsExact = (relative) => {
+  let current = root;
+  for (const part of relative.split('/').filter(Boolean)) {
+    if (!statSync(current).isDirectory() || !readdirSync(current).includes(part)) return false;
+    current = join(current, part);
+  }
+  return true;
+};
+
 const resolves = (url) => {
   const clean = decodeURIComponent(url.split('#')[0].split('?')[0]);
   if (!clean) return true;
-  const path = join(root, clean);
-  return existsSync(path) && (statSync(path).isFile() || existsSync(join(path, 'index.html')));
+  if (!existsExact(clean)) return false;
+  return statSync(join(root, clean)).isFile() || existsExact(`${clean}/index.html`);
 };
 const local = (url) => (url.startsWith(siteUrl) ? url.slice(siteUrl.length) || '/' : url);
 

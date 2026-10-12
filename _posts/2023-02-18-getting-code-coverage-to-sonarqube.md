@@ -143,7 +143,7 @@ INFO: Parsing the Visual Studio Test Results file '/azp/_work/_temp/_376750b5e2a
 
 And now we can finally see our Coverage Metric in the SonarQube server
 
-![SonarQube coverage showing up in report.]({{ '/assets/images/2023/02/sonarQube-coverage.png' | relative_url }})
+![SonarQube coverage showing up in report.]({{ '/assets/images/2023/02/sonarqube-coverage.png' | relative_url }})
 
 Our final YAML pipeline file now looks like this:
 
