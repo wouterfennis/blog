@@ -3,14 +3,27 @@ layout: post
 title: "My experience with GitHub Copilot in an open-source project"
 description: "My experience using GitHub Copilot agentic AI in an open-source project, acting as architect while Copilot agents write the code."
 date: 2025-11-14
+last_modified_at: 2026-10-12
 categories: [Architecture, Programming]
 image: /assets/images/2025/11/banner-1024x534.png
 tags: [github copilot, agentic ai, ai agents, open source, oh my posh, github issues, prompt engineering, developer productivity]
+faq:
+  - question: "Can GitHub Copilot agents build a project while I act as architect?"
+    answer: "Yes. I took the role of architect and requirements engineer while Copilot agents wrote the issues and code. It works well for speed, but someone has to review every result."
+  - question: "What is review fatigue when working with GitHub Copilot?"
+    answer: "Copilot is very diligent and produces a lot of text. Reviewing page after page becomes tedious, and I noticed I started scanning and accepting suggestions too quickly, which risks wrong assumptions ending up in the implementation."
 ---
 
 It is amazing how fast AI developments have led to fundamental changes in the development process of IT projects. It is difficult for me to imagine generative AI and AI agents such as GitHub Copilot disappearing from my day-to-day work anytime soon.
 
 ![Featured image for 2025-11-14-my-experience-with-github-copilot-in-an-open-source-project]({{ '/assets/images/2025/11/banner-1024x534.png' | relative_url }})
+
+## Key takeaways
+
+- As a single person with an idea, I could go from idea to planned GitHub issues very quickly with Copilot.
+- Review fatigue is real: I caught myself scanning Copilot's output instead of reading it.
+- Precise instructions with context and examples prevent scope creep better than short ones.
+- Working in a group would need a different setup, for example a group chat with Copilot as a participant.
 
 Recently, agentic AI in particular has become a popular step in programming functionality in new and existing software or even executing the functionality directly. Because developments are going so fast, I wanted to assess some of these new tools myself in a new experimental project, starting from nothing.
 
@@ -48,7 +61,7 @@ And within 30 minutes of starting the conversation, reviewing output, and doing 
 
 The [wouterfennis/omp-travel-time](https://github.com/wouterfennis/omp-travel-time) project was born!
 
-## Looking back at GitHub Copilot and lessons learned
+## What did I learn from working with GitHub Copilot?
 
 When I review these steps, I am impressed by the initial speed I can make as a single person with just an idea. With Copilot, I can quickly check out ideas, figure out what needs to be done, and post tasks straight to the GitHub project right from the chat. That way, everything's saved and easy for other contributors to jump in and help out.
 

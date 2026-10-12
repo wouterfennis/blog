@@ -6,11 +6,24 @@ date: 2023-04-19
 categories: [CI CD, Programming]
 image: /assets/images/2023/04/Azure-SQL-MI.png
 tags: [authentication, authorization, azure, azure devops, managed identities, powershell, security, sql server]
+faq:
+  - question: "Can I use a managed identity to connect to SQL Server on Azure?"
+    answer: "Yes. The managed identity lives in Azure AD, so you add a reference to it as a user in the database and give it the roles it needs. The application then connects without a stored password."
+  - question: "Why can't I give a managed identity access to SQL Server with a role assignment?"
+    answer: "SQL Server has no role assignment to give access to a specific database. Users and authorizations are configured inside the database itself, so you have to run a SQL command to register the managed identity."
 ---
 
 Deploying infrastructure to Azure is easy enough these days with Azure Powershell, CLI or [Bicep](/2023/05/21/bicep-and-environment-specific-requirements/). Making interactions between infrastructure components secure is also facilitated in Azure with Managed Identities for example. Databases however, often have their own authentication and authorization internally which is out of reach for Bicep and ARM templates. How can you secure your dynamically created SQL Server databases in Azure?
 
 ![Featured image for 2023-04-19-sql-server-authentication-and-authorization-on-azure-with-managed-identities]({{ '/assets/images/2023/04/Azure-SQL-MI.png' | relative_url }})
+
+## Key takeaways
+
+- SQL Server has no Azure role assignment for database access: you register the managed identity as a database user with a SQL command.
+- There are two ways to create that user: from the external provider, or by calculating the SID yourself.
+- Automate the command, because someone has to be the first administrator who is allowed to add users.
+- Once registered, the application connects without a password, which means one less secret in Key Vault or app settings.
+- Expect to experiment: the Microsoft documentation contains many disclaimers and is not always obvious.
 
 ## Context
 
@@ -22,7 +35,7 @@ In this scenario we've already set up a connection with a Service Bus that uses 
 
 As mentioned in the introduction, SQL Server doesn't have Role Assignment functionality to give access to a specific database, let alone limit the actions the connection may perform on the database. Users and authorizations are configured in the Security section of the database. Our goal is to add our Managed Identity as a user and provide it with the `db_owner` role.
 
-## Register users in SQL Server
+## How do you register a managed identity in SQL Server?
 
 A Managed Identity source of truth is within Azure AD. If we want to add a Managed Identity as a user to a SQL database we are not making a copy, we are just making a reference where the incoming identity can be looked up.
 

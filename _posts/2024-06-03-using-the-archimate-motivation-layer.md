@@ -3,6 +3,7 @@ layout: post
 title: "Using the ArchiMate motivation layer"
 description: "How to use the ArchiMate motivation layer to map stakeholder goals, drivers, and priorities before making architecture decisions in a project."
 date: 2024-06-03
+last_modified_at: 2026-10-12
 categories: [Architecture]
 image: /assets/images/2024/05/Organisational-chart-lego.jpg
 tags: [archi, archimate, architecture, enterprise architecture, modeling, motivation layer, requirements, stakeholders]

@@ -3,14 +3,27 @@ layout: post
 title: "Getting Code Coverage to SonarQube"
 description: "How to get .NET code coverage and unit test results into SonarQube using Azure DevOps YAML pipelines with TRX and XML coverage files."
 date: 2023-02-18
+last_modified_at: 2026-10-12
 categories: [CI CD]
 tags: [sonarqube, code coverage, azure devops, .net, c#, unit tests, yaml, ci cd]
 image: /assets/images/2023/02/Sonarqube.webp
+faq:
+  - question: "Why does SonarQube show no code coverage in my Azure DevOps pipeline?"
+    answer: "SonarQube does not calculate coverage itself. The coverage report has to be created while the unit tests run, and SonarQube has to be pointed to the folder where the build stores it. Most of the time the files are written somewhere other than where SonarQube is looking."
+  - question: "Which file formats does SonarQube need for unit tests and code coverage?"
+    answer: "SonarQube reads TRX files to count the executed unit tests. For code coverage, the XML format of the Visual Studio code coverage output is the format I have found SonarQube always understands."
 ---
 
 You finally managed to get your first SonarQube analysis published to the SonarQube server. You've been writing C# code all day and anxiously you navigate to the report to see how your initial coding is being rated. You see some minor code smells, perhaps a major issue that is being exaggerated. But the thing that really stands out is the metric below:
 
 ![Featured image for 2023-02-18-getting-code-coverage-to-sonarqube]({{ '/assets/images/2023/02/Sonarqube.webp' | relative_url }})
+
+## Key takeaways
+
+- SonarQube counts unit tests from TRX files, so run `dotnet test` with the TRX logger.
+- SonarQube does not calculate code coverage itself: collect it during the test run, preferably in XML format.
+- When coverage still does not show up, the files are usually stored somewhere other than where SonarQube is looking.
+- A few small tweaks to your Azure DevOps YAML pipeline are enough to get accurate reporting.
 
 ![SonarQube no coverage showing up in report.]({{ '/assets/images/2023/02/SonarQube-no-coverage.png' | relative_url }})
 
@@ -28,7 +41,7 @@ SonarQube has a wide range of support for different languages and pipelines. Thi
 - SonarQube extension installed in Azure DevOps
 - Self hosted SonarQube server
 
-## Counting unit tests
+## How does SonarQube count unit tests?
 
 Every time you run your unit tests against your code you have the option to output the result of each test into a TRX file. This is a Microsoft standard file for tests written in .NET. This can be done by attaching the TRX logger to your testrun.
 
@@ -42,7 +55,7 @@ TRX files don't contain information about the production code that is being cove
 
 SonarQube uses TRX files to count the amount of unit tests that have been executed against your code. Although often you can let SonarQube scan your test code as well, it doesn't use it to count the unit tests themselves.
 
-## Measuring code coverage
+## How do you measure code coverage?
 
 With your production code and TRX files alone you can't yet determine the Code Coverage.
 

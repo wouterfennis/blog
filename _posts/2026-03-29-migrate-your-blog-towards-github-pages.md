@@ -7,11 +7,23 @@ image: /assets/images/2026/03/featured-blog-migration.png
 description: "A practical guide to migrating a self-hosted blog to GitHub Pages using Jekyll, covering the decisions, challenges, and lessons learned along the way."
 tags: [blog, ci cd, deployment, github actions, github pages, jekyll, migration, static site]
 mermaid: true
+faq:
+  - question: "Can I migrate a WordPress blog to GitHub Pages?"
+    answer: "Yes. I moved my self-hosted WordPress blog to GitHub Pages with Jekyll as the static site generator and GitHub Actions for builds and deployment. Hosting on GitHub Pages is free."
+  - question: "Did GitHub Copilot change my original blog content during the migration?"
+    answer: "Sometimes. I saw my original content being rewritten, so I created plans upfront and reviewed the migrated content manually to build confidence."
 ---
 
 Running WordPress for a personal blog always felt like overkill. My site is mostly static — I write a new post, add some metadata, and hit publish. Yet there I was, managing a full CMS, keeping plugins up to date, and paying for hosting that did far more than I ever needed. One morning it struck me: could a free, Git-based hosting service like GitHub Pages give my readers the exact same result with far less overhead? And could Jekyll — a simple static site generator — replace the whole WordPress setup?
 
 ![Featured image for 2026-03-29-migrate-your-blog-towards-github-pages]({{ '/assets/images/2026/03/featured-blog-migration.png' | relative_url }})
+
+## Key takeaways
+
+- Jekyll, GitHub Actions and GitHub Copilot agent mode were enough to migrate my WordPress blog in about two days, on free-tier infrastructure.
+- Plan upfront and review everything: Copilot rewrote parts of my original content.
+- Agents sometimes stop responding during a long migration, and repeating your last question gets them moving again.
+- The result is a blog with working navigation, SEO and all original content preserved.
 
 ## Why GitHub Pages?
 
@@ -34,7 +46,7 @@ This post covers migrating a self-hosted WordPress blog to GitHub Pages using th
 
 No manual HTML editing or custom plugins were involved. Everything runs on free-tier GitHub infrastructure.
 
-## The migration plan
+## How did I plan the migration?
 
 In a customer production scenario, the migration would normally be a very technical and deterministic exercise. An existing CMS would have a database containing all the articles and content. A process or pipeline would be sketched out to extract the data and funnel it into the new format for GitHub Pages. It would be thoroughly tested and signed off before switching to the new hosting service and going live.
 
@@ -92,7 +104,7 @@ Not only was I steering Copilot to be more aligned with my requirements, but I w
 ## Migrating content
 
 Now that I had a landing zone in place for the content to be migrated to, I needed to make a detailed migration plan for the implementation agent to perform the migration.
-I switched to the `Plan Agent` and explained what I described in [the migration plan](#the-migration-plan).
+I switched to the `Plan Agent` and explained what I described in [the migration plan](#how-did-i-plan-the-migration).
 Once a plan was in place I just gave the go-ahead. Remember, the new blog would be initially published in parallel to the original blog. So if the migration failed, I would simply adjust the plan and retry over and over.
 
 The first step was to let the agent crawl through the live website. Here I was impressed by the agent to go through all the WordPress HTML clutter and extract the actual content from it.

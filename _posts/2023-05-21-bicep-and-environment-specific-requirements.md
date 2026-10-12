@@ -3,6 +3,7 @@ layout: post
 title: "Bicep and environment specific requirements"
 description: "Using environment stage variables in Bicep to manage environment-specific Azure infrastructure requirements without scattered conditional logic."
 date: 2023-05-21
+last_modified_at: 2026-10-12
 categories: [CI CD]
 image: /assets/images/2023/05/bicep.png
 tags: [azure, bicep, deployment, environments, infrastructure as code, json, parameters]

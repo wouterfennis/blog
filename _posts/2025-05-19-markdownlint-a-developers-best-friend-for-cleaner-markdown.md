@@ -3,6 +3,7 @@ layout: post
 title: "Markdownlint: a developer's best friend for cleaner Markdown"
 description: "I show how to set up Markdownlint, customise its rules and add it to your CI/CD pipeline for consistent, clean Markdown across projects."
 date: 2025-05-19
+last_modified_at: 2026-10-12
 categories: [CI CD]
 image: /assets/images/2025/05/5feac392-d10a-4354-8313-c34c56087cdf.jpg
 tags: [markdownlint, markdown, linting, documentation, developer tools, github actions, visual studio code, ci cd]
