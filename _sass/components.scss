@@ -125,6 +125,12 @@ h2, h3, h4 {
   margin-left: 0;
 }
 
+.site-footer .contact-list,
+.site-footer .footer-col,
+.site-footer .p-name {
+  color: var(--muted);
+}
+
 .site-footer .footer-col {
   float: none;
   width: auto;
@@ -207,14 +213,18 @@ figure.highlight {
   background: var(--surface);
 }
 
-.post-content a:not(.heading-anchor):not(.badge) {
+.post-content a:not(.heading-anchor):not(.badge),
+.page-content p a:not(.badge),
+.site-footer p a {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-decoration-color: color-mix(in srgb, var(--accent) 50%, transparent);
   text-underline-offset: 3px;
 }
 
-.post-content a:not(.heading-anchor):not(.badge):hover {
+.post-content a:not(.heading-anchor):not(.badge):hover,
+.page-content p a:not(.badge):hover,
+.site-footer p a:hover {
   text-decoration-thickness: 2px;
   text-decoration-color: var(--accent);
 }
