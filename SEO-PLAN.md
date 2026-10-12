@@ -8,7 +8,7 @@ Delete this file when all points are done. Status: `[ ]` open, `[x]` done, `[-]`
 - [x] 2. Strengthen internal linking: "Related posts" block in `post.html` and manual links
 - [x] 3. Richer structured data: `social` config, author entity, remove duplicate microdata, `last_modified_at`
 - [x] 4. Write for AI extraction: summaries, key takeaways, question headings, FAQ sections
-- [ ] 5. Tag pages
+- [x] 5. Tag pages
 - [ ] 6. About page: E-E-A-T and `Person` schema
 - [ ] 7. Image tuning: dimensions, lazy loading, WebP consistency
 - [ ] 8. `robots.txt` and sitemap tweaks
@@ -50,3 +50,9 @@ Findings and decisions are added below as each point is worked.
 - Added an optional `faq:` front matter list (question/answer), rendered by `_includes/faq.html` as a visible section plus FAQPage JSON-LD (verified valid, 2 entities per post).
 - Renamed several `##` headings to the question people search for; the in-post anchor to the migration plan was updated.
 - Optional front matter fields `last_modified_at` and `faq` to document in CLAUDE.md when finalising.
+
+### Point 5 (done)
+
+- `_plugins/tag_pages.rb` generates `/tags/<slug>/` for tags used by 2+ posts (16 pages), slug overrides for `.net`, `c#`, `asp.net`; exposes `site.tag_index` and `site.tag_urls`.
+- `/tags/` index (`tags.md`, `_layouts/tags.html`) lists all tags; single-use tags link to their post. Tag pages use `_layouts/tag.html`.
+- Tags are linked under the post title only (author choice); tag pages are in the sitemap automatically.

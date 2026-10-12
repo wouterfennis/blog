@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<div class="category-archive">
+
+  <h1 class="category-archive__heading">Tag: {{ page.title | escape }}</h1>
+
+  <p class="category-archive__description">{{ page.description | escape }} <a href="{{ '/tags/' | relative_url }}">Browse all tags</a>.</p>
+
+  {%- assign tagged_posts = site.posts | where_exp: "post", "post.tags contains page.tag" -%}
+  <div class="post-tiles">
+    {%- for post in tagged_posts -%}
+    {%- include post-tile.html post=post -%}
+    {%- endfor -%}
+  </div>
+
+</div>
