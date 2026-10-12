@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "Scrum and the Summer Break"
+title: "Scrum and the summer break"
 description: "Practical advice for Scrum teams on preparing for the summer break — knowledge handover, velocity planning, and getting back up to speed efficiently."
 date: 2023-09-07
+last_modified_at: 2026-10-12
 categories: [Scrum]
 image: /assets/images/2023/09/camping-1024x682.jpg
 tags: [agile, knowledge, scrum, sprint, sprint planning, storming, summer break, velocity]

@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "SQL Server Authentication and Authorization on Azure with Managed Identities"
+title: "SQL Server authentication and authorization on Azure with managed identities"
 description: "How to secure Azure SQL Server databases by adding Managed Identity users and roles through automated Azure DevOps pipelines."
 date: 2023-04-19
+last_modified_at: 2026-10-12
 categories: [CI CD, Programming]
 image: /assets/images/2023/04/Azure-SQL-MI.png
 tags: [authentication, authorization, azure, azure devops, managed identities, powershell, security, sql server]

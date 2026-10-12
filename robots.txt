@@ -37,6 +37,23 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
+# Search, answer and user-triggered fetchers: they retrieve pages to answer
+# a query and cite the source, so they are allowed.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
 # Blocked: these are primarily bulk dataset scrapers for model
 # training with no direct citation/traffic benefit back to the site.
 # Remove these blocks any time you change your mind — it's a policy
@@ -48,6 +65,14 @@ User-agent: Bytespider
 Disallow: /
 
 User-agent: Amazonbot
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+# Opt-out token only: Applebot (above) can still index the site, but Apple
+# may not use the content for AI model training.
+User-agent: Applebot-Extended
 Disallow: /
 
 Sitemap: https://woutercompiles.it/sitemap.xml
