@@ -16,6 +16,7 @@ about.md         # About page
 .github/
   workflows/
     deploy.yml   # CI: build + deploy to GitHub Pages on push to main
+docs/            # seo-geo.md (SEO/GEO architecture and how to add a post), identity.md, content-ideas.md
 .claude/
   rules/         # writing-style + language (loaded when touching _posts/), conventional-commits
   agents/        # Subagents (see "Claude Code tooling" below)

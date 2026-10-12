@@ -16,8 +16,8 @@ Status: `[ ]` open, `[x]` done, `[-]` skipped.
 - [x] 9. Content freshness review [21]
 - [x] 10. Content gaps and topic ideas [14]
 - [x] 11. Automated validation in CI [23]
-- [ ] 12. SEO and GEO documentation [24]
-- [ ] 13. Search Console and Bing monitoring baseline [20]
+- [x] 12. SEO and GEO documentation [24]
+- [-] 13. Search Console and Bing monitoring baseline [20]
 - [x] 14. Should we do something with this Lighthouse library inside a build pipeline etc?
 
 ## Working agreement
@@ -99,3 +99,12 @@ Findings and decisions are added below as each point is worked.
 - New `.github/workflows/site-checks.yml` for pull requests (deploy.yml unchanged): build, `check:site`, `check:post` on changed posts, Lighthouse CI, reports uploaded as an artifact. Not run on GitHub yet; every step was run locally.
 - Lighthouse CI (`lighthouserc.json`, `npx @lhci/cli`, no package.json dependency, 4 URLs, 3 runs): thresholds performance 0.8, accessibility 0.95, best practices 0.9, SEO 0.95. A single local run scored the home page 0.84 for performance, so the performance threshold is deliberately loose; tighten it once CI numbers are known. Reports stay in the artifact (no public upload).
 - Plan point 14 (Lighthouse in the pipeline) is answered by this setup.
+
+### Point 12 (done)
+
+- New `docs/seo-geo.md` (about 120 lines): principles, information architecture, metadata and canonicals, JSON-LD map, author entity, discovery files, content structure, images and performance, accessibility, validation, and an 11-step "How to add a new article" list. Author picked a single file plus the new-article section only.
+- Linked from `CLAUDE.md` (repository structure and CI note), `README.md` (new Documentation section) and `CONTRIBUTING.md` (new Content and SEO rules section).
+
+### Point 13 (skipped)
+
+- Author skipped Search Console and Bing monitoring (scope and verification questions both answered "skip"). Open item for later: verification codes, sitemap submission and a baseline.

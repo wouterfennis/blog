@@ -84,6 +84,10 @@ To set this up:
 2. Generate a new token with at least `repo` scope (classic) or the fine-grained permissions listed above.
 3. In this repository go to **Settings > Secrets and variables > Actions** and create a secret named `RELEASE_PLEASE_TOKEN` with the token value.
 
+## Content and SEO rules
+
+Follow [docs/seo-geo.md](docs/seo-geo.md) when adding or changing posts. A pull request runs the site checks (build, `npm run check:site`, `npm run check:post` on changed posts and Lighthouse CI).
+
 ## Local development
 
 ```bash
