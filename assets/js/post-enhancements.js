@@ -30,6 +30,25 @@
     document.querySelector('article.post').appendChild(nav);
   }
 
+  // Heading anchors: a small link next to h2/h3 that appears on hover or keyboard focus.
+  content.querySelectorAll('h2[id], h3[id]').forEach(function(h) {
+    var a = document.createElement('a');
+    a.className = 'heading-anchor';
+    a.href = '#' + h.id;
+    a.textContent = '#';
+    a.setAttribute('aria-label', 'Link to this section');
+    h.appendChild(a);
+  });
+
+  // Callouts: a blockquote that starts with **Note**, **Tip**, **Important** or **Warning** (optional colon).
+  var calloutKinds = { note: 'note', tip: 'tip', important: 'important', warning: 'warning' };
+  content.querySelectorAll('blockquote').forEach(function(q) {
+    var lead = q.querySelector('p > strong:first-child');
+    if (!lead || lead.parentElement !== q.firstElementChild) return;
+    var kind = calloutKinds[lead.textContent.replace(/:$/, '').trim().toLowerCase()];
+    if (kind) q.classList.add('callout', 'callout--' + kind);
+  });
+
   var ticking = false;
 
   function update() {

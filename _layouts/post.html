@@ -61,11 +61,24 @@ layout: default
     const div = document.createElement('pre');
     div.className = 'mermaid';
     div.textContent = el.textContent;
+    div.dataset.source = el.textContent;
     pre.replaceWith(div);
   });
-  const theme = document.documentElement.getAttribute('data-theme')
+  const currentTheme = () => document.documentElement.getAttribute('data-theme')
     || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-  mermaid.initialize({ startOnLoad: true, theme: theme === 'dark' ? 'dark' : 'default' });
+  const mermaidTheme = () => (currentTheme() === 'dark' ? 'dark' : 'default');
+  mermaid.initialize({ startOnLoad: true, theme: mermaidTheme() });
+
+  // Re-render the diagrams in the matching theme when the header toggle is used.
+  document.addEventListener('themechange', async () => {
+    const nodes = document.querySelectorAll('pre.mermaid');
+    nodes.forEach(node => {
+      node.removeAttribute('data-processed');
+      node.textContent = node.dataset.source;
+    });
+    mermaid.initialize({ startOnLoad: false, theme: mermaidTheme() });
+    await mermaid.run({ nodes });
+  });
 </script>
 <script src="{{ '/assets/js/mermaid-modal.js' | relative_url }}" defer></script>
 {%- endif -%}

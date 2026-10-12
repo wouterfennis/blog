@@ -103,7 +103,9 @@ With the library installed it can also be executed when the Client project is be
 </ItemGroup>
 ```
 
-Notice how the `OpenApiReference` assumes the `swagger.json` is already present in the Client project. Build order has become important at this stage. Make sure that the projects are always built in the order that the Clients are last in line.
+Notice how the `OpenApiReference` assumes the `swagger.json` is already present in the Client project. 
+
+> **Important:** Build order has become important at this stage. Make sure that the projects are always built in the order that the Clients are last in line.
 
 When the solution is built, you should see no compilation errors. However, no C# client is popping up in the IDE. That is because it is placed in the output directory of the build, it shouldn't be manually adjusted as it is generated code.
 

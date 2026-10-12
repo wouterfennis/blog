@@ -14,9 +14,13 @@
 
   btn.addEventListener('click', function() {
     var next = effective() === 'dark' ? 'light' : 'dark';
+    // Fade colours only for the click itself, so page loads and hovers are unaffected.
+    root.classList.add('theme-transition');
+    window.setTimeout(function() { root.classList.remove('theme-transition'); }, 300);
     root.setAttribute('data-theme', next);
     try { localStorage.setItem('theme', next); } catch (e) { /* storage unavailable */ }
     sync();
+    document.dispatchEvent(new CustomEvent('themechange', { detail: next }));
   });
 
   if (query.addEventListener) query.addEventListener('change', sync);

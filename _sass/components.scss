@@ -1,3 +1,5 @@
+$categories: programming, architecture, ci-cd, scrum;
+
 /* Dark mode: syntax tokens re-tuned for the dark code background */
 .highlight {
   @include in-dark {
@@ -63,6 +65,15 @@ h2, h3, h4 {
   scroll-margin-top: 4.5rem;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .theme-transition,
+  .theme-transition *,
+  .theme-transition *::before,
+  .theme-transition *::after {
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, fill 0.25s ease !important;
+  }
+}
+
 .theme-toggle {
   display: inline-flex;
   align-items: center;
@@ -89,7 +100,7 @@ h2, h3, h4 {
   fill: currentColor;
 }
 
-/* Footer */
+/* Footer: one quiet block instead of three floated columns */
 .site-footer {
   margin-top: 3rem;
   background: var(--surface);
@@ -98,6 +109,109 @@ h2, h3, h4 {
 
 .footer-heading {
   font-size: 1rem;
+}
+
+.site-footer .footer-col-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 3rem;
+  margin-left: 0;
+}
+
+.site-footer .footer-col {
+  float: none;
+  width: auto;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.site-footer .footer-col-3 {
+  flex: 1 1 18rem;
+  max-width: 28rem;
+  color: var(--muted);
+}
+
+/* Archive and tags lists: quiet rows with muted meta */
+.archive__year {
+  margin-top: 2rem;
+  font-size: 1.25rem;
+  color: var(--muted);
+}
+
+.archive__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.archive__item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.archive__link {
+  font-weight: 500;
+}
+
+.archive__meta,
+.archive__meta a {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.archive__meta a {
+  text-decoration: underline;
+}
+
+/* Callouts: blockquote starting with **Note**, **Tip**, **Important** or **Warning** */
+.callout {
+  padding: 0.75rem 1rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left-width: 4px;
+  border-radius: 8px;
+}
+
+.callout > :last-child {
+  margin-bottom: 0;
+}
+
+.callout--note { border-left-color: var(--accent); }
+.callout--tip { border-left-color: var(--cat-architecture-fg); }
+.callout--important { border-left-color: var(--cat-scrum-fg); }
+.callout--warning { border-left-color: var(--cat-ci-cd-fg); }
+
+.callout--note > p:first-child > strong:first-child { color: var(--accent); }
+.callout--tip > p:first-child > strong:first-child { color: var(--cat-architecture-fg); }
+.callout--important > p:first-child > strong:first-child { color: var(--cat-scrum-fg); }
+.callout--warning > p:first-child > strong:first-child { color: var(--cat-ci-cd-fg); }
+
+/* Heading anchors (added by post-enhancements.js) */
+.heading-anchor {
+  margin-left: 0.4rem;
+  font-weight: 400;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+h2:hover > .heading-anchor,
+h3:hover > .heading-anchor,
+.heading-anchor:focus {
+  opacity: 1;
+}
+
+/* Category pages take the tint of their category */
+@each $c in $categories {
+  .category-archive--#{$c} .category-archive__heading {
+    padding-left: 0.75rem;
+    border-left: 4px solid var(--cat-#{$c}-fg);
+  }
 }
 
 /* Banner: dark variant swaps in with the theme */
@@ -135,8 +249,6 @@ a.badge:visited {
 a.badge:hover {
   text-decoration: underline;
 }
-
-$categories: programming, architecture, ci-cd, scrum;
 
 @each $c in $categories {
   .badge--#{$c},
@@ -237,8 +349,7 @@ a.badge--lg {
 }
 
 .home-topics__item {
-  padding: 0;
-  border: 0;
+  margin: 0;
 }
 
 .latest-posts__heading {
