@@ -6,11 +6,23 @@ date: 2024-03-09
 categories: [Programming]
 image: /assets/images/2024/03/distributingAPIs-Klein.jpg
 tags: [.net, api, asp.net, c#, nswag, nuget, openapi, swagger]
+faq:
+  - question: "How can I distribute an ASP.NET API client as a NuGet package?"
+    answer: "Serialize the API definition to a swagger.json file at build time with the Swashbuckle CLI, generate a C# client from it with NSwag in a separate client project, and publish that project as a NuGet package to your feed."
+  - question: "Why distribute a generated client instead of only publishing the API definition?"
+    answer: "It saves consumers boilerplate HTTP code and lets you make sure clients uphold non-functional requirements such as authentication. With semantic versioning, consumers can also adopt the latest definition by updating one package."
 ---
 
 Creating APIs is quite simple nowadays. You can have a functional API up and running in the Azure cloud within minutes. By using an OpenAPI library like Swagger to publish your API's definition, other systems can easily integrate and utilize its functionality. The real challenge, as with many programming aspects, lies in maintaining the software once other parties start using your API. To help your customers integrate with your API, but also to have some influence over the way the API is called, a client can be created on the maintainer side and distributed using a NuGet package.
 
 ![Featured image for 2024-03-09-distributing-your-api-definition-as-a-nuget-client]({{ '/assets/images/2024/03/distributingAPIs-Klein.jpg' | relative_url }})
+
+## Key takeaways
+
+- Generate the OpenAPI definition at build time with Swashbuckle, generate a C# client from it with NSwag, and distribute that client as a NuGet package.
+- Build order matters: the client project needs the generated swagger.json, so it has to be built after the API.
+- A distributed client lets you prepare authentication, such as OAuth 2.0 or mutual TLS, for your consumers.
+- Version the client with semantic versioning, so consumers only have to update a package to get the latest definition.
 
 ## Designing the distribution
 

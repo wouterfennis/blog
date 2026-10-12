@@ -7,11 +7,23 @@ last_modified_at: 2026-10-12
 categories: [Scrum]
 image: /assets/images/2023/03/Pizza-1024x483.png
 tags: [agile, facilitation, miro, pizza, retrospective, scrum, self-reflection, whiteboard]
+faq:
+  - question: "What is a Pizzaria Retrospettiva?"
+    answer: "It is a Scrum retrospective format in which the board is a pizza divided into slices. Team members add cards about what worked well, what could be improved and what to stop doing, each linked to a pizza, an ingredient or another Italian dish."
+  - question: "How do you run a Pizzaria Retrospettiva remotely?"
+    answer: "Use an online whiteboard such as Miro. Draw a circle with a slightly transparent pizza as background, divide it into slices with topics, invite the team to fill in cards, and discuss them slice by slice."
 ---
 
 Retrospectives have a tendency to sometimes be repetitive and less fruitful. However, sometimes just a simple change of scenery can already open up a new perspective of underlying problems or successes that a Scrum team has been through. One method I've tried in practice is bringing the retrospective in an authentic Italian vibe. And what is the first thing people associate with Italia? Pizza 🍕 of course!
 
 ![Featured image for 2023-03-12-retrospective-idea-pizzaria-retrospettiva]({{ '/assets/images/2023/03/Pizza-1024x483.png' | relative_url }})
+
+## Key takeaways
+
+- A change of scenery makes retrospectives less repetitive: draw a pizza on a digital whiteboard such as Miro and slice it into topics.
+- Participants link each card to a pizza, an ingredient or another Italian dish, which lightens the mood.
+- The group discusses the board slice by slice and ends with action points and a one to five star rating of the session.
+- It works just as well on a physical whiteboard.
 
 ## Scrum rituals going digital
 

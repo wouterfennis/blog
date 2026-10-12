@@ -7,11 +7,23 @@ last_modified_at: 2026-10-12
 categories: [CI CD]
 image: /assets/images/2025/05/5feac392-d10a-4354-8313-c34c56087cdf.jpg
 tags: [markdownlint, markdown, linting, documentation, developer tools, github actions, visual studio code, ci cd]
+faq:
+  - question: "What is markdownlint?"
+    answer: "Markdownlint is an open-source tool that checks Markdown files against a set of rules for syntax and consistency, such as heading structure, blank lines and list indentation."
+  - question: "How do I use markdownlint in a project?"
+    answer: "Install the CLI with npm or the Visual Studio Code extension, add a .markdownlint.json file to adjust the rules, and run markdownlint on your files. Adding it to your CI/CD pipeline catches issues before they reach production."
 ---
 
 You open a pull request for a README, and half of the review comments are about missing blank lines and inconsistent list indentation instead of the actual content. Markdown is a common language among developers for its simplicity, whether you're crafting a README for your open-source project, writing technical documentation, or drafting a blog post. However, as straightforward as it may seem, writing clean and consistent Markdown can sometimes be a challenge — this is where Markdownlint becomes an indispensable tool.
 
 ![Featured image for 2025-05-19-markdownlint-a-developers-best-friend-for-cleaner-markdown]({{ '/assets/images/2025/05/5feac392-d10a-4354-8313-c34c56087cdf.jpg' | relative_url }})
+
+## Key takeaways
+
+- Markdownlint is an open-source tool that enforces Markdown rules, so reviews are about content instead of blank lines and list indentation.
+- It runs in the editor (the Visual Studio Code extension) and on the command line, so it fits in a CI/CD pipeline.
+- Customise the rules in a `.markdownlint.json` file instead of dropping the tool.
+- Add it early in a project to prevent technical debt in your documentation.
 
 ## What is Markdownlint?
 
@@ -113,4 +125,6 @@ Whether you're a seasoned developer or just getting started with Markdown, Markd
 
 ## References
 
-<!-- TODO: add references -->
+- [markdownlint](https://github.com/DavidAnson/markdownlint)
+- [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli)
+- [markdownlint extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)

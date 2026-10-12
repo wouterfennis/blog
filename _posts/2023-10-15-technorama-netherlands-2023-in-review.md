@@ -6,6 +6,11 @@ date: 2023-10-15
 categories: [Programming]
 image: /assets/images/2023/10/technorama-2023-1-1024x285.jpg
 tags: [technorama, conference, ai, azure, architecture, microservices, tdd, terraform]
+faq:
+  - question: "What is Technorama?"
+    answer: "Technorama is a Dutch \"deep knowledge IT conference\". I attended the 2023 edition, where every hour offered a choice of 10 speakers on architecture, cloud computing, data, developer trends, self-improvement, front end development and AI."
+  - question: "At which level should you apply test driven development?"
+    answer: "According to the talk I attended, TDD is often used at the wrong level, too close to the implementation of the software. When mocking, aim to mock only IO, so your tests stay tied to behaviour and contracts instead of implementation details."
 ---
 
 During and shortly after COVID I kind of lost track of IT conferences. Working more from home and occasionally visiting the office makes your professional circle increasingly smaller without you noticing. So when I was made aware that this month the Technorama conference would take place in the [Kinopolis](https://kinepolis.nl/bioscopen/kinepolis-jaarbeurs-utrecht/info/) in Utrecht, I signed up and went there.
@@ -15,6 +20,13 @@ During and shortly after COVID I kind of lost track of IT conferences. Working m
 Technorama is a "Deep knowledge IT Conference" as the event is described on the website. And that is definitely true, I wouldn't describe the sessions as entry level. Most of the presentations given by the large list of speakers require knowledge and experience of working in the field. And for me, that makes it worth spending two days hopping between 14(!) different cinema rooms.
 
 By Dutch standards, the scale of the event was big. Every hour you could choose between 10 different speakers each with their own interesting insight on architecture, cloud computing, data, developer trends, self-improvement, front end development and of course Artificial Intelligence.
+
+## Key takeaways
+
+- Technorama is a deep-knowledge conference: the sessions assume experience, which made two days worth spending.
+- The main themes were AI, architecture, cloud development and test driven development.
+- Microservices without good modelling of cohesion and coupling often end up as a distributed monolith.
+- Apply TDD at the level of behaviour instead of implementation details, and mock only IO.
 
 ## Artificial intelligence
 
@@ -50,4 +62,5 @@ Following speaker sessions for close to 8 hours a day for two days is a bit inte
 
 ## References
 
-<!-- TODO: add references -->
+- [Erwin Staal](https://erwinstaal.nl/)
+- [Ian Cooper on GitHub](https://github.com/iancooper)

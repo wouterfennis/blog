@@ -8,7 +8,7 @@ Status: `[ ]` open, `[x]` done, `[-]` skipped.
 - [x] 1. Structured data gaps: BreadcrumbList with visible breadcrumbs, Blog entity, articleSection, publisher [3]
 - [x] 2. Homepage: expertise, featured articles, featured projects, topics [13]
 - [-] 3. Information architecture: topic and pillar pages, projects linked with articles [5, 6, 7, 12]
-- [ ] 4. Article structure and first-hand experience for the remaining posts [8, 9]
+- [x] 4. Article structure and first-hand experience for the remaining posts [8, 9]
 - [ ] 5. Title and search-intent audit [10]
 - [ ] 6. Performance: measure, heavy images, JavaScript, fonts [17]
 - [ ] 7. Accessibility audit and fixes [18]
@@ -44,3 +44,9 @@ Findings and decisions are added below as each point is worked.
 ### Point 3 (skipped)
 
 - Author skipped topic and pillar pages for now (questions on pillars, location and linking were all answered "skip").
+
+### Point 4 (done, first-hand experience review skipped)
+
+- Key takeaways plus a 2-question FAQ (front matter `faq:`) added to the remaining 9 posts, so all 14 posts now have both. Drafted from each post's own text; please review the wording.
+- Replaced the leftover `<!-- TODO: add references -->` placeholders: markdownlint post gets real references, Technorama review lists the two people it links to (Erwin Staal, Ian Cooper).
+- Not done on purpose: first-hand experience review (author skipped).

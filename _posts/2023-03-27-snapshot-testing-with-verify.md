@@ -6,11 +6,23 @@ date: 2023-03-27
 categories: [Programming]
 image: /assets/images/2023/03/archive-1024x577.png
 tags: [.net, assertions, c#, diff tool, snapshot testing, testing, unit tests, verify]
+faq:
+  - question: "What is snapshot testing?"
+    answer: "Snapshot testing is a form of output testing for complex information at component or system level, where the output is awkward to assert in a standard unit test. You compare the received output with a stored snapshot instead."
+  - question: "When should you not use snapshot testing with Verify?"
+    answer: "I don't recommend it for complex mapping between objects. A diff tool makes it so easy to accept the new output that team members, myself included, started overwriting the expected snapshot without properly thinking it through."
 ---
 
 Have you ever programmed something that had to output a string or file into a specific format? Whether it's CSV, a markup language or worse.. position based text, I've written many ugly unit tests to compare unreadable output to unreadable expected outcomes. Fortunately there is an alternative: Snapshot Testing. And with a library like [Verify](https://github.com/VerifyTests/Verify), it's actually manageable.
 
 ![Featured image for 2023-03-27-snapshot-testing-with-verify]({{ '/assets/images/2023/03/archive-1024x577.png' | relative_url }})
+
+## Key takeaways
+
+- Snapshot testing compares a complex output, such as a file or formatted string, with a stored snapshot instead of asserting it piece by piece.
+- Verify creates a received file and a snapshot on the first run, and opens your diff tool when they differ.
+- It works very well for position-based file formats and is easy to hand over to teammates.
+- I don't recommend it for mapping between objects: in my team the expected snapshot was too easily overwritten without thinking.
 
 ## What is snapshot testing?
 

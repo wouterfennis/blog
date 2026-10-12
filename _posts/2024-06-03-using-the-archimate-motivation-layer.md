@@ -7,6 +7,11 @@ last_modified_at: 2026-10-12
 categories: [Architecture]
 image: /assets/images/2024/05/Organisational-chart-lego.jpg
 tags: [archi, archimate, architecture, enterprise architecture, modeling, motivation layer, requirements, stakeholders]
+faq:
+  - question: "What is the ArchiMate motivation layer?"
+    answer: "It is a level of ArchiMate that doesn't look at systems or applications but at the motivations of stakeholders: their drivers, the assessments of the current situation, goals and outcomes."
+  - question: "Why map stakeholder motivations before making architecture decisions?"
+    answer: "So you can refer back to the needs of the people who pay for and use the project. It comes down to delivering the right thing, at the right time, under the right circumstances."
 ---
 
 How often did you ask yourself during a project: "Why am I doing this again?". You have to take a step back, zoom out of the technicalities and look at the written requirements or talk with the stakeholders of your project. Often discovering that you had made an assumption about the underlying reasons some work had to be done or in a certain way — halting the workflow of a team member to get the reasoning behind a change or addition. The ArchiMate motivation layer can help prevent exactly that.
@@ -18,6 +23,13 @@ How nice it would be if there were an 'architecture' diagram of the stakeholders
 Archimate is a very large modeling language. Too large to fit in a single blog post obviously. There are interesting aspects that I can pick out and use individually to gain insight or generate more impact in a project. The Motivation layer from Archimate is a level of architecture that doesn't look at systems, applications or functionality for that matter. Only people, their roles in the project and what they find important.
 
 So how would you start mapping this diagram? The challenge during these initial impressions or talks with the stakeholders is to not dive straight into the problems, challenges or even solutions that might already be on the table. First we have to get a clear picture of who the stakeholders are in the organisation, including who may or may not benefit from the project. Don't narrow the scope just yet, this can always be done later.
+
+## Key takeaways
+
+- The ArchiMate motivation layer maps stakeholders, their drivers, assessments, goals and outcomes, not systems or applications.
+- Start with who the stakeholders are before diving into problems or solutions.
+- Outcomes can influence a goal positively or negatively, which exposes conflicting interests and helps you prioritise.
+- A good diagram reflects a long-running strategy: if it needs replacing every month, the vision behind it may be unclear.
 
 ## Why use the ArchiMate motivation layer
 

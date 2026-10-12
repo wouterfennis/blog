@@ -7,6 +7,11 @@ last_modified_at: 2026-10-12
 categories: [CI CD]
 image: /assets/images/2023/05/bicep.png
 tags: [azure, bicep, deployment, environments, infrastructure as code, json, parameters]
+faq:
+  - question: "How do you handle environment-specific settings in Bicep?"
+    answer: "Extract all differences between environments, such as the back-up strategy and zone redundancy, into one JSON file. Load it where it is needed in the modules and pass a single parameter that indicates which environment is being rolled out."
+  - question: "Why not use parameters for environment differences in Bicep?"
+    answer: "These requirements are known before the environments are created and do not change during the rollout, so parameters are a poor fit. Passing them from module to module also spreads conditional logic through the whole template."
 ---
 
 Infrastructure as code, the eternal promise of stability, shared understanding and high maintainability. Often it starts out that way. You start writing the first components, tie them together in a Bicep template. It runs excellently in the development environment. Just one click away from rolling it out in other environments. But then you realize you can't.
@@ -16,6 +21,13 @@ Infrastructure as code, the eternal promise of stability, shared understanding a
 You have to restrict access way more on production, and you forgot to turn on the back-up strategy that isn't needed on dev. Did I tell you the landscape in production has to be zone redundant as well?
 
 And so the conditional logic seeps in like water through a leaky roof. Parameters start popping up everywhere in your neatly separated bicep files. From module to module, flags and enums have to be passed along for a suddenly important piece of production configuration three levels down. Shamefully you have to explain to your team member the end result contains not so loosely coupled modules. So what goes wrong here?
+
+## Key takeaways
+
+- Infrastructure as code rarely applies the same blueprint to every environment, because security, compliance and cost differ.
+- Passing environment flags from module to module makes Bicep templates messy.
+- Put all differences in one hardcoded JSON file, load it wherever it is needed, and pass only one parameter: the environment.
+- Adding an environment forces you to answer the availability and recoverability questions up front.
 
 ## Infrastructure is never the same
 

@@ -6,6 +6,11 @@ date: 2023-06-12
 categories: [Scrum]
 image: /assets/images/2023/06/Wheel_of_Fortune_logo-3.png
 tags: [brainstorming, devops, facilitation, incidents, operations, sre, team exercise, wheel of misfortune]
+faq:
+  - question: "What is the Wheel of Misfortune?"
+    answer: "It is a team exercise in which scenarios you would rather not encounter in production are put on a wheel. The team spins it and works out what steps they would take to mitigate or recover from the randomly picked incident."
+  - question: "How do you prepare a Wheel of Misfortune session?"
+    answer: "Collect scenarios in a brainstorm with post-its on a whiteboard, group similar cards and let everyone dot vote on the categories to handle first. Then add the scenarios to a wheel, for example with Wheel of Names, and keep them generic enough that they can't be traced to your project or customer."
 ---
 
 Getting software to production is one thing, maintaining it however is a whole other ball game. In your local development environment everything is always running smoothly, network issues? Shortage on storage? Slow performance? Those issues often arise when your application is running on a server somewhere with actual production load and data. As developers we cannot be ignorant anymore and leave it to a system engineer to keep the system running for us. That ship has long since sailed, we have to reinvent our way of working to develop new software and think ahead about the challenges of running it.
@@ -15,6 +20,13 @@ Nobody likes to be called in the middle of the night to be confronted with a fai
 ![Featured image for 2023-06-12-wheel-of-misfortune]({{ '/assets/images/2023/06/Wheel_of_Fortune_logo-3.png' | relative_url }})
 
 A tool I've been using to help teams think openly about this is the Wheel of Misfortune. It contains all the scenarios you would rather not encounter on a Friday afternoon. The team spins the wheel and one of the scenarios will be picked at random, the team will then sit together and determine what steps they would do to mitigate. This may sound easier than it is. Because there are often more variables involved once you start brainstorming about a specific scenario.
+
+## Key takeaways
+
+- The Wheel of Misfortune is a team exercise: a random production incident is drawn and the team works out what to do.
+- The session has four phases: collect scenarios, spin the wheel, reflect on the reactions and follow up.
+- Keep scenarios generic enough that they can't be traced to the project or customer when you use an online wheel tool.
+- One session reveals gaps in knowledge, tooling and dependencies, which makes good input for your next retrospective.
 
 ## Phase 1: collecting scenarios
 
