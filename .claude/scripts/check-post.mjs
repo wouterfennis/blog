@@ -12,7 +12,9 @@ if (!path) {
 const { fm, body, hasFrontMatter } = readPost(path);
 const name = basename(path).replace(/\.md$/, '');
 const findings = [];
+const warnings = [];
 const add = (msg) => findings.push(msg);
+const warn = (msg) => warnings.push(msg);
 
 if (!hasFrontMatter) add('front matter: missing');
 if (fm.layout !== 'post') add('front matter: layout must be "post"');
@@ -80,7 +82,7 @@ lines.forEach((line, i) => {
   if (/^references$/i.test(text) && level === 2) hasReferences = true;
   const words = text.split(/\s+/).slice(1);
   const capped = words.filter((w) => /^[A-Z][a-z]{2,}$/.test(w));
-  if (capped.length >= 2) add(`line ${n}: heading may not be sentence-case (${capped.join(', ')}); ignore if proper nouns`);
+  if (capped.length >= 2) warn(`line ${n}: heading may not be sentence-case (${capped.join(', ')}); ignore if proper nouns`);
 });
 
 if (inFence) add(`line ${fenceStart}: unclosed code block`);
@@ -95,6 +97,8 @@ if (first && /^(in this (post|article)|this (post|article))\b/i.test(first.trim(
 if (findings.length) {
   console.log(`${path}: ${findings.length} finding(s)`);
   findings.forEach((f) => console.log(`- ${f}`));
-  process.exit(1);
 }
-console.log(`${path}: OK`);
+// Warnings never change the exit code: the heading heuristic cannot tell proper nouns from capitalisation mistakes.
+warnings.forEach((w) => console.log(`${path}: warning: ${w}`));
+if (findings.length) process.exit(1);
+if (!warnings.length) console.log(`${path}: OK`);

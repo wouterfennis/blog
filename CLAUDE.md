@@ -110,8 +110,12 @@ Slash commands (`.claude/skills/`), all manually invoked:
 
 Token-saving scripts (`.claude/scripts/`, zero-token deterministic work):
 `npm run check:post -- <path>` lists checklist violations for one post (exit 1 when any),
-`npm run posts:index` prints one line per post (date-slug, categories, title, tags).
+`npm run posts:index` prints one line per post (date-slug, categories, title, tags),
+`npm run check:site` crawls the built `_site` (links, images, titles, descriptions, H1, JSON-LD, sitemap),
+`npm run images:optimize` converts PNG/JPEG over 300 KB (front matter images to JPEG, others to WebP) and updates references.
 `settings.json` denies reads of `node_modules`, `_site`, `vendor`, `.bundle` and the lock files.
 
 Commands: `npm run lint:md` (also runs automatically via a hook after Markdown edits),
 `bundle exec jekyll build` to verify the site builds.
+
+CI: `.github/workflows/site-checks.yml` runs on every pull request (build, `check:site`, `check:post` on changed posts and Lighthouse CI with the thresholds in `lighthouserc.json`). More background in `docs/`.

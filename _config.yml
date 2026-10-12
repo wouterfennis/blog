@@ -99,3 +99,4 @@ exclude:
   - vendor
   - ISSUE-54-PLAN.md
   - docs
+  - lighthouserc.json

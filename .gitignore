@@ -9,3 +9,6 @@ node_modules/
 .vs/
 # Claude Code local settings
 .claude/settings.local.json
+
+# Lighthouse CI reports
+.lighthouseci/

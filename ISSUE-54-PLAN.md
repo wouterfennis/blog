@@ -15,10 +15,10 @@ Status: `[ ]` open, `[x]` done, `[-]` skipped.
 - [x] 8. External identity consistency and certification links [19]
 - [x] 9. Content freshness review [21]
 - [x] 10. Content gaps and topic ideas [14]
-- [ ] 11. Automated validation in CI [23]
+- [x] 11. Automated validation in CI [23]
 - [ ] 12. SEO and GEO documentation [24]
 - [ ] 13. Search Console and Bing monitoring baseline [20]
-- [ ] 14. Should we do something with this Lighthouse library inside a build pipeline etc?
+- [x] 14. Should we do something with this Lighthouse library inside a build pipeline etc?
 
 ## Working agreement
 
@@ -91,3 +91,11 @@ Findings and decisions are added below as each point is worked.
 
 - `docs/content-ideas.md`: four ideas recorded (Claude Code in a blog repo, AI search for a Jekyll blog, Lighthouse and images, release-please for a blog), each with category, search intent, angle, first-hand evidence, tags and internal links. Experience sections are left for the author to write.
 - Not recorded (author did not pick them): Azure Dev Conference 2025 review, Service Bus vs SQL managed identity, Scrum Master AI workflows.
+
+### Point 11 and 14 (done)
+
+- `npm run check:site` (`.claude/scripts/check-site.mjs`): crawl of the built site; broken links and assets, missing anchors, `og:image` targets, sitemap URLs, title, description, canonical, single H1, duplicate titles, JSON-LD validity and required files. Exit code 1 on findings. Verified on the real build and on a deliberately broken page.
+- `check:post`: the heading sentence-case heuristic is now a warning (never fails), so proper nouns such as "Wheel of Misfortune" do not break CI; all 14 posts pass.
+- New `.github/workflows/site-checks.yml` for pull requests (deploy.yml unchanged): build, `check:site`, `check:post` on changed posts, Lighthouse CI, reports uploaded as an artifact. Not run on GitHub yet; every step was run locally.
+- Lighthouse CI (`lighthouserc.json`, `npx @lhci/cli`, no package.json dependency, 4 URLs, 3 runs): thresholds performance 0.8, accessibility 0.95, best practices 0.9, SEO 0.95. A single local run scored the home page 0.84 for performance, so the performance threshold is deliberately loose; tighten it once CI numbers are known. Reports stay in the artifact (no public upload).
+- Plan point 14 (Lighthouse in the pipeline) is answered by this setup.
