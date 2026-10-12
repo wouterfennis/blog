@@ -37,7 +37,7 @@ What is the benefit of mapping the stakeholders and their motivations in the fir
 
 Before you as an architect or software engineer start making decisions and implementations that have consequences in the long run, you have to be able to reference the initial needs of the stakeholders that pay and use the project that will be delivered.
 
-Building up a diagram and giving insights into this should always be worth the investment. ArchiMate has a [complete definition](https://pubs.opengroup.org/architecture/archimate2-doc/) of the motivation layer. In this blog post I will use a limited example and it will be describing the steps through my personal experience.
+Building up a diagram and giving insights into this should always be worth the investment. ArchiMate has a [complete definition](https://www.opengroup.org/archimate-forum/archimate-overview) of the motivation layer. In this blog post I will use a limited example and it will be describing the steps through my personal experience.
 
 ## Example
 
@@ -73,5 +73,5 @@ If you want more architecture inspiration, my [Technorama Netherlands 2023 revie
 
 ## References
 
-- [ArchiMate® 2.1 Specification](https://pubs.opengroup.org/architecture/archimate2-doc/)
+- [ArchiMate® Specification – The Open Group](https://www.opengroup.org/archimate-forum/archimate-overview)
 - [Archi – Open Source ArchiMate Modelling](https://www.archimatetool.com/)

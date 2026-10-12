@@ -12,8 +12,8 @@ Status: `[ ]` open, `[x]` done, `[-]` skipped.
 - [x] 5. Title and search-intent audit [10]
 - [x] 6. Performance: measure, heavy images, JavaScript, fonts [17]
 - [x] 7. Accessibility audit and fixes [18]
-- [ ] 8. External identity consistency and certification links [19]
-- [ ] 9. Content freshness review [21]
+- [x] 8. External identity consistency and certification links [19]
+- [x] 9. Content freshness review [21]
 - [ ] 10. Content gaps and topic ideas [14]
 - [ ] 11. Automated validation in CI [23]
 - [ ] 12. SEO and GEO documentation [24]
@@ -72,3 +72,17 @@ Findings and decisions are added below as each point is worked.
 - Colours: `$grey-color` #6b6b6b and `$brand-color` #1f66c6 (minima variables, set before the import), darker syntax-highlighting tokens, no opacity on tag pills. The site is effectively light only (minima 2.5.2 has no dark skin, so `skin: auto` does nothing); no dark-mode work was needed.
 - Added: skip-to-content link (own `_layouts/default.html`, a copy of the minima layout), larger nav and footer link targets, visible `:focus-visible` outlines, keyboard-focusable code blocks (`code-copy.js`).
 - Not covered by Lighthouse, worth a manual check: keyboard walk-through and a screen reader pass.
+
+### Point 8 (done, certification links deferred)
+
+- New `docs/identity.md`: canonical name, short and long title, bio snippets, expertise and consistency rules, plus a checklist for LinkedIn, GitHub and project READMEs. `docs` is excluded from the Jekyll build.
+- Certification verification links: author said "later". When the URLs are available, add them to the About list and `hasCredential.url` in `about.md`.
+
+### Point 9 (done)
+
+- Text edited in place, no update notes (author choice). Publication dates untouched.
+  - SonarQube post: tasks `@5` to `@8`, `scannerMode: 'MSBuild'` to `'dotnet'` (both checked against the current SonarQube docs), reference URLs moved to `docs.sonarsource.com` (both fetched OK).
+  - Managed identities post: Azure AD to Microsoft Entra ID (first mention says "formerly Azure AD"). Left alone on purpose: the legacy permission name "Azure Active Directory Graph > Directory.ReadAll" and the titles of external reference links. The permission has a Microsoft Graph equivalent: please verify and update by hand.
+  - NuGet client post: `net6.0` to `net8.0` in the csproj snippet. The linked blogExamples repository may still target net6.0.
+  - ArchiMate post: both links now point at the Open Group ArchiMate Forum overview instead of the 2.1 document (the pubs.opengroup.org spec pages sit behind a login redirect for tools).
+- Post header shows "Updated <date>" when `last_modified_at` differs from `date`; 12 posts carry 2026-10-12.

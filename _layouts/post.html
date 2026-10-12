@@ -12,6 +12,9 @@ layout: default
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         {{ page.date | date: date_format }}
       </time>
+      {%- if page.last_modified_at and page.last_modified_at != page.date -%}
+      · Updated <time class="dt-updated" datetime="{{ page.last_modified_at | date_to_xmlschema }}">{{ page.last_modified_at | date: date_format }}</time>
+      {%- endif %}
       · {% include reading-time.html post_content=content %}
       {%- if page.author -%}
         • <span class="p-author h-card">{{ page.author }}</span>

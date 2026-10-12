@@ -98,3 +98,4 @@ exclude:
   - .github
   - vendor
   - ISSUE-54-PLAN.md
+  - docs

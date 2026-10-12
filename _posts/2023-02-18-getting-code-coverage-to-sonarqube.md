@@ -82,11 +82,11 @@ There is probably still a mismatch in where SonarQube is trying to look for the 
 The last hurdle is fine-tuning your pipeline so that SonarQube will find all the metric files that you have just created. Following the documentation of SonarQube itself, the pipeline can look something like this:
 
 ```yaml
-- task: SonarQubePrepare@5
+- task: SonarQubePrepare@8
   displayName: SonarQube prepare
   inputs:
     SonarQube: 'SonarQubeServiceConnection'
-    scannerMode: 'MSBuild'
+    scannerMode: 'dotnet'
     projectKey: woutercompiles.it
 
 - task: DotNetCoreCLI@2
@@ -104,10 +104,10 @@ The last hurdle is fine-tuning your pipeline so that SonarQube will find all the
     arguments: '--no-build -c Release'
     publishTestResults: true
 
-- task: SonarQubeAnalyze@5
+- task: SonarQubeAnalyze@8
   displayName: SonarQube start analyse
 
-- task: SonarQubePublish@5
+- task: SonarQubePublish@8
   displayName: SonarQube publish analyse
   inputs:
     pollingTimeoutSec: '300'
@@ -148,11 +148,11 @@ And now we can finally see our Coverage Metric in the SonarQube server
 Our final YAML pipeline file now looks like this:
 
 ```yaml
-- task: SonarQubePrepare@5
+- task: SonarQubePrepare@8
   displayName: SonarQube prepare
   inputs:
     SonarQube: 'SonarQubeServiceConnection'
-    scannerMode: 'MSBuild'
+    scannerMode: 'dotnet'
     projectKey: woutercompiles.it
     extraproperties: |
       sonar.cs.vstest.reportsPaths=$(Agent.TempDirectory)/**/*.trx
@@ -173,10 +173,10 @@ Our final YAML pipeline file now looks like this:
     arguments: '--no-build -c Release --collect "Code Coverage;Format=Xml"'
     publishTestResults: true
 
-- task: SonarQubeAnalyze@5
+- task: SonarQubeAnalyze@8
   displayName: SonarQube start analyse
 
-- task: SonarQubePublish@5
+- task: SonarQubePublish@8
   displayName: SonarQube publish analyse
   inputs:
     pollingTimeoutSec: '300'
@@ -190,6 +190,6 @@ Coverage only tells you which code your tests execute, not whether they assert t
 
 ## References
 
-- [SonarQube – .NET test coverage](https://docs.sonarqube.org/9.7/analyzing-source-code/test-coverage/dotnet-test-coverage/)
-- [SonarQube extension for Azure DevOps](https://docs.sonarqube.org/9.6/analyzing-source-code/scanners/sonarqube-extension-for-azure-devops/)
+- [SonarQube – .NET test coverage](https://docs.sonarsource.com/sonarqube-server/analyzing-source-code/test-coverage/dotnet-test-coverage)
+- [SonarQube extension for Azure DevOps](https://docs.sonarsource.com/sonarqube-server/analyzing-source-code/scanners/sonarqube-extension-for-azure-devops)
 - [DotNetCoreCLI@2 – .NET Core v2 task](https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/dotnet-core-cli-v2?view=azure-pipelines)

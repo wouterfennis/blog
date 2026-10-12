@@ -141,7 +141,7 @@ To make the prepared client available through NuGet we need to declare this in t
 
 ```xml
 <PropertyGroup>
-  <TargetFramework>net6.0</TargetFramework>
+  <TargetFramework>net8.0</TargetFramework>
   <ImplicitUsings>enable</ImplicitUsings>
   <Nullable>enable</Nullable>
   <AssemblyName>Client</AssemblyName>
