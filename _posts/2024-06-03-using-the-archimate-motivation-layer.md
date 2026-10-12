@@ -5,10 +5,10 @@ description: "How to use the ArchiMate motivation layer to map stakeholder goals
 date: 2024-06-03
 categories: [Architecture]
 image: /assets/images/2024/05/Organisational-chart-lego.jpg
-tags: [archi, archi tool, archimate, architecture, enterprise architecture, examples, modeling, motivation layer, requirements, stakeholders]
+tags: [archi, archimate, architecture, enterprise architecture, modeling, motivation layer, requirements, stakeholders]
 ---
 
-How often did you ask yourself during a project: "Why am I doing this again?". You have to take a step back, zoom out of the technicalities and look at the written requirements or talk with the stakeholders of your project. Often discovering that you had made an assumption about the underlying reasons some work had to be done or in a certain way — halting the workflow of a team member to get the reasoning behind a change or addition.
+How often did you ask yourself during a project: "Why am I doing this again?". You have to take a step back, zoom out of the technicalities and look at the written requirements or talk with the stakeholders of your project. Often discovering that you had made an assumption about the underlying reasons some work had to be done or in a certain way — halting the workflow of a team member to get the reasoning behind a change or addition. The ArchiMate motivation layer can help prevent exactly that.
 
 ![Featured image for 2024-06-03-using-the-archimate-motivation-layer]({{ '/assets/images/2024/05/Organisational-chart-lego.jpg' | relative_url }})
 
@@ -18,7 +18,7 @@ Archimate is a very large modeling language. Too large to fit in a single blog p
 
 So how would you start mapping this diagram? The challenge during these initial impressions or talks with the stakeholders is to not dive straight into the problems, challenges or even solutions that might already be on the table. First we have to get a clear picture of who the stakeholders are in the organisation, including who may or may not benefit from the project. Don't narrow the scope just yet, this can always be done later.
 
-## Why
+## Why use the ArchiMate motivation layer
 
 What is the benefit of mapping the stakeholders and their motivations in the first place? I would say it often comes down to delivering the right thing, in the right timing under the right circumstances.
 

@@ -5,10 +5,10 @@ description: "Practical advice for Scrum teams on preparing for the summer break
 date: 2023-09-07
 categories: [Scrum]
 image: /assets/images/2023/09/camping-1024x682.jpg
-tags: [agile, knowledge, scrum, sprint, sprint planning, storming, summer break, team, velocity]
+tags: [agile, knowledge, scrum, sprint, sprint planning, storming, summer break, velocity]
 ---
 
-It's something people can look forward to months in advance: Good weather, nice scenery, not having to think about work, and always a bit on the short side once it's coming to an end. The Summer Break. Although let's not forget the heroic colleagues that stay behind, plowing on, waiting for the postcard you always forget to send from your destination. In this article I'll zoom in on how a team can prepare itself for this period and how to get back together in the original formation in the months that follow.
+It's something people can look forward to months in advance: Good weather, nice scenery, not having to think about work, and always a bit on the short side once it's coming to an end. The Summer Break. Although let's not forget the heroic colleagues that stay behind, ploughing on, waiting for the postcard you always forget to send from your destination. In this article I'll zoom in on how a team can prepare itself for this period and how to get back together in the original formation in the months that follow.
 
 ![Featured image for 2023-09-07-scrum-and-the-summer-break]({{ '/assets/images/2023/09/camping-1024x682.jpg' | relative_url }})
 

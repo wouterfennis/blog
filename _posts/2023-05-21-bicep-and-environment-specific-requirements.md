@@ -8,7 +8,7 @@ image: /assets/images/2023/05/bicep.png
 tags: [azure, bicep, deployment, environments, infrastructure as code, json, parameters]
 ---
 
-Infrastructure as code, the eternal promise of stability, shared understanding and high maintainability. Often it starts out that way. You start writing the first components, tie them together in a procedure. It runs excellently in the development environment. Just one click away from rolling it out in other environments. But then you realize you can't.
+Infrastructure as code, the eternal promise of stability, shared understanding and high maintainability. Often it starts out that way. You start writing the first components, tie them together in a Bicep template. It runs excellently in the development environment. Just one click away from rolling it out in other environments. But then you realize you can't.
 
 ![Featured image for 2023-05-21-bicep-and-environment-specific-requirements]({{ '/assets/images/2023/05/bicep.png' | relative_url }})
 

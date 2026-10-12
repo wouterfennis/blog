@@ -5,7 +5,7 @@ description: "How to use the Verify .NET library for snapshot testing complex ou
 date: 2023-03-27
 categories: [Programming]
 image: /assets/images/2023/03/archive-1024x577.png
-tags: [.net, assertions, c#, diff tool, file, snapshot, structure, testing, unit tests, verify]
+tags: [.net, assertions, c#, diff tool, snapshot testing, testing, unit tests, verify]
 ---
 
 Have you ever programmed something that had to output a string or file into a specific format? Whether it's CSV, a markup language or worse.. position based text, I've written many ugly unit tests to compare unreadable output to unreadable expected outcomes. Fortunately there is an alternative: Snapshot Testing. And with a library like [Verify](https://github.com/VerifyTests/Verify), it's actually manageable.
@@ -26,7 +26,7 @@ Verify is a library that simplifies the assertion of these complex information o
 
 Verify will compare the snapshot from now on with what it receives from your test run. If there are differences in even the slightest details, it will bring up any installed 'diff tool' present and point out the differences between both files. From this point the developer makes up his/her mind to either fix the production code to match the snapshot again, or to update the snapshot to make the test green again during the next testrun.
 
-## Pros and Cons
+## Pros and cons
 
 I've used this tool during an actual customer project in a multidisciplinary team. We had a fitting use case for it because our system had to output different types of files that had to match specific formats. For this use case it is almost a no-brainer to use snapshot testing.
 
@@ -40,7 +40,7 @@ This however did not work out as we anticipated. I've noticed that as time progr
 
 ## Conclusion
 
-Snapshot testing has really opened my eyes to a new tool to use when developing complex software. It is fast, reliable and easy to integrate into an existing system and team. I do recommend it for validating file formats and structure, I don't recommend it for testing complex mapping between objects as human error will eventually decrease the reliability.
+Snapshot testing has really opened my eyes to a new tool to use when developing complex software. It is fast, reliable and easy to integrate into an existing system and team. I do recommend it for validating file formats and structure, I don't recommend it for testing complex mapping between objects as human error will eventually decrease the reliability. If you want to see how much of your code such tests actually cover, have a look at [Getting Code Coverage to SonarQube](/2023/02/18/getting-code-coverage-to-sonarqube/).
 
 ## References
 

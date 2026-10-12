@@ -5,7 +5,7 @@ description: "How to secure Azure SQL Server databases by adding Managed Identit
 date: 2023-04-19
 categories: [CI CD, Programming]
 image: /assets/images/2023/04/Azure-SQL-MI.png
-tags: [authentication, authorization, azure, azure ad, azure devops, entra id, managed identities, powershell, role assignment, security, sql, sql server]
+tags: [authentication, authorization, azure, azure devops, managed identities, powershell, security, sql server]
 ---
 
 Deploying infrastructure to Azure is easy enough these days with Azure Powershell, CLI or [Bicep](/2023/05/21/bicep-and-environment-specific-requirements/). Making interactions between infrastructure components secure is also facilitated in Azure with Managed Identities for example. Databases however, often have their own authentication and authorization internally which is out of reach for Bicep and ARM templates. How can you secure your dynamically created SQL Server databases in Azure?
@@ -16,7 +16,7 @@ Deploying infrastructure to Azure is easy enough these days with Azure Powershel
 
 For this post we need to place ourselves in a context where there is a database and some (web) application involved that need to communicate with each other in a secure way. Because Managed Identities is a promoted solution within Azure for secure interaction for all kinds of Azure products, we want to use that as well. We'd rather not have separate credentials for just the database connection. Connection Strings with secrets in them are also out of the question, because our imaginary company states that that is not compliant.
 
-![The landscape]({{ '/assets/images/2023/04/mi-landschape.png' | relative_url }})
+![Diagram of the landscape: an app service and a SQL Server database that must communicate securely using a managed identity]({{ '/assets/images/2023/04/mi-landschape.png' | relative_url }})
 
 In this scenario we've already set up a connection with a Service Bus that uses a managed identity + a role assignment to exclusively give access to the app service. Now we want to do something similar for the SQL Server connection.
 
@@ -138,7 +138,7 @@ The last important step is to execute the above PowerShell under the identity wh
 
 The end result is a registered managed identity in SQL Server:
 
-![Query result]({{ '/assets/images/2023/04/query-result.png' | relative_url }})
+![Query result listing the managed identities registered as external users in SQL Server]({{ '/assets/images/2023/04/query-result.png' | relative_url }})
 
 In this example two external users have been added, which are Managed Identities registered in Azure AD.
 

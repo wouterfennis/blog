@@ -5,14 +5,14 @@ description: "How to implement Client Certificate Authentication in ASP.NET to s
 date: 2024-06-16
 categories: [Programming]
 image: /assets/images/2024/06/client-certificate-blog.jpg
-tags: [api, asp.net, authentication, azure app service, client certificates, kestrel, mutual tls, security, ssl, x509]
+tags: [api, asp.net, authentication, azure app service, client certificates, kestrel, mutual tls, security]
 ---
 
 Authentication is often a broad, difficult and not straightforward topic to work on as a software engineer. There are endless options to secure your application and just as many ways to implement each option. And once your team has it all worked out, the business wants to onboard a new client that doesn't want to or cannot follow the previously built secure route. Just as with functional requirements, security requirements are rarely static or require continuous maintenance and upgrading.
 
 ![Featured image for 2024-06-16-client-certificates-in-asp-net]({{ '/assets/images/2024/06/client-certificate-blog.jpg' | relative_url }})
 
-One aspect of security which I find interesting is Client Certificate Authentication. It may sound a bit old school to send along a certificate with your request, with the JWT authentication methods that are in fashion for the past years. However, I think it still has a valuable purpose to fulfill.
+One aspect of security which I find interesting is Client Certificate Authentication. It may sound a bit old school to send along a certificate with your request, with the JWT authentication methods that are in fashion for the past years. However, I think it still has a valuable purpose to fulfill. For another angle on authentication in Azure, see my post on [SQL Server authentication and authorization with managed identities](/2023/04/19/sql-server-authentication-and-authorization-on-azure-with-managed-identities/).
 
 ## What is client certificate authentication?
 
@@ -56,7 +56,7 @@ The next steps depend on the hosting model your API is running on. In an Azure A
 
 #### Extra steps required for certificate forwarding
 
-Certificate exchanges happen at a transport layer level. So we need to configure the kestrel server to request client certificates on incoming requests:
+Certificate exchanges happen at a transport layer level. So we need to configure the Kestrel server to request client certificates on incoming requests:
 
 ```csharp
 public class Program
@@ -92,7 +92,7 @@ We need to make sure that request headers are forwarded to your startup logic. W
         });
 ```
 
-If the certificate is put forward through a header it needs to be translated back to a certificate instance. With the following block the header key can be overwritten and the header value can be converted to a X509 certificate:
+If the certificate is put forward through a header it needs to be translated back to a certificate instance. With the following block the header key can be overwritten and the header value can be converted to an X509 certificate:
 
 ```csharp
         // 3
@@ -176,19 +176,19 @@ From a code perspective, everything is now in place. But to try this out we need
 
 In a production scenario, you should use an actual certificate authority to sign your client certificates.
 
-After the certificate has been generated we can extract the thumbprint and configure it in the App settings of the API for later comparison. The self-signed root and client certificate are loaded into the keystore of your windows machine.
+After the certificate has been generated we can extract the thumbprint and configure it in the App settings of the API for later comparison. The self-signed root and client certificate are loaded into the keystore of your Windows machine.
 
 If we start up the API it will open the browser and, depending on your browser, a prompt will show asking for a Client Certificate to send along to the local running server. This is the first sign that our adjustment of the Kestrel server is actually working.
 
-![Select certificate]({{ '/assets/images/2024/06/client-certificate-blog.png' | relative_url }})
+![Browser prompt asking to select a client certificate for the ASP.NET API]({{ '/assets/images/2024/06/client-certificate-blog.png' | relative_url }})
 
 The browser will look into your personal certificate store to see if there are any certificates suitable for client authentication. Because the PowerShell script has already loaded it in, you're able to select it. Making API calls from this point onwards will succeed because the browser will make sure the certificate is passed along.
 
-![200 response]({{ '/assets/images/2024/06/image-3.png' | relative_url }})
+![Successful 200 response from the API after presenting a valid client certificate]({{ '/assets/images/2024/06/image-3.png' | relative_url }})
 
 If you would not select the certificate and go in without any, the request will be blocked as expected.
 
-![403 response]({{ '/assets/images/2024/06/image-2.png' | relative_url }})
+![403 response from the API when no client certificate is presented]({{ '/assets/images/2024/06/image-2.png' | relative_url }})
 
 ## Conclusion
 

@@ -4,7 +4,7 @@ title: "Getting Code Coverage to SonarQube"
 description: "How to get .NET code coverage and unit test results into SonarQube using Azure DevOps YAML pipelines with TRX and XML coverage files."
 date: 2023-02-18
 categories: [CI CD]
-tags: [.net, azure devops, c#, ci cd, code coverage, dotnet, pipeline, sonarqube, trx, unit tests, xml, yaml]
+tags: [sonarqube, code coverage, azure devops, .net, c#, unit tests, yaml, ci cd]
 image: /assets/images/2023/02/Sonarqube.webp
 ---
 
@@ -42,7 +42,7 @@ TRX files don't contain information about the production code that is being cove
 
 SonarQube uses TRX files to count the amount of unit tests that have been executed against your code. Although often you can let SonarQube scan your test code as well, it doesn't use it to count the unit tests themselves.
 
-## Measuring Code Coverage
+## Measuring code coverage
 
 With your production code and TRX files alone you can't yet determine the Code Coverage.
 
@@ -58,7 +58,7 @@ Code Coverage information can be outputted into different formats. In my experie
 dotnet test WouterCompiles.sln --collect "Code Coverage;Format=Xml"
 ```
 
-### You've got Coverage yet?
+### You've got coverage yet?
 
 With the above steps you have all the test information required to get the SonarQube metrics updated. Yet, often it still won't show up after starting the build pipeline again. Why?
 

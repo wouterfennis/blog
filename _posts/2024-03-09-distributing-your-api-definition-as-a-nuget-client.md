@@ -5,7 +5,7 @@ description: "How to serialize an ASP.NET API definition with Swagger, generate 
 date: 2024-03-09
 categories: [Programming]
 image: /assets/images/2024/03/distributingAPIs-Klein.jpg
-tags: [.net, api, asp.net, c#, client, code generation, distributing, http client, nswag, nuget, openapi, rest api, swagger]
+tags: [.net, api, asp.net, c#, nswag, nuget, openapi, swagger]
 ---
 
 Creating APIs is quite simple nowadays. You can have a functional API up and running in the Azure cloud within minutes. By using an OpenAPI library like Swagger to publish your API's definition, other systems can easily integrate and utilize its functionality. The real challenge, as with many programming aspects, lies in maintaining the software once other parties start using your API. To help your customers integrate with your API, but also to have some influence over the way the API is called, a client can be created on the maintainer side and distributed using a NuGet package.
@@ -73,7 +73,7 @@ First the swagger tooling is restored when this project is built for the first t
 
 ![Solution view with swagger.json visible in Client project](/assets/images/2024/03/image.png)
 
-### Generating the CSharp Client
+### Generating the CSharp client
 
 Here we will use NSwag to generate a C# class from the previously generated `swagger.json`. Specifically, the `NSwag.ApiDescription.Client` will do the job for us in the Client project.
 

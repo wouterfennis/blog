@@ -80,7 +80,7 @@ sequenceDiagram
 I had no experience with GitHub Pages, and I had no intention of reading up on it much beforehand. I gave Copilot the assignment to come up with a plan for a Git-based blog website that can be maintained as code.
 It immediately made the suggestion to set up Jekyll as a website generator that uses Markdown files as source input.
 It gives me the flexibility of content management, but all content can be edited from within Visual Studio Code, for example.
-All blog posts are placed in a `_posts` directory like source code.
+All blog posts are placed in a `_posts` directory like source code, and I keep the Markdown tidy with [markdownlint](/2025/05/19/markdownlint-a-developers-best-friend-for-cleaner-markdown/).
 
 ![The _posts directory containing all blog post Markdown files]({{ '/assets/images/2026/03/29/posts_folder.png' | relative_url }})
 
@@ -188,7 +188,7 @@ You are reading this blog post from the new website right now!
 
 ## Conclusion
 
-I'm genuinely impressed by the power of GitHub Copilot in an experiment like this. Within two days I was able to migrate my blog towards a new hosting provider, a new CMS (blog as code) solution and a new workflow of writing blog posts more effectively with the help of Copilot. I would recommend letting Copilot build a deterministic migration pipeline in normal circumstances, but if the project allows it — give it a try yourself.
+I'm genuinely impressed by the power of GitHub Copilot in an experiment like this (I wrote about [my earlier experience with GitHub Copilot in an open source project](/2025/11/14/my-experience-with-github-copilot-in-an-open-source-project/) before). Within two days I was able to migrate my blog towards a new hosting provider, a new CMS (blog as code) solution and a new workflow of writing blog posts more effectively with the help of Copilot. I would recommend letting Copilot build a deterministic migration pipeline in normal circumstances, but if the project allows it — give it a try yourself.
 
 ## References
 
