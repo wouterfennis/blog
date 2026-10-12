@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "Wheel of Misfortune"
+title: "Wheel of Misfortune: a team exercise for production incidents"
 description: "Prepare your DevOps team for production incidents with the Wheel of Misfortune — a Scrum exercise for disaster scenario planning and brainstorming."
 date: 2023-06-12
+last_modified_at: 2026-10-12
 categories: [Scrum]
 image: /assets/images/2023/06/Wheel_of_Fortune_logo-3.png
 tags: [brainstorming, devops, facilitation, incidents, operations, sre, team exercise, wheel of misfortune]

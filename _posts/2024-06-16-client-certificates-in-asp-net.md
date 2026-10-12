@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "Client certificates in ASP.NET"
+title: "Client certificate authentication in ASP.NET"
 description: "How to implement Client Certificate Authentication in ASP.NET to secure back-end-to-back-end communication with mutual TLS in Azure."
 date: 2024-06-16
+last_modified_at: 2026-10-12
 categories: [Programming]
 image: /assets/images/2024/06/client-certificate-blog.jpg
 tags: [api, asp.net, authentication, azure app service, client certificates, kestrel, mutual tls, security]

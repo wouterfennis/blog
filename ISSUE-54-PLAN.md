@@ -9,7 +9,7 @@ Status: `[ ]` open, `[x]` done, `[-]` skipped.
 - [x] 2. Homepage: expertise, featured articles, featured projects, topics [13]
 - [-] 3. Information architecture: topic and pillar pages, projects linked with articles [5, 6, 7, 12]
 - [x] 4. Article structure and first-hand experience for the remaining posts [8, 9]
-- [ ] 5. Title and search-intent audit [10]
+- [x] 5. Title and search-intent audit [10]
 - [ ] 6. Performance: measure, heavy images, JavaScript, fonts [17]
 - [ ] 7. Accessibility audit and fixes [18]
 - [ ] 8. External identity consistency and certification links [19]
@@ -50,3 +50,8 @@ Findings and decisions are added below as each point is worked.
 - Key takeaways plus a 2-question FAQ (front matter `faq:`) added to the remaining 9 posts, so all 14 posts now have both. Drafted from each post's own text; please review the wording.
 - Replaced the leftover `<!-- TODO: add references -->` placeholders: markdownlint post gets real references, Technorama review lists the two people it links to (Erwin Staal, Ian Cooper).
 - Not done on purpose: first-hand experience review (author skipped).
+
+### Point 5 (done)
+
+- All 8 proposed titles applied (author approved all): migrate, SonarQube, client certificates, Verify, Wheel of Misfortune, Bicep, Pizzaria, summer break. URLs unchanged; `last_modified_at` set.
+- Descriptions re-checked: all 14 are at most 160 characters. Only note: the migrate description says "self-hosted blog" while the title now says WordPress.

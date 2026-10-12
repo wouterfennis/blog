@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Bicep and environment specific requirements"
+title: "Handling environment-specific settings in Bicep"
 description: "Using environment stage variables in Bicep to manage environment-specific Azure infrastructure requirements without scattered conditional logic."
 date: 2023-05-21
 last_modified_at: 2026-10-12

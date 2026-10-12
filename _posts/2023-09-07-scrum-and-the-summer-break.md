@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Scrum and the summer break"
+title: "Scrum and the summer break: keeping your team on track"
 description: "Practical advice for Scrum teams on preparing for the summer break — knowledge handover, velocity planning, and getting back up to speed efficiently."
 date: 2023-09-07
 last_modified_at: 2026-10-12

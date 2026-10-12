@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "Snapshot testing with Verify"
+title: "Snapshot testing in .NET with Verify"
 description: "How to use the Verify .NET library for snapshot testing complex output in C# — a practical alternative to brittle, hard-to-read unit test assertions."
 date: 2023-03-27
+last_modified_at: 2026-10-12
 categories: [Programming]
 image: /assets/images/2023/03/archive-1024x577.png
 tags: [.net, assertions, c#, diff tool, snapshot testing, testing, unit tests, verify]

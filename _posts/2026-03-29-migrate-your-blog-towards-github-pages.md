@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "Migrate your blog towards GitHub Pages"
+title: "Migrate your WordPress blog to GitHub Pages with Jekyll"
 date: 2026-03-29
+last_modified_at: 2026-10-12
 featured: true
 categories: [CI CD, Programming]
 image: /assets/images/2026/03/featured-blog-migration.png
