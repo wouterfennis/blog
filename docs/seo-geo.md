@@ -37,7 +37,7 @@ Not built yet: topic or pillar pages, and links between projects and articles.
 ## Structured data (JSON-LD)
 
 | Page | Types | Source |
-|---|---|---|
+| --- | --- | --- |
 | All pages | `WebSite`, `Person` (with `sameAs`) | `jekyll-seo-tag`, `social:` in `_config.yml` |
 | Posts | `BlogPosting` (author, publisher, dates, `articleSection`) | `jekyll-seo-tag`, extended by `_plugins/post_structured_data.rb`; author URL from `_data/authors.yml` |
 | Posts, category pages, tag pages | `BreadcrumbList` | `_includes/breadcrumbs.html` (same data as the visible breadcrumbs) |
@@ -55,7 +55,7 @@ Rule: the visible content and the JSON-LD come from the same data, so they canno
 ## Discovery files
 
 | File | Purpose |
-|---|---|
+| --- | --- |
 | `robots.txt` | Crawler policy: search and answer bots allowed, bulk training crawlers blocked |
 | `sitemap.xml` | `jekyll-sitemap`; contains posts, categories, tags, projects and pages (not 404 or the llms files) |
 | `feed.xml` | `jekyll-feed`, full content, advertised in the page head |
@@ -85,7 +85,7 @@ Skip link, visible focus outlines, WCAG AA colour contrast (`$grey-color`, `$bra
 ## Validation
 
 | Check | Command | When |
-|---|---|---|
+| --- | --- | --- |
 | Markdown | `npm run lint:md` | After every Markdown edit (hook) and in CI |
 | One post | `npm run check:post -- _posts/<file>.md` | Before publishing; CI on changed posts |
 | Built site | `bundle exec jekyll build && npm run check:site` | Locally and in CI |

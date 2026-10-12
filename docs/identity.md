@@ -6,7 +6,7 @@ Use these exact wordings so search engines and AI systems see one consistent ent
 ## Facts
 
 | Item | Value |
-|---|---|
+| --- | --- |
 | Name | Wouter Fennis (always this spelling, no abbreviations) |
 | Short title | Software Engineer and Scrum Master |
 | Long title (About page, structured data) | Senior Software Engineer, Lead Developer and Scrum Master |
