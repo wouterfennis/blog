@@ -521,3 +521,32 @@
 .page-content img {
   height: auto;
 }
+
+.faq__question {
+  font-weight: 600;
+}
+
+.related-posts__item .post-link {
+  font-size: 1.1rem;
+}
+
+/* Labelled variant (about page): icon and name inside a bordered pill */
+.social-links--labelled {
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.social-links--labelled .social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 1rem 0.5rem 0.75rem;
+  border: 1px solid #e8e8e8;
+  border-radius: 2rem;
+  text-decoration: none;
+}
+
+.social-links--labelled .social-link__icon {
+  width: 24px;
+  height: 24px;
+}

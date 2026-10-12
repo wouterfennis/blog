@@ -65,7 +65,9 @@ You can also browse [all tags](/tags/).
 }
 </script>
 
-<div class="social-links">
-  <a href="{{ site.author.linkedin }}" class="social-link" title="LinkedIn" target="_blank" rel="noopener noreferrer"><img src="{{ '/assets/images/linkedin.svg' | relative_url }}" alt="LinkedIn" class="social-link__icon"></a>
-  <a href="{{ site.author.github }}" class="social-link" title="GitHub" target="_blank" rel="noopener noreferrer"><img src="{{ '/assets/images/github.svg' | relative_url }}" alt="GitHub" class="social-link__icon"></a>
+## Find me online
+
+<div class="social-links social-links--labelled">
+  <a href="{{ site.author.linkedin }}" class="social-link" target="_blank" rel="noopener noreferrer"><img src="{{ '/assets/images/linkedin.svg' | relative_url }}" alt="" class="social-link__icon"><span>LinkedIn</span></a>
+  <a href="{{ site.author.github }}" class="social-link" target="_blank" rel="noopener noreferrer"><img src="{{ '/assets/images/github.svg' | relative_url }}" alt="" class="social-link__icon"><span>GitHub</span></a>
 </div>

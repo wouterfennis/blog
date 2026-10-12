@@ -17,14 +17,14 @@ Authentication is often a broad, difficult and not straightforward topic to work
 
 ![Featured image for 2024-06-16-client-certificates-in-asp-net]({{ '/assets/images/2024/06/client-certificate-blog.jpg' | relative_url }})
 
+One aspect of security which I find interesting is Client Certificate Authentication. It may sound a bit old school to send along a certificate with your request, with the JWT authentication methods that are in fashion for the past years. However, I think it still has a valuable purpose to fulfill. For another angle on authentication in Azure, see my post on [SQL Server authentication and authorization with managed identities](/2023/04/19/sql-server-authentication-and-authorization-on-azure-with-managed-identities/).
+
 ## Key takeaways
 
 - Client certificates add mutual trust: the server also verifies who the client is, which fits back-end to back-end calls.
 - The main challenges are certificate rotation, secure storage on the client side, and cost.
 - I would not recommend them when the number of clients grows and the maintenance stays manual.
 - In ASP.NET the configuration is simple and well documented by Microsoft.
-
-One aspect of security which I find interesting is Client Certificate Authentication. It may sound a bit old school to send along a certificate with your request, with the JWT authentication methods that are in fashion for the past years. However, I think it still has a valuable purpose to fulfill. For another angle on authentication in Azure, see my post on [SQL Server authentication and authorization with managed identities](/2023/04/19/sql-server-authentication-and-authorization-on-azure-with-managed-identities/).
 
 ## What is client certificate authentication?
 

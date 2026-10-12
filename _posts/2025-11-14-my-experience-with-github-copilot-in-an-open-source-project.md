@@ -18,18 +18,18 @@ It is amazing how fast AI developments have led to fundamental changes in the de
 
 ![Featured image for 2025-11-14-my-experience-with-github-copilot-in-an-open-source-project]({{ '/assets/images/2025/11/banner-1024x534.png' | relative_url }})
 
+Recently, agentic AI in particular has become a popular step in programming functionality in new and existing software or even executing the functionality directly. Because developments are going so fast, I wanted to assess some of these new tools myself in a new experimental project, starting from nothing.
+
+For this project I wanted to put myself primarily into the position of 'architect' and 'requirements engineer.' Not as the programmer writing every line of code, but with Copilot agents taking the initiative of building the project.
+
+Both the GitHub Copilot Reviewer and I will review any software that is generated. This blog post is part of a series where I will recount the journey that I've made, things I have discovered and looking back each part of the way with my learnings.
+
 ## Key takeaways
 
 - As a single person with an idea, I could go from idea to planned GitHub issues very quickly with Copilot.
 - Review fatigue is real: I caught myself scanning Copilot's output instead of reading it.
 - Precise instructions with context and examples prevent scope creep better than short ones.
 - Working in a group would need a different setup, for example a group chat with Copilot as a participant.
-
-Recently, agentic AI in particular has become a popular step in programming functionality in new and existing software or even executing the functionality directly. Because developments are going so fast, I wanted to assess some of these new tools myself in a new experimental project, starting from nothing.
-
-For this project I wanted to put myself primarily into the position of 'architect' and 'requirements engineer.' Not as the programmer writing every line of code, but with Copilot agents taking the initiative of building the project.
-
-Both the GitHub Copilot Reviewer and I will review any software that is generated. This blog post is part of a series where I will recount the journey that I've made, things I have discovered and looking back each part of the way with my learnings.
 
 ## Project inspiration
 
