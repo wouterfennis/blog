@@ -1,0 +1,7 @@
+<aside class="author-card" aria-label="About the author">
+  <img class="author-card__image" src="{{ '/assets/images/wouter.jpg' | relative_url }}" alt="" width="64" height="64" loading="lazy">
+  <div>
+    <p class="author-card__name">Written by <strong>{{ site.author.name | escape }}</strong></p>
+    <p class="author-card__bio">{{ site.author.role | escape }} · <a href="{{ '/about/' | relative_url }}">About me</a> · <a href="{{ '/feed.xml' | relative_url }}">RSS</a></p>
+  </div>
+</aside>
