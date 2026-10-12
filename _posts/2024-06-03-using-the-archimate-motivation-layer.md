@@ -3,12 +3,18 @@ layout: post
 title: "Using the ArchiMate motivation layer"
 description: "How to use the ArchiMate motivation layer to map stakeholder goals, drivers, and priorities before making architecture decisions in a project."
 date: 2024-06-03
+last_modified_at: 2026-10-12
 categories: [Architecture]
 image: /assets/images/2024/05/Organisational-chart-lego.jpg
-tags: [archi, archi tool, archimate, architecture, enterprise architecture, examples, modeling, motivation layer, requirements, stakeholders]
+tags: [archi, archimate, architecture, enterprise architecture, modeling, motivation layer, requirements, stakeholders]
+faq:
+  - question: "What is the ArchiMate motivation layer?"
+    answer: "It is a level of ArchiMate that doesn't look at systems or applications but at the motivations of stakeholders: their drivers, the assessments of the current situation, goals and outcomes."
+  - question: "Why map stakeholder motivations before making architecture decisions?"
+    answer: "So you can refer back to the needs of the people who pay for and use the project. It comes down to delivering the right thing, at the right time, under the right circumstances."
 ---
 
-How often did you ask yourself during a project: "Why am I doing this again?". You have to take a step back, zoom out of the technicalities and look at the written requirements or talk with the stakeholders of your project. Often discovering that you had made an assumption about the underlying reasons some work had to be done or in a certain way — halting the workflow of a team member to get the reasoning behind a change or addition.
+How often did you ask yourself during a project: "Why am I doing this again?". You have to take a step back, zoom out of the technicalities and look at the written requirements or talk with the stakeholders of your project. Often discovering that you had made an assumption about the underlying reasons some work had to be done or in a certain way — halting the workflow of a team member to get the reasoning behind a change or addition. The ArchiMate motivation layer can help prevent exactly that.
 
 ![Featured image for 2024-06-03-using-the-archimate-motivation-layer]({{ '/assets/images/2024/05/Organisational-chart-lego.jpg' | relative_url }})
 
@@ -18,13 +24,20 @@ Archimate is a very large modeling language. Too large to fit in a single blog p
 
 So how would you start mapping this diagram? The challenge during these initial impressions or talks with the stakeholders is to not dive straight into the problems, challenges or even solutions that might already be on the table. First we have to get a clear picture of who the stakeholders are in the organisation, including who may or may not benefit from the project. Don't narrow the scope just yet, this can always be done later.
 
-## Why
+## Key takeaways
+
+- The ArchiMate motivation layer maps stakeholders, their drivers, assessments, goals and outcomes, not systems or applications.
+- Start with who the stakeholders are before diving into problems or solutions.
+- Outcomes can influence a goal positively or negatively, which exposes conflicting interests and helps you prioritise.
+- A good diagram reflects a long-running strategy: if it needs replacing every month, the vision behind it may be unclear.
+
+## Why use the ArchiMate motivation layer
 
 What is the benefit of mapping the stakeholders and their motivations in the first place? I would say it often comes down to delivering the right thing, in the right timing under the right circumstances.
 
 Before you as an architect or software engineer start making decisions and implementations that have consequences in the long run, you have to be able to reference the initial needs of the stakeholders that pay and use the project that will be delivered.
 
-Building up a diagram and giving insights into this should always be worth the investment. ArchiMate has a [complete definition](https://pubs.opengroup.org/architecture/archimate2-doc/) of the motivation layer. In this blog post I will use a limited example and it will be describing the steps through my personal experience.
+Building up a diagram and giving insights into this should always be worth the investment. ArchiMate has a [complete definition](https://www.opengroup.org/archimate-forum/archimate-overview) of the motivation layer. In this blog post I will use a limited example and it will be describing the steps through my personal experience.
 
 ## Example
 
@@ -56,7 +69,9 @@ What we have created now is a map of interests, problems, current state of affai
 
 Diagrams like these don't have to be static, but they should reflect a long-running strategy in the business. Updating and replacing these components every month would indicate that the roles involved do not have a clear vision for the coming years. Or there might be an underlying driver and assessment that is disrupting stability.
 
+If you want more architecture inspiration, my [Technorama Netherlands 2023 review](/2023/10/15/technorama-netherlands-2023-in-review/) covers several architecture sessions.
+
 ## References
 
-- [ArchiMate® 2.1 Specification](https://pubs.opengroup.org/architecture/archimate2-doc/)
+- [ArchiMate® Specification – The Open Group](https://www.opengroup.org/archimate-forum/archimate-overview)
 - [Archi – Open Source ArchiMate Modelling](https://www.archimatetool.com/)

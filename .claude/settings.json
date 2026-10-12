@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run lint:md)",
+      "Bash(npm run lint:md:fix)",
+      "Bash(bundle exec jekyll build*)",
+      "Bash(gh issue list*)",
+      "Bash(gh issue view*)",
+      "Bash(gh label list*)",
+      "Bash(date *)",
+      "Bash(npm run check:post*)",
+      "Bash(npm run posts:index)"
+    ],
+    "deny": [
+      "Read(./node_modules/**)",
+      "Grep(./node_modules/**)",
+      "Read(./_site/**)",
+      "Grep(./_site/**)",
+      "Read(./vendor/**)",
+      "Grep(./vendor/**)",
+      "Read(./.bundle/**)",
+      "Grep(./.bundle/**)",
+      "Read(./package-lock.json)",
+      "Read(./Gemfile.lock)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/lint-md.mjs\""
+          }
+        ]
+      }
+    ]
+  }
+}

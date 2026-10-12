@@ -7,3 +7,8 @@ Gemfile.lock
 node_modules/
 .bundle/
 .vs/
+# Claude Code local settings
+.claude/settings.local.json
+
+# Lighthouse CI reports
+.lighthouseci/

@@ -1,51 +1,65 @@
 ---
 layout: post
-title: "SQL Server Authentication and Authorization on Azure with Managed Identities"
+title: "SQL Server authentication and authorization on Azure with managed identities"
 description: "How to secure Azure SQL Server databases by adding Managed Identity users and roles through automated Azure DevOps pipelines."
 date: 2023-04-19
+last_modified_at: 2026-10-12
 categories: [CI CD, Programming]
 image: /assets/images/2023/04/Azure-SQL-MI.png
-tags: [authentication, authorization, azure, azure ad, azure devops, entra id, managed identities, powershell, role assignment, security, sql, sql server]
+tags: [authentication, authorization, azure, azure devops, managed identities, powershell, security, sql server]
+faq:
+  - question: "Can I use a managed identity to connect to SQL Server on Azure?"
+    answer: "Yes. The managed identity lives in Microsoft Entra ID, so you add a reference to it as a user in the database and give it the roles it needs. The application then connects without a stored password."
+  - question: "Why can't I give a managed identity access to SQL Server with a role assignment?"
+    answer: "SQL Server has no role assignment to give access to a specific database. Users and authorizations are configured inside the database itself, so you have to run a SQL command to register the managed identity."
 ---
 
 Deploying infrastructure to Azure is easy enough these days with Azure Powershell, CLI or [Bicep](/2023/05/21/bicep-and-environment-specific-requirements/). Making interactions between infrastructure components secure is also facilitated in Azure with Managed Identities for example. Databases however, often have their own authentication and authorization internally which is out of reach for Bicep and ARM templates. How can you secure your dynamically created SQL Server databases in Azure?
 
 ![Featured image for 2023-04-19-sql-server-authentication-and-authorization-on-azure-with-managed-identities]({{ '/assets/images/2023/04/Azure-SQL-MI.png' | relative_url }})
 
+## Key takeaways
+
+- SQL Server has no Azure role assignment for database access: you register the managed identity as a database user with a SQL command.
+- There are two ways to create that user: from the external provider, or by calculating the SID yourself.
+- Automate the command, because someone has to be the first administrator who is allowed to add users.
+- Once registered, the application connects without a password, which means one less secret in Key Vault or app settings.
+- Expect to experiment: the Microsoft documentation contains many disclaimers and is not always obvious.
+
 ## Context
 
 For this post we need to place ourselves in a context where there is a database and some (web) application involved that need to communicate with each other in a secure way. Because Managed Identities is a promoted solution within Azure for secure interaction for all kinds of Azure products, we want to use that as well. We'd rather not have separate credentials for just the database connection. Connection Strings with secrets in them are also out of the question, because our imaginary company states that that is not compliant.
 
-![The landscape]({{ '/assets/images/2023/04/mi-landschape.png' | relative_url }})
+![Diagram of the landscape: an app service and a SQL Server database that must communicate securely using a managed identity]({{ '/assets/images/2023/04/mi-landschape.png' | relative_url }})
 
 In this scenario we've already set up a connection with a Service Bus that uses a managed identity + a role assignment to exclusively give access to the app service. Now we want to do something similar for the SQL Server connection.
 
 As mentioned in the introduction, SQL Server doesn't have Role Assignment functionality to give access to a specific database, let alone limit the actions the connection may perform on the database. Users and authorizations are configured in the Security section of the database. Our goal is to add our Managed Identity as a user and provide it with the `db_owner` role.
 
-## Register users in SQL Server
+## How do you register a managed identity in SQL Server?
 
-A Managed Identity source of truth is within Azure AD. If we want to add a Managed Identity as a user to a SQL database we are not making a copy, we are just making a reference where the incoming identity can be looked up.
+A Managed Identity source of truth is within Microsoft Entra ID (formerly Azure AD). If we want to add a Managed Identity as a user to a SQL database we are not making a copy, we are just making a reference where the incoming identity can be looked up.
 
-To add users to a database, we have to perform a SQL command in the database itself. There is simply no other way. This will cause a classic Chicken and Egg problem. When a database is created it's completely empty including the registered users. So who is allowed to add the first user when no one is allowed access? When the SQL Server itself is configured, an administrator has to be appointed to perform the initial actions. This can be a basic username and password combination, or an existing Azure AD user can be assigned as administrator. This will be our entry point to configure the application-level authorizations.
+To add users to a database, we have to perform a SQL command in the database itself. There is simply no other way. This will cause a classic Chicken and Egg problem. When a database is created it's completely empty including the registered users. So who is allowed to add the first user when no one is allowed access? When the SQL Server itself is configured, an administrator has to be appointed to perform the initial actions. This can be a basic username and password combination, or an existing Microsoft Entra ID user can be assigned as administrator. This will be our entry point to configure the application-level authorizations.
 
 A SQL Command can be executed through multiple routes. But we don't want to give this responsibility to a human. Everything should be automated by design. During my own implementation I've noticed that there are two types of commands that can be executed that will have the same end result.
 
 ### Option 1: From external
 
-This approach is the **smoothest** looking way of adding a user that originates from Azure AD:
+This approach is the **smoothest** looking way of adding a user that originates from Microsoft Entra ID:
 
 ```sql
 CREATE USER [NameOfManagedIdentity] FROM EXTERNAL PROVIDER;
 ```
 
-What happens under the hood is that basically we're saying to SQL Server "Here is a name of a managed identity, it originates from in an external provider (read, Azure AD). Go look it up and store the details internally."
+What happens under the hood is that basically we're saying to SQL Server "Here is a name of a managed identity, it originates from in an external provider (read, Microsoft Entra ID). Go look it up and store the details internally."
 
 There are a few prerequisites to get this working though:
 
-- The SQL Command itself has to be performed under a session of an identity in Azure AD
+- The SQL Command itself has to be performed under a session of an identity in Microsoft Entra ID
 - The identity performing the query needs to have the 'Azure Active Directory Graph > Directory.ReadAll' permission
 
-Unfortunately, I didn't get this implementation working properly myself at first. Although I executed the command under an identity registered in Azure AD, with the required permissions and even more as described in [Microsoft's own documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/authentication-azure-ad-user-assigned-managed-identity?view=azuresql#permissions). It didn't have enough permission to lookup the details of the Managed Identity during the execution of the command. It kept failing with the same error message.
+Unfortunately, I didn't get this implementation working properly myself at first. Although I executed the command under an identity registered in Microsoft Entra ID, with the required permissions and even more as described in [Microsoft's own documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/authentication-azure-ad-user-assigned-managed-identity?view=azuresql#permissions). It didn't have enough permission to lookup the details of the Managed Identity during the execution of the command. It kept failing with the same error message.
 
 After a while I discovered that it doesn't matter what privileges the identity has that executes the SQL command, the identity of the SQL Server itself has to be granted Directory Reader access in order to lookup the AD user and register it within SQL Server.
 
@@ -57,7 +71,7 @@ Because option 1 didn't work for me at first, luckily there was an alternative w
 CREATE USER [$managedIdentityName] WITH DEFAULT_SCHEMA=[dbo], SID = $sid, TYPE = E;
 ```
 
-The AD lookup is needed to retrieve a unique identifier to store with the new SQL User — this is called a SID. When later authentication attempts take place, the identity can be verified. This identifier can be calculated locally without the need of an Azure AD within SQL Server. This way, there is no need for a runtime lookup during the registration, yet the managed identity of the application will still be recognized and allowed access.
+The Entra ID lookup is needed to retrieve a unique identifier to store with the new SQL User — this is called a SID. When later authentication attempts take place, the identity can be verified. This identifier can be calculated locally without the need of a Microsoft Entra ID lookup within SQL Server. This way, there is no need for a runtime lookup during the registration, yet the managed identity of the application will still be recognized and allowed access.
 
 In the example below a complete PowerShell script is shown to calculate the SID and execute the SQL Query:
 
@@ -70,7 +84,7 @@ param (
 
 $ErrorActionPreference = "Stop"
 
-# The calculation of the SID manually has been chosen after the AD integrated user lookup didn't work
+# The calculation of the SID manually has been chosen after the Entra ID integrated user lookup didn't work
 function ConvertTo-Sid {
     param (
         [string]$ApplicationId
@@ -138,16 +152,16 @@ The last important step is to execute the above PowerShell under the identity wh
 
 The end result is a registered managed identity in SQL Server:
 
-![Query result]({{ '/assets/images/2023/04/query-result.png' | relative_url }})
+![Query result listing the managed identities registered as external users in SQL Server]({{ '/assets/images/2023/04/query-result.png' | relative_url }})
 
-In this example two external users have been added, which are Managed Identities registered in Azure AD.
+In this example two external users have been added, which are Managed Identities registered in Microsoft Entra ID.
 
 ## Connecting to the database
 
 On the application side, things now got simpler. There are only two things needed:
 
 - The managed identity registered in the SQL database needs to be associated with the App Service
-- The connection string should mention to only use Azure AD without credentials to connect to the database.
+- The connection string should mention to only use Microsoft Entra ID without credentials to connect to the database.
 
 The managed identity can be easily associated with the App Service by either the Azure Portal or by configuring the following Bicep:
 
@@ -177,7 +191,7 @@ The connection string of the App Service should look like this:
 Server=tcp:dbserver.database.windows.net,1433;Initial Catalog=BlogDb;User Id=GUID-OF-MANAGED-IDENTITY;Authentication=Active Directory Managed Identity;
 ```
 
-Now your app service should be able to retrieve an Azure AD access token by itself and make itself known to the SQL Server instance.
+Now your app service should be able to retrieve a Microsoft Entra ID access token by itself and make itself known to the SQL Server instance.
 
 ## Conclusion
 

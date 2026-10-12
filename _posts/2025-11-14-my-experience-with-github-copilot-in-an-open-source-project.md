@@ -3,20 +3,34 @@ layout: post
 title: "My experience with GitHub Copilot in an open-source project"
 description: "My experience using GitHub Copilot agentic AI in an open-source project, acting as architect while Copilot agents write the code."
 date: 2025-11-14
+featured: true
+last_modified_at: 2026-10-12
 categories: [Architecture, Programming]
-image: /assets/images/2025/11/banner-1024x534.png
-tags: [agentic ai, ai agents, artificial intelligence, azure dev conference, cli extensions, code review, collaboration, developer productivity, developer tools, experimental projects, generative ai, github copilot, github issues, oh my posh, open source, prompt engineering]
+image: /assets/images/2025/11/banner-1024x534.jpg
+tags: [github copilot, agentic ai, ai agents, open source, oh my posh, github issues, prompt engineering, developer productivity]
+faq:
+  - question: "Can GitHub Copilot agents build a project while I act as architect?"
+    answer: "Yes. I took the role of architect and requirements engineer while Copilot agents wrote the issues and code. It works well for speed, but someone has to review every result."
+  - question: "What is review fatigue when working with GitHub Copilot?"
+    answer: "Copilot is very diligent and produces a lot of text. Reviewing page after page becomes tedious, and I noticed I started scanning and accepting suggestions too quickly, which risks wrong assumptions ending up in the implementation."
 ---
 
-It is amazing how fast AI developments have led to fundamental changes in the development process of IT projects. It is difficult for me to imagine generative AI and AI agents disappearing from my day-to-day work anytime soon.
+It is amazing how fast AI developments have led to fundamental changes in the development process of IT projects. It is difficult for me to imagine generative AI and AI agents such as GitHub Copilot disappearing from my day-to-day work anytime soon.
 
-![Featured image for 2025-11-14-my-experience-with-github-copilot-in-an-open-source-project]({{ '/assets/images/2025/11/banner-1024x534.png' | relative_url }})
+![Featured image for 2025-11-14-my-experience-with-github-copilot-in-an-open-source-project]({{ '/assets/images/2025/11/banner-1024x534.jpg' | relative_url }})
 
 Recently, agentic AI in particular has become a popular step in programming functionality in new and existing software or even executing the functionality directly. Because developments are going so fast, I wanted to assess some of these new tools myself in a new experimental project, starting from nothing.
 
 For this project I wanted to put myself primarily into the position of 'architect' and 'requirements engineer.' Not as the programmer writing every line of code, but with Copilot agents taking the initiative of building the project.
 
-Both the GitHub Copilot Reviewer and I will review any software that is generated. This blogpost is part of a series where I will recount the journey that I've made, things I have discovered and looking back each part of the way with my learnings.
+Both the GitHub Copilot Reviewer and I will review any software that is generated. This blog post is part of a series where I will recount the journey that I've made, things I have discovered and looking back each part of the way with my learnings.
+
+## Key takeaways
+
+- As a single person with an idea, I could go from idea to planned GitHub issues very quickly with Copilot.
+- Review fatigue is real: I caught myself scanning Copilot's output instead of reading it.
+- Precise instructions with context and examples prevent scope creep better than short ones.
+- Working in a group would need a different setup, for example a group chat with Copilot as a participant.
 
 ## Project inspiration
 
@@ -28,13 +42,13 @@ Scott Hanselman was also present in Lisbon with very inspiring talks. During one
 
 Towards the end of the day, when I work from the office, I always monitor the traffic situation for the journey back home. Why not build an extension that does that for me? I don't know the Oh My Posh library. I do not write code specifically for the terminal all that often. But with Copilot on my side, and with my general knowledge and experience as a software developer. I must be able to do this and learn along the way.
 
-![Azure dev summit]({{ '/assets/images/2025/11/azure-dev-summit.png' | relative_url }})
+![Azure Dev Conference 2025 in Lisbon, the inspiration for building an Oh My Posh extension with GitHub Copilot]({{ '/assets/images/2025/11/azure-dev-summit.png' | relative_url }})
 
 ## Project kick-off and planning
 
 I wanted to work in a structured way, not only for myself but because LLMs thrive on context and well-structured descriptions. So, every change or idea must be a GitHub Issue first.
 
-When starting a project from scratch there is always a lot of scaffolding to do, repository structure needs to be set up, initial files are to be put in place and a vision of the project has to be written down. Of course, I started right away with Copilot to help me with the kick-off. For interacting with the project and Copilot I've used [Visual Studio Code](https://code.visualstudio.com/) with the [Github Copilot extensions](https://code.visualstudio.com/docs/copilot/overview).
+When starting a project from scratch there is always a lot of scaffolding to do, repository structure needs to be set up, initial files are to be put in place and a vision of the project has to be written down. Of course, I started right away with Copilot to help me with the kick-off. For interacting with the project and Copilot I've used [Visual Studio Code](https://code.visualstudio.com/) with the [GitHub Copilot extensions](https://code.visualstudio.com/docs/copilot/overview).
 
 First I started a conversation in the chat window about my ideas for a CLI [Oh My Posh extension](https://github.com/JanDeDobbeleer/oh-my-posh). Not directing Copilot to start building software right away, but to first come to an understanding that we are talking about the same thing and a confirmation for myself that this was going somewhere.
 
@@ -48,7 +62,7 @@ And within 30 minutes of starting the conversation, reviewing output, and doing 
 
 The [wouterfennis/omp-travel-time](https://github.com/wouterfennis/omp-travel-time) project was born!
 
-## Looking back and lessons learned
+## What did I learn from working with GitHub Copilot?
 
 When I review these steps, I am impressed by the initial speed I can make as a single person with just an idea. With Copilot, I can quickly check out ideas, figure out what needs to be done, and post tasks straight to the GitHub project right from the chat. That way, everything's saved and easy for other contributors to jump in and help out.
 
@@ -72,6 +86,7 @@ Copilot will do its best to serve you but will try to introduce scope creep in i
 
 ## See also
 
+- [Migrate your blog towards GitHub Pages](/2026/03/29/migrate-your-blog-towards-github-pages/) — another project where I used a GitHub Copilot-driven workflow
 - [Copilot Lab](/projects/copilot-lab/) — the hands-on lab series for learning GitHub Copilot responsibly, which grew out of experiences like the ones described in this post
 - [OMP Travel Time](/projects/omp-travel-time/) — the Oh My Posh extension project that was built during the experiment described in this post
 

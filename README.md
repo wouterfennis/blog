@@ -51,6 +51,12 @@ npm run lint:md:fix
 
 Markdown linting runs in CI on every push to `main` and on every pull request.
 
+## Documentation
+
+- [SEO and GEO architecture](docs/seo-geo.md): how the site is made discoverable, how to add an article correctly and how it is validated
+- [Identity and bio](docs/identity.md): the canonical author description used on the site and on external profiles
+- [Content ideas](docs/content-ideas.md): backlog of post ideas
+
 ## Deployment
 
 Push to `main` → GitHub Actions builds with Jekyll and deploys to GitHub Pages automatically.

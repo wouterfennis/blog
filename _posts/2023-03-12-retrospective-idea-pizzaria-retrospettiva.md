@@ -1,16 +1,29 @@
 ---
 layout: post
-title: "Retrospective idea: Pizzaria Retrospettiva"
+title: "Pizzaria Retrospettiva: a playful Scrum retrospective format"
 description: "A fun Scrum retrospective format inspired by pizza — ideal for remote and in-person Agile teams looking to refresh their self-reflection ritual."
 date: 2023-03-12
+last_modified_at: 2026-10-12
 categories: [Scrum]
-image: /assets/images/2023/03/Pizza-1024x483.png
-tags: [agile, facilitation, fun, ingredients, learn, miro, online, pizza, retrospective, ritual, scrum, self-reflection, slices, whiteboard]
+image: /assets/images/2023/03/Pizza-1024x483.jpg
+tags: [agile, facilitation, miro, pizza, retrospective, scrum, self-reflection, whiteboard]
+faq:
+  - question: "What is a Pizzaria Retrospettiva?"
+    answer: "It is a Scrum retrospective format in which the board is a pizza divided into slices. Team members add cards about what worked well, what could be improved and what to stop doing, each linked to a pizza, an ingredient or another Italian dish."
+  - question: "How do you run a Pizzaria Retrospettiva remotely?"
+    answer: "Use an online whiteboard such as Miro. Draw a circle with a slightly transparent pizza as background, divide it into slices with topics, invite the team to fill in cards, and discuss them slice by slice."
 ---
 
-Retrospectives have a tendency to sometimes be repetitive and less fruitful. However sometimes just a simple change of scenery can already open up a new perspective of underlying problems or successes that a Scrum team has been through. One method I've tried in practice is bringing the retrospective in an authentic Italian vibe. And what is the first thing people associate with Italia? Pizza 🍕 of course!
+Retrospectives have a tendency to sometimes be repetitive and less fruitful. However, sometimes just a simple change of scenery can already open up a new perspective of underlying problems or successes that a Scrum team has been through. One method I've tried in practice is bringing the retrospective in an authentic Italian vibe. And what is the first thing people associate with Italia? Pizza 🍕 of course!
 
-![Featured image for 2023-03-12-retrospective-idea-pizzaria-retrospettiva]({{ '/assets/images/2023/03/Pizza-1024x483.png' | relative_url }})
+![Featured image for 2023-03-12-retrospective-idea-pizzaria-retrospettiva]({{ '/assets/images/2023/03/Pizza-1024x483.jpg' | relative_url }})
+
+## Key takeaways
+
+- A change of scenery makes retrospectives less repetitive: draw a pizza on a digital whiteboard such as Miro and slice it into topics.
+- Participants link each card to a pizza, an ingredient or another Italian dish, which lightens the mood.
+- The group discusses the board slice by slice and ends with action points and a one to five star rating of the session.
+- It works just as well on a physical whiteboard.
 
 ## Scrum rituals going digital
 
@@ -18,15 +31,15 @@ In the last few years, digital retrospectives have become more and more common i
 
 ## Sketching the board
 
-In this blogpost I'll explain the retrospective from a digital point of view. However, the Pizzaria retrospettiva can be easily sketched out on a physical whiteboard as well. I have good experiences with [Miro](https://miro.com/) as an online whiteboard, but there are tons of other initiatives as well to choose from.
+In this blog post I'll explain the retrospective from a digital point of view. However, the Pizzaria retrospettiva can be easily sketched out on a physical whiteboard as well. I have good experiences with [Miro](https://miro.com/) as an online whiteboard, but there are tons of other initiatives as well to choose from.
 
 So how to bring pizza and self-reflection together? Well it might be easier than you think. First, draw a circle and use a background of a pizza with slight transparency as a background.
 
-![Pizza canvas in Miro]({{ '/assets/images/2023/02/retrospective-pizza-blank.png' | relative_url }})
+![Blank pizza canvas for a Scrum retrospective in Miro]({{ '/assets/images/2023/03/retrospective-pizza-blank.webp' | relative_url }})
 
-The background will set the atmosphere and will be eye candy for colleagues used to a standard grid layout. As with any pizza before eating, we first have to slice it. So let's divide the background in a few sections where we can put our discussion topics that are current. These topics can of course be anything you want, but the example below can be used as inspiration.
+The background will set the atmosphere and will be eye candy for colleagues used to a standard grid layout. As with any pizza before eating, we first have to slice it. So let's divide the background in a few sections where we can put our discussion topics that are relevant right now. These topics can of course be anything you want, but the example below can be used as inspiration.
 
-![Canvas with slices and example cards]({{ '/assets/images/2023/02/retrospective-pizza-filled.png' | relative_url }})
+![Pizza retrospective canvas divided into slices with example cards]({{ '/assets/images/2023/03/retrospective-pizza-filled.webp' | relative_url }})
 
 ## Start the retrospective
 
@@ -49,3 +62,5 @@ With the preparation complete, we can now start the session. Invite your colleag
 In my experience, changing the scenery of a retrospective in the atmosphere of a Pizzaria can lighten up the mood, change people's perspectives and, above all, get team members to know each other just a little bit better. Creating more shared security amongst them in the long run.
 
 I hope you try out this format in one of your upcoming retrospectives. Leave your experiences in the comments below so I can perhaps fine-tune this even further.
+
+Looking for another playful team exercise? Try the [Wheel of Misfortune](/2023/06/12/wheel-of-misfortune/) to prepare your team for production incidents.

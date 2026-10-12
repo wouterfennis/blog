@@ -12,6 +12,14 @@ author:
   linkedin: https://www.linkedin.com/in/wouter-fennis/
   github: https://github.com/wouterfennis
 
+# Used by jekyll-seo-tag for the Person JSON-LD entity (sameAs links)
+social:
+  type: Person
+  name: Wouter Fennis
+  links:
+    - https://www.linkedin.com/in/wouter-fennis/
+    - https://github.com/wouterfennis
+
 theme: minima
 
 header_pages:
@@ -75,6 +83,7 @@ kramdown:
 
 # Sass warning controls for Ruby 3.4 + minima 2.5 (theme internals still use deprecated APIs)
 sass:
+  style: compressed
   quiet_deps: true
   silence_deprecations:
     - import
@@ -88,3 +97,5 @@ exclude:
   - README.md
   - .github
   - vendor
+  - docs
+  - lighthouserc.json

@@ -1,16 +1,29 @@
 ---
 layout: post
 title: "Markdownlint: a developer's best friend for cleaner Markdown"
-description: "How Markdownlint helps enforce consistent Markdown quality across developer projects — including setup, custom rules, and CI/CD integration."
+description: "I show how to set up Markdownlint, customise its rules and add it to your CI/CD pipeline for consistent, clean Markdown across projects."
 date: 2025-05-19
+last_modified_at: 2026-10-12
 categories: [CI CD]
 image: /assets/images/2025/05/5feac392-d10a-4354-8313-c34c56087cdf.jpg
-tags: [ci cd, content, developer tools, documentation, example, github actions, linting, markdown, markdownlint, npm, readme, visual studio code]
+tags: [markdownlint, markdown, linting, documentation, developer tools, github actions, visual studio code, ci cd]
+faq:
+  - question: "What is markdownlint?"
+    answer: "Markdownlint is an open-source tool that checks Markdown files against a set of rules for syntax and consistency, such as heading structure, blank lines and list indentation."
+  - question: "How do I use markdownlint in a project?"
+    answer: "Install the CLI with npm or the Visual Studio Code extension, add a .markdownlint.json file to adjust the rules, and run markdownlint on your files. Adding it to your CI/CD pipeline catches issues before they reach production."
 ---
 
-Markdown has become a common language among developers for its simplicity and effectiveness in creating formatted text. Whether you're crafting a README file for your open-source project, writing technical documentation, or drafting a blog post, Markdown provides an elegant and efficient way to write content. However, as straightforward as it may seem, writing clean and consistent Markdown can sometimes be a challenge — this is where Markdownlint becomes an indispensable tool.
+You open a pull request for a README, and half of the review comments are about missing blank lines and inconsistent list indentation instead of the actual content. Markdown is a common language among developers for its simplicity, whether you're crafting a README for your open-source project, writing technical documentation, or drafting a blog post. However, as straightforward as it may seem, writing clean and consistent Markdown can sometimes be a challenge — this is where Markdownlint becomes an indispensable tool.
 
 ![Featured image for 2025-05-19-markdownlint-a-developers-best-friend-for-cleaner-markdown]({{ '/assets/images/2025/05/5feac392-d10a-4354-8313-c34c56087cdf.jpg' | relative_url }})
+
+## Key takeaways
+
+- Markdownlint is an open-source tool that enforces Markdown rules, so reviews are about content instead of blank lines and list indentation.
+- It runs in the editor (the Visual Studio Code extension) and on the command line, so it fits in a CI/CD pipeline.
+- Customise the rules in a `.markdownlint.json` file instead of dropping the tool.
+- Add it early in a project to prevent technical debt in your documentation.
 
 ## What is Markdownlint?
 
@@ -85,7 +98,7 @@ Once installed, you can create a configuration file (typically named `.markdownl
 }
 ```
 
-### 3. Running Markdownlint
+### 3. Running markdownlint
 
 To analyze a Markdown file, simply run the following command in your terminal:
 
@@ -109,3 +122,9 @@ To make the most of Markdownlint, consider adopting the following best practices
 Markdownlint is more than just a linter — it's a tool that empowers you to create cleaner, more consistent, and professional Markdown documents. By incorporating it into your workflow, you can save time, reduce errors, and produce high-quality content that stands out.
 
 Whether you're a seasoned developer or just getting started with Markdown, Markdownlint is a must-have tool that will elevate your writing and documentation to new heights. So why wait? Install Markdownlint today and embrace the power of perfectly linted Markdown!
+
+## References
+
+- [markdownlint](https://github.com/DavidAnson/markdownlint)
+- [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli)
+- [markdownlint extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)

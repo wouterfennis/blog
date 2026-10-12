@@ -4,6 +4,8 @@ layout: default
 
 <div class="category-archive">
 
+  {%- include breadcrumbs.html -%}
+
   <h1 class="category-archive__heading">Category: {{ page.title | escape }}</h1>
 
   {%- if page.description -%}

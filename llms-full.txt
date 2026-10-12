@@ -1,0 +1,21 @@
+---
+layout: null
+permalink: /llms-full.txt
+sitemap: false
+---
+# {{ site.title }} — full text
+
+> {{ site.description | strip | normalize_whitespace }}
+
+{% for post in site.posts %}
+---
+
+# {{ post.title }}
+
+URL: {{ post.url | absolute_url }}
+Published: {{ post.date | date: "%Y-%m-%d" }}
+Categories: {{ post.categories | join: ", " }}
+Tags: {{ post.tags | join: ", " }}
+
+{{ post.raw_markdown }}
+{% endfor %}

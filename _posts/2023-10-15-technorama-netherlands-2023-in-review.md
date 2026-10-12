@@ -5,7 +5,12 @@ description: "My personal review of Technorama Netherlands 2023 — two days of 
 date: 2023-10-15
 categories: [Programming]
 image: /assets/images/2023/10/technorama-2023-1-1024x285.jpg
-tags: [2023, ai, architecture, artificial intelligence, azure, bicep, cloud, conference, development, microservices, netherlands, pulumi, tdd, technorama, terraform, test driven development, testing]
+tags: [technorama, conference, ai, azure, architecture, microservices, tdd, terraform]
+faq:
+  - question: "What is Technorama?"
+    answer: "Technorama is a Dutch \"deep knowledge IT conference\". I attended the 2023 edition, where every hour offered a choice of 10 speakers on architecture, cloud computing, data, developer trends, self-improvement, front end development and AI."
+  - question: "At which level should you apply test driven development?"
+    answer: "According to the talk I attended, TDD is often used at the wrong level, too close to the implementation of the software. When mocking, aim to mock only IO, so your tests stay tied to behaviour and contracts instead of implementation details."
 ---
 
 During and shortly after COVID I kind of lost track of IT conferences. Working more from home and occasionally visiting the office makes your professional circle increasingly smaller without you noticing. So when I was made aware that this month the Technorama conference would take place in the [Kinopolis](https://kinepolis.nl/bioscopen/kinepolis-jaarbeurs-utrecht/info/) in Utrecht, I signed up and went there.
@@ -16,9 +21,16 @@ Technorama is a "Deep knowledge IT Conference" as the event is described on the 
 
 By Dutch standards, the scale of the event was big. Every hour you could choose between 10 different speakers each with their own interesting insight on architecture, cloud computing, data, developer trends, self-improvement, front end development and of course Artificial Intelligence.
 
+## Key takeaways
+
+- Technorama is a deep-knowledge conference: the sessions assume experience, which made two days worth spending.
+- The main themes were AI, architecture, cloud development and test driven development.
+- Microservices without good modelling of cohesion and coupling often end up as a distributed monolith.
+- Apply TDD at the level of behaviour instead of implementation details, and mock only IO.
+
 ## Artificial intelligence
 
-AI had special attention this year as ChatGPT and GitHub Copilot blasted their way into IT development. Jennifer Marsman, a principal engineer at Microsoft, flew over to explain the potential of AI and of course how the Azure platform can make it accessible to any business to hop onboard. AI was mentioned in almost every session I've attended during the day. How it could help solving the problems of businesses, to refactoring or explaining legacy code. Apart from marketing one liners there were actually speakers that showed some real use cases and weren't afraid to demo them live. Often the prompts didn't return the exact answer that was expected but that only confirmed the imperfection of the concept. You always have to review the suggestions or answers being presented by an AI model.
+AI had special attention this year as ChatGPT and [GitHub Copilot](/2025/11/14/my-experience-with-github-copilot-in-an-open-source-project/) blasted their way into IT development. Jennifer Marsman, a principal engineer at Microsoft, flew over to explain the potential of AI and of course how the Azure platform can make it accessible to any business to hop onboard. AI was mentioned in almost every session I've attended during the day. How it could help solving the problems of businesses, to refactoring or explaining legacy code. Apart from marketing one liners there were actually speakers that showed some real use cases and weren't afraid to demo them live. Often the prompts didn't return the exact answer that was expected but that only confirmed the imperfection of the concept. You always have to review the suggestions or answers being presented by an AI model.
 
 ## Architecture
 
@@ -26,7 +38,7 @@ Another topic that many sessions were about was architecture. What struck me wer
 
 Microservices are often taken as an example where everyone jumps on the bandwagon as the new revolution in architecture. But because modeling and figuring out which components have high cohesion and low coupling is still difficult, the end result is often a distributed monolith — why not build proper monoliths instead?
 
-The problem isn't micro services themselves but the modeling and designing effort that it takes to get there.
+The problem isn't microservices themselves but the modeling and designing effort that it takes to get there.
 
 ## Cloud development
 
@@ -46,4 +58,9 @@ When it comes to mocking, you should aim to only mock IO. Breaking up the applic
 
 ## Conclusion
 
-Following speaker sessions for close to 8 hours a day for two days is a bit intense, especially if you don't make notes along the way. However it is a great opportunity to break out your usual professional circle and talk to complete strangers that happen to do the same job as yourself. For me the conference confirmed things I already do on a day to day basis. But every speaker gave me a hint to look something up or try something at a later moment. There is always something to learn by just listening.
+Following speaker sessions for close to 8 hours a day for two days is a bit intense, especially if you don't make notes along the way. However, it is a great opportunity to break out your usual professional circle and talk to complete strangers that happen to do the same job as yourself. For me the conference confirmed things I already do on a day to day basis. But every speaker gave me a hint to look something up or try something at a later moment. There is always something to learn by just listening.
+
+## References
+
+- [Erwin Staal](https://erwinstaal.nl/)
+- [Ian Cooper on GitHub](https://github.com/iancooper)

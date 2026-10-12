@@ -84,6 +84,10 @@ To set this up:
 2. Generate a new token with at least `repo` scope (classic) or the fine-grained permissions listed above.
 3. In this repository go to **Settings > Secrets and variables > Actions** and create a secret named `RELEASE_PLEASE_TOKEN` with the token value.
 
+## Content and SEO rules
+
+Follow [docs/seo-geo.md](docs/seo-geo.md) when adding or changing posts. A pull request runs the site checks (build, `npm run check:site`, `npm run check:post` on changed posts and Lighthouse CI).
+
 ## Local development
 
 ```bash
@@ -99,3 +103,11 @@ npm ci
 npm run lint:md
 npm run lint:md:fix   # auto-fix where possible
 ```
+
+## Working with Claude Code
+
+Project instructions live in `CLAUDE.md` and `.claude/`:
+
+- `/new-post`, `/post-outline` and `/create-issue` are slash commands for scaffolding posts, planning them and filing issues.
+- Run the `pre-publish-reviewer` agent on a post before publishing it; it fixes front matter, SEO and structure issues directly.
+- A hook runs markdownlint after every Markdown edit, so violations are reported while Claude works.

@@ -1,14 +1,22 @@
 ---
 layout: post
-title: "Getting Code Coverage to SonarQube"
+title: "Getting .NET code coverage into SonarQube from Azure DevOps"
 description: "How to get .NET code coverage and unit test results into SonarQube using Azure DevOps YAML pipelines with TRX and XML coverage files."
 date: 2023-02-18
+last_modified_at: 2026-10-12
 categories: [CI CD]
-tags: [.net, azure devops, c#, ci cd, code coverage, dotnet, pipeline, sonarqube, trx, unit tests, xml, yaml]
+tags: [sonarqube, code coverage, azure devops, .net, c#, unit tests, yaml, ci cd]
 image: /assets/images/2023/02/Sonarqube.webp
+faq:
+  - question: "Why does SonarQube show no code coverage in my Azure DevOps pipeline?"
+    answer: "SonarQube does not calculate coverage itself. The coverage report has to be created while the unit tests run, and SonarQube has to be pointed to the folder where the build stores it. Most of the time the files are written somewhere other than where SonarQube is looking."
+  - question: "Which file formats does SonarQube need for unit tests and code coverage?"
+    answer: "SonarQube reads TRX files to count the executed unit tests. For code coverage, the XML format of the Visual Studio code coverage output is the format I have found SonarQube always understands."
 ---
 
 You finally managed to get your first SonarQube analysis published to the SonarQube server. You've been writing C# code all day and anxiously you navigate to the report to see how your initial coding is being rated. You see some minor code smells, perhaps a major issue that is being exaggerated. But the thing that really stands out is the metric below:
+
+![Featured image for 2023-02-18-getting-code-coverage-to-sonarqube]({{ '/assets/images/2023/02/Sonarqube.webp' | relative_url }})
 
 ![SonarQube no coverage showing up in report.]({{ '/assets/images/2023/02/SonarQube-no-coverage.png' | relative_url }})
 
@@ -16,7 +24,12 @@ No Coverage information is being displayed, not even your unit tests are being c
 
 Simply put, the information about your tests and the amount of code they cover isn't being read by the SonarQube analyser that runs during your pipeline. This can have multiple causes, but first let's zoom in on where this information is stored in the first place.
 
-![Featured image for 2023-02-18-getting-code-coverage-to-sonarqube]({{ '/assets/images/2023/02/Sonarqube.webp' | relative_url }})
+## Key takeaways
+
+- SonarQube counts unit tests from TRX files, so run `dotnet test` with the TRX logger.
+- SonarQube does not calculate code coverage itself: collect it during the test run, preferably in XML format.
+- When coverage still does not show up, the files are usually stored somewhere other than where SonarQube is looking.
+- A few small tweaks to your Azure DevOps YAML pipeline are enough to get accurate reporting.
 
 ## Scope of this article
 
@@ -28,7 +41,7 @@ SonarQube has a wide range of support for different languages and pipelines. Thi
 - SonarQube extension installed in Azure DevOps
 - Self hosted SonarQube server
 
-## Counting unit tests
+## How does SonarQube count unit tests?
 
 Every time you run your unit tests against your code you have the option to output the result of each test into a TRX file. This is a Microsoft standard file for tests written in .NET. This can be done by attaching the TRX logger to your testrun.
 
@@ -42,7 +55,7 @@ TRX files don't contain information about the production code that is being cove
 
 SonarQube uses TRX files to count the amount of unit tests that have been executed against your code. Although often you can let SonarQube scan your test code as well, it doesn't use it to count the unit tests themselves.
 
-## Measuring Code Coverage
+## How do you measure code coverage?
 
 With your production code and TRX files alone you can't yet determine the Code Coverage.
 
@@ -58,7 +71,7 @@ Code Coverage information can be outputted into different formats. In my experie
 dotnet test WouterCompiles.sln --collect "Code Coverage;Format=Xml"
 ```
 
-### You've got Coverage yet?
+### You've got coverage yet?
 
 With the above steps you have all the test information required to get the SonarQube metrics updated. Yet, often it still won't show up after starting the build pipeline again. Why?
 
@@ -69,11 +82,11 @@ There is probably still a mismatch in where SonarQube is trying to look for the 
 The last hurdle is fine-tuning your pipeline so that SonarQube will find all the metric files that you have just created. Following the documentation of SonarQube itself, the pipeline can look something like this:
 
 ```yaml
-- task: SonarQubePrepare@5
+- task: SonarQubePrepare@8
   displayName: SonarQube prepare
   inputs:
     SonarQube: 'SonarQubeServiceConnection'
-    scannerMode: 'MSBuild'
+    scannerMode: 'dotnet'
     projectKey: woutercompiles.it
 
 - task: DotNetCoreCLI@2
@@ -91,10 +104,10 @@ The last hurdle is fine-tuning your pipeline so that SonarQube will find all the
     arguments: '--no-build -c Release'
     publishTestResults: true
 
-- task: SonarQubeAnalyze@5
+- task: SonarQubeAnalyze@8
   displayName: SonarQube start analyse
 
-- task: SonarQubePublish@5
+- task: SonarQubePublish@8
   displayName: SonarQube publish analyse
   inputs:
     pollingTimeoutSec: '300'
@@ -130,16 +143,16 @@ INFO: Parsing the Visual Studio Test Results file '/azp/_work/_temp/_376750b5e2a
 
 And now we can finally see our Coverage Metric in the SonarQube server
 
-![SonarQube coverage showing up in report.]({{ '/assets/images/2023/02/sonarQube-coverage.png' | relative_url }})
+![SonarQube coverage showing up in report.]({{ '/assets/images/2023/02/sonarqube-coverage.png' | relative_url }})
 
 Our final YAML pipeline file now looks like this:
 
 ```yaml
-- task: SonarQubePrepare@5
+- task: SonarQubePrepare@8
   displayName: SonarQube prepare
   inputs:
     SonarQube: 'SonarQubeServiceConnection'
-    scannerMode: 'MSBuild'
+    scannerMode: 'dotnet'
     projectKey: woutercompiles.it
     extraproperties: |
       sonar.cs.vstest.reportsPaths=$(Agent.TempDirectory)/**/*.trx
@@ -160,10 +173,10 @@ Our final YAML pipeline file now looks like this:
     arguments: '--no-build -c Release --collect "Code Coverage;Format=Xml"'
     publishTestResults: true
 
-- task: SonarQubeAnalyze@5
+- task: SonarQubeAnalyze@8
   displayName: SonarQube start analyse
 
-- task: SonarQubePublish@5
+- task: SonarQubePublish@8
   displayName: SonarQube publish analyse
   inputs:
     pollingTimeoutSec: '300'
@@ -173,8 +186,10 @@ Our final YAML pipeline file now looks like this:
 
 With some minor tweaks of your existing Continuous Integration pipeline in Azure DevOps you are able to get more accurate reporting from SonarQube. Helping you and your team to make the right choices when it comes to technical debt and testing. I hope this article helps you and others. Please leave your feedback or suggestions in the comments below.
 
+Coverage only tells you which code your tests execute, not whether they assert the right things. If you want tests that are easy to review and maintain, have a look at [snapshot testing with Verify](/2023/03/27/snapshot-testing-with-verify/).
+
 ## References
 
-- [SonarQube – .NET test coverage](https://docs.sonarqube.org/9.7/analyzing-source-code/test-coverage/dotnet-test-coverage/)
-- [SonarQube extension for Azure DevOps](https://docs.sonarqube.org/9.6/analyzing-source-code/scanners/sonarqube-extension-for-azure-devops/)
+- [SonarQube – .NET test coverage](https://docs.sonarsource.com/sonarqube-server/analyzing-source-code/test-coverage/dotnet-test-coverage)
+- [SonarQube extension for Azure DevOps](https://docs.sonarsource.com/sonarqube-server/analyzing-source-code/scanners/sonarqube-extension-for-azure-devops)
 - [DotNetCoreCLI@2 – .NET Core v2 task](https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/dotnet-core-cli-v2?view=azure-pipelines)

@@ -1,16 +1,29 @@
 ---
 layout: post
-title: "Scrum and the Summer Break"
+title: "Scrum and the summer break: keeping your team on track"
 description: "Practical advice for Scrum teams on preparing for the summer break — knowledge handover, velocity planning, and getting back up to speed efficiently."
 date: 2023-09-07
+last_modified_at: 2026-10-12
 categories: [Scrum]
 image: /assets/images/2023/09/camping-1024x682.jpg
-tags: [agile, knowledge, scrum, sprint, sprint planning, storming, summer break, team, velocity]
+tags: [agile, knowledge, scrum, sprint, sprint planning, storming, summer break, velocity]
+faq:
+  - question: "How should a Scrum team prepare for the summer break?"
+    answer: "Register everyone's vacation period, be transparent about the expected drop in velocity, and prepare a knowledge handover instead of handing over all work: what colleagues will miss first, ongoing conversations, access rights and manuals."
+  - question: "Does Scrum still matter when half of the team is on holiday?"
+    answer: "Yes, perhaps more than ever. With fewer people and equal responsibility, prioritisation is key and transparency is how the team steers itself. Keep running retrospectives and planning sessions during and after the break."
 ---
 
-It's something people can look forward to months in advance: Good weather, nice scenery, not having to think about work, and always a bit on the short side once it's coming to an end. The Summer Break. Although let's not forget the heroic colleagues that stay behind, plowing on, waiting for the postcard you always forget to send from your destination. In this article I'll zoom in on how a team can prepare itself for this period and how to get back together in the original formation in the months that follow.
+It's something people can look forward to months in advance: Good weather, nice scenery, not having to think about work, and always a bit on the short side once it's coming to an end. The Summer Break. Although let's not forget the heroic colleagues that stay behind, ploughing on, waiting for the postcard you always forget to send from your destination. In this article I'll zoom in on how a team can prepare itself for this period and how to get back together in the original formation in the months that follow.
 
 ![Featured image for 2023-09-07-scrum-and-the-summer-break]({{ '/assets/images/2023/09/camping-1024x682.jpg' | relative_url }})
+
+## Key takeaways
+
+- Register everyone's vacation period early and be transparent about the lost velocity, towards your team, the company and management.
+- Hand over knowledge instead of work: urgent matters get picked up, work that can wait will wait.
+- During the break Scrum matters more than ever, because transparency is how a smaller team steers itself.
+- Expect the team to go through the storming phase again, and keep doing retrospectives and planning during and after the break.
 
 ## Preparation is half of the work
 
