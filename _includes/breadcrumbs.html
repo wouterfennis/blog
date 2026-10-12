@@ -1,0 +1,50 @@
+{%- comment -%}
+  Visible breadcrumb trail plus BreadcrumbList JSON-LD (both from the same data).
+  Posts: Home > first category > post. Category pages: Home > category. Tag pages: Home > Tags > tag.
+{%- endcomment -%}
+{%- assign _bc_names = "Home" | split: "|" -%}
+{%- assign _bc_urls = "/" | split: "|" -%}
+{%- if page.layout == "post" -%}
+  {%- assign _bc_cat = page.categories | first -%}
+  {%- assign _bc_cat_page = site.pages | where: "category", _bc_cat | first -%}
+  {%- if _bc_cat_page -%}
+    {%- assign _bc_names = _bc_names | push: _bc_cat -%}
+    {%- assign _bc_urls = _bc_urls | push: _bc_cat_page.url -%}
+  {%- endif -%}
+  {%- assign _bc_names = _bc_names | push: page.title -%}
+  {%- assign _bc_urls = _bc_urls | push: page.url -%}
+{%- elsif page.layout == "category" -%}
+  {%- assign _bc_names = _bc_names | push: page.title -%}
+  {%- assign _bc_urls = _bc_urls | push: page.url -%}
+{%- elsif page.layout == "tag" -%}
+  {%- assign _bc_names = _bc_names | push: "Tags" | push: page.title -%}
+  {%- assign _bc_urls = _bc_urls | push: "/tags/" | push: page.url -%}
+{%- endif -%}
+{%- if _bc_names.size > 1 -%}
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol class="breadcrumbs__list">
+    {%- for name in _bc_names -%}
+    <li class="breadcrumbs__item">
+      {%- if forloop.last -%}<span aria-current="page">{{ name | escape }}</span>
+      {%- else -%}<a href="{{ _bc_urls[forloop.index0] | relative_url }}">{{ name | escape }}</a>{%- endif -%}
+    </li>
+    {%- endfor -%}
+  </ol>
+</nav>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {%- for name in _bc_names -%}
+    {
+      "@type": "ListItem",
+      "position": {{ forloop.index }},
+      "name": {{ name | jsonify }},
+      "item": {{ _bc_urls[forloop.index0] | absolute_url | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ]
+}
+</script>
+{%- endif -%}

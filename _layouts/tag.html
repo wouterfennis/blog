@@ -4,6 +4,8 @@ layout: default
 
 <div class="category-archive">
 
+  {%- include breadcrumbs.html -%}
+
   <h1 class="category-archive__heading">Tag: {{ page.title | escape }}</h1>
 
   <p class="category-archive__description">{{ page.description | escape }} <a href="{{ '/tags/' | relative_url }}">Browse all tags</a>.</p>

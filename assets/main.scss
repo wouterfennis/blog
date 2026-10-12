@@ -550,3 +550,22 @@
   width: 24px;
   height: 24px;
 }
+
+.breadcrumbs {
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.breadcrumbs__list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumbs__item + .breadcrumbs__item::before {
+  content: "›";
+  margin: 0 0.5rem;
+  opacity: 0.6;
+}

@@ -96,3 +96,4 @@ exclude:
   - README.md
   - .github
   - vendor
+  - ISSUE-54-PLAN.md
