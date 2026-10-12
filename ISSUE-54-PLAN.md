@@ -14,7 +14,7 @@ Status: `[ ]` open, `[x]` done, `[-]` skipped.
 - [x] 7. Accessibility audit and fixes [18]
 - [x] 8. External identity consistency and certification links [19]
 - [x] 9. Content freshness review [21]
-- [ ] 10. Content gaps and topic ideas [14]
+- [x] 10. Content gaps and topic ideas [14]
 - [ ] 11. Automated validation in CI [23]
 - [ ] 12. SEO and GEO documentation [24]
 - [ ] 13. Search Console and Bing monitoring baseline [20]
@@ -86,3 +86,8 @@ Findings and decisions are added below as each point is worked.
   - NuGet client post: `net6.0` to `net8.0` in the csproj snippet. The linked blogExamples repository may still target net6.0.
   - ArchiMate post: both links now point at the Open Group ArchiMate Forum overview instead of the 2.1 document (the pubs.opengroup.org spec pages sit behind a login redirect for tools).
 - Post header shows "Updated <date>" when `last_modified_at` differs from `date`; 12 posts carry 2026-10-12.
+
+### Point 10 (done)
+
+- `docs/content-ideas.md`: four ideas recorded (Claude Code in a blog repo, AI search for a Jekyll blog, Lighthouse and images, release-please for a blog), each with category, search intent, angle, first-hand evidence, tags and internal links. Experience sections are left for the author to write.
+- Not recorded (author did not pick them): Azure Dev Conference 2025 review, Service Bus vs SQL managed identity, Scrum Master AI workflows.
