@@ -72,6 +72,7 @@ Copilot will do its best to serve you but will try to introduce scope creep in i
 
 ## See also
 
+- [Migrate your blog towards GitHub Pages](/2026/03/29/migrate-your-blog-towards-github-pages/) — another project where I used a GitHub Copilot-driven workflow
 - [Copilot Lab](/projects/copilot-lab/) — the hands-on lab series for learning GitHub Copilot responsibly, which grew out of experiences like the ones described in this post
 - [OMP Travel Time](/projects/omp-travel-time/) — the Oh My Posh extension project that was built during the experiment described in this post
 

@@ -77,6 +77,8 @@ Whenever an environment is added where different rules apply the JSON file needs
 
 Using this technique we were able to cut out a lot of parameters of each module in our project. They are still there of course in a way, only now the information can be read directly from the low level modules.
 
+The same environment-specific thinking applies to access: in [SQL Server authentication and authorization on Azure with managed identities](/2023/04/19/sql-server-authentication-and-authorization-on-azure-with-managed-identities/) I show how to give each environment only the permissions it needs.
+
 ## References
 
 - [Bicep functions – files – Azure Resource Manager](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/bicep-functions-files#loadjsoncontent)

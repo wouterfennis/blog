@@ -49,3 +49,5 @@ With the preparation complete, we can now start the session. Invite your colleag
 In my experience, changing the scenery of a retrospective in the atmosphere of a Pizzaria can lighten up the mood, change people's perspectives and, above all, get team members to know each other just a little bit better. Creating more shared security amongst them in the long run.
 
 I hope you try out this format in one of your upcoming retrospectives. Leave your experiences in the comments below so I can perhaps fine-tune this even further.
+
+Looking for another playful team exercise? Try the [Wheel of Misfortune](/2023/06/12/wheel-of-misfortune/) to prepare your team for production incidents.

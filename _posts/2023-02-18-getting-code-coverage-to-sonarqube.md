@@ -173,6 +173,8 @@ Our final YAML pipeline file now looks like this:
 
 With some minor tweaks of your existing Continuous Integration pipeline in Azure DevOps you are able to get more accurate reporting from SonarQube. Helping you and your team to make the right choices when it comes to technical debt and testing. I hope this article helps you and others. Please leave your feedback or suggestions in the comments below.
 
+Coverage only tells you which code your tests execute, not whether they assert the right things. If you want tests that are easy to review and maintain, have a look at [snapshot testing with Verify](/2023/03/27/snapshot-testing-with-verify/).
+
 ## References
 
 - [SonarQube – .NET test coverage](https://docs.sonarqube.org/9.7/analyzing-source-code/test-coverage/dotnet-test-coverage/)

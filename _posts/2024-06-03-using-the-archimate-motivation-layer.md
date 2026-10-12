@@ -56,6 +56,8 @@ What we have created now is a map of interests, problems, current state of affai
 
 Diagrams like these don't have to be static, but they should reflect a long-running strategy in the business. Updating and replacing these components every month would indicate that the roles involved do not have a clear vision for the coming years. Or there might be an underlying driver and assessment that is disrupting stability.
 
+If you want more architecture inspiration, my [Technorama Netherlands 2023 review](/2023/10/15/technorama-netherlands-2023-in-review/) covers several architecture sessions.
+
 ## References
 
 - [ArchiMate® 2.1 Specification](https://pubs.opengroup.org/architecture/archimate2-doc/)

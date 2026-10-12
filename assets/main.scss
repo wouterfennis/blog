@@ -457,3 +457,27 @@
     color: #aaa;
   }
 }
+
+.related-posts {
+  margin-top: 2rem;
+}
+
+.related-posts__title {
+  font-size: 1.25rem;
+}
+
+.related-posts__list {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.related-posts__item {
+  margin-bottom: 0.75rem;
+}
+
+.related-posts__description {
+  display: block;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}

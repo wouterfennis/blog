@@ -1,0 +1,37 @@
+{%- comment -%}
+  Up to 3 related posts: ranked by shared tags (weight 10 each), then shared category (weight 1), then newest first.
+  Posts without any shared tag or category are not shown.
+{%- endcomment -%}
+{%- assign _rp_keys = "" | split: "" -%}
+{%- for p in site.posts -%}
+  {%- if p.url != page.url -%}
+    {%- assign _rp_score = 0 -%}
+    {%- for t in p.tags -%}
+      {%- if page.tags contains t -%}{%- assign _rp_score = _rp_score | plus: 10 -%}{%- endif -%}
+    {%- endfor -%}
+    {%- for c in p.categories -%}
+      {%- if page.categories contains c -%}{%- assign _rp_score = _rp_score | plus: 1 -%}{%- endif -%}
+    {%- endfor -%}
+    {%- if _rp_score > 0 -%}
+      {%- assign _rp_padded = _rp_score | plus: 1000 -%}
+      {%- capture _rp_key -%}{{ _rp_padded }}|{{ p.date | date: "%Y%m%d" }}|{{ p.url }}{%- endcapture -%}
+      {%- assign _rp_keys = _rp_keys | push: _rp_key -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign _rp_keys = _rp_keys | sort | reverse -%}
+{%- if _rp_keys.size > 0 -%}
+<aside class="related-posts" aria-labelledby="related-posts-title">
+  <h2 id="related-posts-title" class="related-posts__title">Related posts</h2>
+  <ul class="related-posts__list">
+    {%- for key in _rp_keys limit: 3 -%}
+      {%- assign _rp_url = key | split: "|" | last -%}
+      {%- assign _rp_post = site.posts | where: "url", _rp_url | first -%}
+    <li class="related-posts__item">
+      <a class="post-link" href="{{ _rp_post.url | relative_url }}">{{ _rp_post.title | escape }}</a>
+      <span class="related-posts__description">{{ _rp_post.description | escape }}</span>
+    </li>
+    {%- endfor -%}
+  </ul>
+</aside>
+{%- endif -%}
