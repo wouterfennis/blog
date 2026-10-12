@@ -43,7 +43,7 @@ If everything has gone right you should now have a few categories to start futur
 
 At this stage we can add our scenarios to a spinning wheel. For the creative and handy ones out there, you might build something real that can be brought on site. But these days there are plenty of free online tools to use. For example [Wheel of Names](https://wheelofnames.com/).
 
-Be aware though what text you copy and paste to the internet. Keep the scenarios generic enough so that they can't be traced to the project or customer. Can you imagine the scandal?
+> **Warning:** Be aware what text you copy and paste to the internet. Keep the scenarios generic enough so that they can't be traced to the project or customer. Can you imagine the scandal?
 
 Now you can spin the wheel!
 

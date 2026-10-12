@@ -134,7 +134,9 @@ Write-host "Close connection"
 $conn.Close()
 ```
 
-The last important step is to execute the above PowerShell under the identity which is also administrator of the SQL Server. What worked for me is to create a Service Principal to assign this role and to store its credentials in an Azure DevOps Service Connection. This way you can create a pipeline in Azure DevOps with the AzurePowershell Task that can run the above PowerShell using the service connection:
+> **Important:** The above PowerShell must be executed under the identity which is also administrator of the SQL Server.
+
+What worked for me is to create a Service Principal to assign this role and to store its credentials in an Azure DevOps Service Connection. This way you can create a pipeline in Azure DevOps with the AzurePowershell Task that can run the above PowerShell using the service connection:
 
 ```yaml
 - task: AzurePowerShell@5
