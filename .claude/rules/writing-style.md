@@ -1,5 +1,6 @@
 ---
-applyTo: "_posts/**"
+paths:
+  - "_posts/**"
 ---
 
 # Blog Writing Style Guide
@@ -104,42 +105,6 @@ Use it to verify that new posts are consistent with the existing style before pu
   ---
   ```
 
-## Language and punctuation
-
-- Use **British-influenced international English** (the blog author is Dutch): avoid American-only idioms.
-- Contractions (`it's`, `you're`, `won't`, `don't`) are acceptable in informal, conversational sentences,
-  but avoid them in formal explanatory sentences.
-- Use an em dash (—) for asides and parenthetical remarks, or a double dot (..) for a casual trailing aside.
-- Use rhetorical questions to engage the reader and create natural transitions between sections.
-- Sentences vary in length: short punchy sentences for emphasis, longer sentences for explanation.
-  Avoid paragraphs with uniform sentence length.
-- Emojis are acceptable sparingly, to reinforce tone in non-technical posts.
-- Use **fewer** for countable nouns and **less** for uncountable: "fewer people", "less time".
-- "**blog post**" is always two words — never "blogpost".
-- "**prerequisites**" is one word — never "pre-requisites".
-- Comparative constructions require **than**, not "as": "more confident **than** before".
-- Decades take no apostrophe: **the 90s** (not "the 90's").
-- Acronym and abbreviation plurals take no apostrophe: **LLMs**, **APIs** (not "LLM's").
-- Use **an** before initialisms/acronyms that start with a vowel sound: "**an** HTTP request", "**an** SQL query", "**an** SSL certificate".
-- Parenthetical "however" requires commas on both sides: "It is**, however,** not the case".
-
-## Dutch-interference watchlist
-
-The author's first language is Dutch. Watch for these words and phrases that transfer incorrectly into English:
-
-| Avoid | Use instead | Dutch source |
-|-------|-------------|--------------|
-| rapport | report | rapport |
-| strikes/jumps out | stands out | uitspringen |
-| actual (meaning *current*) | current / relevant | actueel |
-| confronting (meaning *challenging*) | challenging / uncomfortable | confronterend |
-| arrangement (of a team, meaning *composition*) | composition | opstelling |
-| dot on the horizon | goal on the horizon / north star | stip op de horizon |
-| comes down on (something) | comes down to | neerkomen op |
-| analysation | analysis | non-standard form |
-| far before | long before | ver voor |
-| fine-tuning written as one word: finetuning | fine-tuning | afstemmen |
-
 ## Paragraph length
 
 - Keep paragraphs focused on one idea — three to five sentences is typical.
@@ -158,33 +123,16 @@ The author's first language is Dutch. Watch for these words and phrases that tra
 - Use descriptive alt text that explains what the image shows in context.
 - Store images in `assets/images/YYYY/MM/` matching the post date.
 
-## Front matter checklist
+## Front matter
 
-Every post must have all of these fields:
+The required fields are defined in `CLAUDE.md` (single source of truth). Writing-specific notes:
 
-```yaml
----
-layout: post
-title: "Exact title here"
-date: YYYY-MM-DD
-categories: [Category]
-image: /assets/images/YYYY/MM/filename.ext
-description: "1-2 sentence summary of the post."
-tags: [tag1, tag2, tag3]
----
-```
-
-- `categories` must be exactly one of: `Programming`, `Architecture`, `CI CD`, `Scrum`.
-  A post may belong to multiple categories (e.g. `[Architecture, Programming]`).
-- `tags` are all lowercase with spaces between words (e.g. `client certificates`, not `ClientCertificates`).
 - `image` must point to the same image used as the feature image in the body.
-- `description` must be 1-2 sentences summarising the post. It appears as the search snippet and social preview text — do not copy the opening paragraph verbatim.
+- `description` is the search snippet: do not copy the opening paragraph verbatim.
+- A post may belong to multiple categories (e.g. `[Architecture, Programming]`).
 
-## What to avoid
+## Quality bar
 
-- **Do not** open with a definition or a meta-statement ("In this post I will...").
-- **Do not** end without a conclusion or clear takeaway.
-- **Do not** add code blocks without a language identifier.
-- **Do not** write a References section with bare URLs — always use a labelled link.
-- **Do not** use heading-case for section titles (wrong: `## What Is Client Certificate Authentication?`).
-- **Do not** let the post read like official documentation — it must contain personal experience and opinion.
+- Every post ends with a conclusion or clear takeaway.
+- The post must contain personal experience and opinion — it must not read like official documentation.
+- Language rules (British-influenced English, Dutch-interference watchlist) are in `language.md`.

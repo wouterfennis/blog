@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run lint:md)",
+      "Bash(npm run lint:md:fix)",
+      "Bash(bundle exec jekyll build*)",
+      "Bash(gh issue list*)",
+      "Bash(gh issue view*)",
+      "Bash(gh label list*)",
+      "Bash(date *)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/lint-md.mjs\""
+          }
+        ]
+      }
+    ]
+  }
+}

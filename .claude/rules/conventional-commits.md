@@ -1,14 +1,10 @@
----
-applyTo: "**"
----
-
 # Conventional Commits for this repository
 
 This repository uses [release-please](https://github.com/googleapis/release-please-action) for automated semantic versioning. Every commit to `main` must follow the [Conventional Commits](https://www.conventionalcommits.org/) format so the version is bumped correctly.
 
 ## Commit message format
 
-```
+```text
 <type>: <short description>
 ```
 
@@ -21,17 +17,19 @@ This repository uses [release-please](https://github.com/googleapis/release-plea
 | Fixing a typo or small edit in an existing post | `fix:` | patch — `1.0.x` |
 | Repairing a broken link or image | `fix:` | patch — `1.0.x` |
 | Site redesign or any breaking URL change | `feat!:` | major — `x.0.0` |
+| Docs, tooling, CI, or Claude Code configuration (no site content change) | `docs:`, `chore:`, `ci:` | none |
 
 `feat!:` signals a breaking change. Alternatively, add `BREAKING CHANGE: <description>` in the commit footer.
 
 ## Examples
 
-```
+```text
 feat: add post about using feature flags in .NET
 fix: correct broken image link in sql-server-auth post
 fix: fix typo in bicep-environment-specific-requirements post
 feat: add part 2 of GitHub Copilot open-source series
 feat!: redesign site navigation and update permalink structure
+chore: migrate agents and prompts to Claude Code
 ```
 
 ## Files managed automatically — never edit these manually

@@ -99,3 +99,11 @@ npm ci
 npm run lint:md
 npm run lint:md:fix   # auto-fix where possible
 ```
+
+## Working with Claude Code
+
+Project instructions live in `CLAUDE.md` and `.claude/`:
+
+- `/new-post`, `/post-outline` and `/create-issue` are slash commands for scaffolding posts, planning them and filing issues.
+- Run the `pre-publish-reviewer` agent on a post before publishing it; it fixes front matter, SEO and structure issues directly.
+- A hook runs markdownlint after every Markdown edit, so violations are reported while Claude works.
