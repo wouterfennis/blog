@@ -5,7 +5,7 @@ description: "A fun Scrum retrospective format inspired by pizza — ideal for r
 date: 2023-03-12
 last_modified_at: 2026-10-12
 categories: [Scrum]
-image: /assets/images/2023/03/Pizza-1024x483.png
+image: /assets/images/2023/03/Pizza-1024x483.jpg
 tags: [agile, facilitation, miro, pizza, retrospective, scrum, self-reflection, whiteboard]
 faq:
   - question: "What is a Pizzaria Retrospettiva?"
@@ -16,7 +16,7 @@ faq:
 
 Retrospectives have a tendency to sometimes be repetitive and less fruitful. However, sometimes just a simple change of scenery can already open up a new perspective of underlying problems or successes that a Scrum team has been through. One method I've tried in practice is bringing the retrospective in an authentic Italian vibe. And what is the first thing people associate with Italia? Pizza 🍕 of course!
 
-![Featured image for 2023-03-12-retrospective-idea-pizzaria-retrospettiva]({{ '/assets/images/2023/03/Pizza-1024x483.png' | relative_url }})
+![Featured image for 2023-03-12-retrospective-idea-pizzaria-retrospettiva]({{ '/assets/images/2023/03/Pizza-1024x483.jpg' | relative_url }})
 
 ## Key takeaways
 
@@ -35,11 +35,11 @@ In this blog post I'll explain the retrospective from a digital point of view. H
 
 So how to bring pizza and self-reflection together? Well it might be easier than you think. First, draw a circle and use a background of a pizza with slight transparency as a background.
 
-![Blank pizza canvas for a Scrum retrospective in Miro]({{ '/assets/images/2023/03/retrospective-pizza-blank.png' | relative_url }})
+![Blank pizza canvas for a Scrum retrospective in Miro]({{ '/assets/images/2023/03/retrospective-pizza-blank.webp' | relative_url }})
 
 The background will set the atmosphere and will be eye candy for colleagues used to a standard grid layout. As with any pizza before eating, we first have to slice it. So let's divide the background in a few sections where we can put our discussion topics that are relevant right now. These topics can of course be anything you want, but the example below can be used as inspiration.
 
-![Pizza retrospective canvas divided into slices with example cards]({{ '/assets/images/2023/03/retrospective-pizza-filled.png' | relative_url }})
+![Pizza retrospective canvas divided into slices with example cards]({{ '/assets/images/2023/03/retrospective-pizza-filled.webp' | relative_url }})
 
 ## Start the retrospective
 

@@ -5,7 +5,7 @@ description: "How to use the Verify .NET library for snapshot testing complex ou
 date: 2023-03-27
 last_modified_at: 2026-10-12
 categories: [Programming]
-image: /assets/images/2023/03/archive-1024x577.png
+image: /assets/images/2023/03/archive-1024x577.jpg
 tags: [.net, assertions, c#, diff tool, snapshot testing, testing, unit tests, verify]
 faq:
   - question: "What is snapshot testing?"
@@ -16,7 +16,7 @@ faq:
 
 Have you ever programmed something that had to output a string or file into a specific format? Whether it's CSV, a markup language or worse.. position based text, I've written many ugly unit tests to compare unreadable output to unreadable expected outcomes. Fortunately there is an alternative: Snapshot Testing. And with a library like [Verify](https://github.com/VerifyTests/Verify), it's actually manageable.
 
-![Featured image for 2023-03-27-snapshot-testing-with-verify]({{ '/assets/images/2023/03/archive-1024x577.png' | relative_url }})
+![Featured image for 2023-03-27-snapshot-testing-with-verify]({{ '/assets/images/2023/03/archive-1024x577.jpg' | relative_url }})
 
 ## Key takeaways
 

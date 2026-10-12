@@ -83,6 +83,7 @@ kramdown:
 
 # Sass warning controls for Ruby 3.4 + minima 2.5 (theme internals still use deprecated APIs)
 sass:
+  style: compressed
   quiet_deps: true
   silence_deprecations:
     - import

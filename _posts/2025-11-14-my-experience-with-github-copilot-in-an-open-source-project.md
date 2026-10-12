@@ -6,7 +6,7 @@ date: 2025-11-14
 featured: true
 last_modified_at: 2026-10-12
 categories: [Architecture, Programming]
-image: /assets/images/2025/11/banner-1024x534.png
+image: /assets/images/2025/11/banner-1024x534.jpg
 tags: [github copilot, agentic ai, ai agents, open source, oh my posh, github issues, prompt engineering, developer productivity]
 faq:
   - question: "Can GitHub Copilot agents build a project while I act as architect?"
@@ -17,7 +17,7 @@ faq:
 
 It is amazing how fast AI developments have led to fundamental changes in the development process of IT projects. It is difficult for me to imagine generative AI and AI agents such as GitHub Copilot disappearing from my day-to-day work anytime soon.
 
-![Featured image for 2025-11-14-my-experience-with-github-copilot-in-an-open-source-project]({{ '/assets/images/2025/11/banner-1024x534.png' | relative_url }})
+![Featured image for 2025-11-14-my-experience-with-github-copilot-in-an-open-source-project]({{ '/assets/images/2025/11/banner-1024x534.jpg' | relative_url }})
 
 Recently, agentic AI in particular has become a popular step in programming functionality in new and existing software or even executing the functionality directly. Because developments are going so fast, I wanted to assess some of these new tools myself in a new experimental project, starting from nothing.
 

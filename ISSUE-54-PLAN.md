@@ -10,7 +10,7 @@ Status: `[ ]` open, `[x]` done, `[-]` skipped.
 - [-] 3. Information architecture: topic and pillar pages, projects linked with articles [5, 6, 7, 12]
 - [x] 4. Article structure and first-hand experience for the remaining posts [8, 9]
 - [x] 5. Title and search-intent audit [10]
-- [ ] 6. Performance: measure, heavy images, JavaScript, fonts [17]
+- [x] 6. Performance: measure, heavy images, JavaScript, fonts [17]
 - [ ] 7. Accessibility audit and fixes [18]
 - [ ] 8. External identity consistency and certification links [19]
 - [ ] 9. Content freshness review [21]
@@ -55,3 +55,12 @@ Findings and decisions are added below as each point is worked.
 
 - All 8 proposed titles applied (author approved all): migrate, SonarQube, client certificates, Verify, Wheel of Misfortune, Bicep, Pizzaria, summer break. URLs unchanged; `last_modified_at` set.
 - Descriptions re-checked: all 14 are at most 160 characters. Only note: the migrate description says "self-hosted blog" while the title now says WordPress.
+
+### Point 6 (done)
+
+- Lighthouse baseline (local, mobile emulation): performance 97 home, 100 post, 75 migrate post (LCP 12.2 s, 2.4 MB), 100 tag page; SEO 100 and best practices 100 everywhere; accessibility 91 to 92 everywhere.
+- `npm run images:optimize` (new `sharp` devDependency, `.claude/scripts/optimize-images.mjs`) converts PNG/JPEG over 300 KB and updates all references. Images used as a post's `image:` front matter (social preview) become JPEG, body-only images become WebP, because not every social network renders WebP previews. GIF kept (author choice).
+- Converted 6 images, for example `featured-blog-migration` 2.1 MB to 103 KB. Migrate post: performance 75 to 98, LCP 12.2 s to 2.3 s, weight 2.4 MB to 416 KB.
+- `technorama-2023-2.jpg` (312 KB) is referenced by no post; left untouched.
+- CSS now compressed (19 KB to 14 KB) and the two social icons got explicit width and height.
+- Not fixable here: GitHub Pages sets the cache headers (10 minutes) and Google Analytics script size.

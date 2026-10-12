@@ -5,7 +5,7 @@ date: 2026-03-29
 last_modified_at: 2026-10-12
 featured: true
 categories: [CI CD, Programming]
-image: /assets/images/2026/03/featured-blog-migration.png
+image: /assets/images/2026/03/featured-blog-migration.jpg
 description: "A practical guide to migrating a self-hosted blog to GitHub Pages using Jekyll, covering the decisions, challenges, and lessons learned along the way."
 tags: [blog, ci cd, deployment, github actions, github pages, jekyll, migration, static site]
 mermaid: true
@@ -18,7 +18,7 @@ faq:
 
 Running WordPress for a personal blog always felt like overkill. My site is mostly static — I write a new post, add some metadata, and hit publish. Yet there I was, managing a full CMS, keeping plugins up to date, and paying for hosting that did far more than I ever needed. One morning it struck me: could a free, Git-based hosting service like GitHub Pages give my readers the exact same result with far less overhead? And could Jekyll — a simple static site generator — replace the whole WordPress setup?
 
-![Featured image for 2026-03-29-migrate-your-blog-towards-github-pages]({{ '/assets/images/2026/03/featured-blog-migration.png' | relative_url }})
+![Featured image for 2026-03-29-migrate-your-blog-towards-github-pages]({{ '/assets/images/2026/03/featured-blog-migration.jpg' | relative_url }})
 
 ## Key takeaways
 
