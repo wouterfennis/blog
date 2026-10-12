@@ -4,7 +4,9 @@
   "scripts": {
     "lint:md": "markdownlint \"**/*.md\" --ignore node_modules --ignore _site --ignore vendor",
     "lint:md:fix": "markdownlint \"**/*.md\" --fix --ignore node_modules --ignore _site --ignore vendor",
-    "sync:mermaid": "node -e \"const v=require('./node_modules/mermaid/package.json').version;require('fs').writeFileSync('_data/mermaid.yml','version: '+v+'\\n');\""
+    "sync:mermaid": "node -e \"const v=require('./node_modules/mermaid/package.json').version;require('fs').writeFileSync('_data/mermaid.yml','version: '+v+'\\n');\"",
+    "check:post": "node .claude/scripts/check-post.mjs",
+    "posts:index": "node .claude/scripts/posts-index.mjs"
   },
   "devDependencies": {
     "markdownlint-cli": "^0.45.0"

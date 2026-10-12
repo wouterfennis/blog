@@ -17,6 +17,10 @@ const result = spawnSync('npx', ['--no-install', 'markdownlint', file], {
 });
 
 if (result.status !== 0) {
-  process.stderr.write(`markdownlint violations in ${file}:\n${result.stderr || result.stdout}`);
+  const output = (result.stderr || result.stdout)
+    .split('\n')
+    .filter((line) => !line.startsWith('npm notice'))
+    .join('\n');
+  process.stderr.write(`markdownlint violations in ${file}:\n${output}`);
   process.exit(2);
 }

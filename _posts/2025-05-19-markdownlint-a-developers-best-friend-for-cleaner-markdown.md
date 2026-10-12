@@ -5,7 +5,7 @@ description: "I show how to set up Markdownlint, customise its rules and add it 
 date: 2025-05-19
 categories: [CI CD]
 image: /assets/images/2025/05/5feac392-d10a-4354-8313-c34c56087cdf.jpg
-tags: [ci cd, content, developer tools, documentation, example, github actions, linting, markdown, markdownlint, npm, readme, visual studio code]
+tags: [markdownlint, markdown, linting, documentation, developer tools, github actions, visual studio code, ci cd]
 ---
 
 You open a pull request for a README, and half of the review comments are about missing blank lines and inconsistent list indentation instead of the actual content. Markdown is a common language among developers for its simplicity, whether you're crafting a README for your open-source project, writing technical documentation, or drafting a blog post. However, as straightforward as it may seem, writing clean and consistent Markdown can sometimes be a challenge — this is where Markdownlint becomes an indispensable tool.
@@ -85,7 +85,7 @@ Once installed, you can create a configuration file (typically named `.markdownl
 }
 ```
 
-### 3. Running Markdownlint
+### 3. Running markdownlint
 
 To analyze a Markdown file, simply run the following command in your terminal:
 

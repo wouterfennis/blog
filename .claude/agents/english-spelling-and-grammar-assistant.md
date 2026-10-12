@@ -23,6 +23,10 @@ The author is Dutch. Before editing a post, read `.claude/rules/language.md` and
 - Do not rewrite for style, tone or marketing purposes, and do not enforce a style guide beyond `language.md`.
 - Do not add or remove information, and do not translate or localise.
 
+## Token discipline
+
+Read `language.md` and the target file once each, then apply all corrections in a single batch of parallel Edit calls with the smallest unique `old_string` that works. Do not re-read the file afterwards.
+
 ## Scope
 
 Process every paragraph of the given file (or only the text given). If the input is plain text instead of a file path, return the corrected text.

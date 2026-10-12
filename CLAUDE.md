@@ -91,7 +91,8 @@ Using the default **minima** theme (`~> 2.5`). Skin is set to `auto` (follows sy
 
 ## Claude Code tooling
 
-Subagents (`.claude/agents/`) edit files directly and report briefly what they changed:
+Subagents (`.claude/agents/`) edit files directly and report briefly what they changed.
+Each has a "Token discipline" section (targeted reads, no re-reads, batched edits); keep it when changing an agent:
 
 - `pre-publish-reviewer` — full pre-publish checklist and SEO pass for one post. Use it before every publish.
 - `content-strategist` — read-only content strategy report across all posts.
@@ -102,6 +103,13 @@ Slash commands (`.claude/skills/`), all manually invoked:
 - `/new-post <title, category, type, tags>` — scaffold a new post.
 - `/post-outline <topic>` — produce a writing brief, creates no files.
 - `/create-issue <summary>` — create a GitHub issue with `gh`.
+- `/lean-mode [task]` — token-saving working rules for the rest of the session.
+- `/handoff [focus]` — compact session summary so you can `/clear` and continue cheaply.
+
+Token-saving scripts (`.claude/scripts/`, zero-token deterministic work):
+`npm run check:post -- <path>` lists checklist violations for one post (exit 1 when any),
+`npm run posts:index` prints one line per post (date-slug, categories, title, tags).
+`settings.json` denies reads of `node_modules`, `_site`, `vendor`, `.bundle` and the lock files.
 
 Commands: `npm run lint:md` (also runs automatically via a hook after Markdown edits),
 `bundle exec jekyll build` to verify the site builds.

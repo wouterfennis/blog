@@ -10,13 +10,13 @@ image: /assets/images/2023/02/Sonarqube.webp
 
 You finally managed to get your first SonarQube analysis published to the SonarQube server. You've been writing C# code all day and anxiously you navigate to the report to see how your initial coding is being rated. You see some minor code smells, perhaps a major issue that is being exaggerated. But the thing that really stands out is the metric below:
 
+![Featured image for 2023-02-18-getting-code-coverage-to-sonarqube]({{ '/assets/images/2023/02/Sonarqube.webp' | relative_url }})
+
 ![SonarQube no coverage showing up in report.]({{ '/assets/images/2023/02/SonarQube-no-coverage.png' | relative_url }})
 
 No Coverage information is being displayed, not even your unit tests are being counted. What is going on here?
 
 Simply put, the information about your tests and the amount of code they cover isn't being read by the SonarQube analyser that runs during your pipeline. This can have multiple causes, but first let's zoom in on where this information is stored in the first place.
-
-![Featured image for 2023-02-18-getting-code-coverage-to-sonarqube]({{ '/assets/images/2023/02/Sonarqube.webp' | relative_url }})
 
 ## Scope of this article
 
