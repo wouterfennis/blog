@@ -105,6 +105,7 @@ Slash commands (`.claude/skills/`), all manually invoked:
 - `/post-outline <topic>` — produce a writing brief, creates no files.
 - `/create-issue <summary>` — create a GitHub issue with `gh`.
 - `/lean-mode [task]` — token-saving working rules for the rest of the session.
+- `/post-publish <post>` — draft LinkedIn text, dev.to front matter (canonical URL) and the indexing checklist.
 - `/handoff [focus]` — compact session summary so you can `/clear` and continue cheaply.
 
 Token-saving scripts (`.claude/scripts/`, zero-token deterministic work):

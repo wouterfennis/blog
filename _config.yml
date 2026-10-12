@@ -96,4 +96,3 @@ exclude:
   - README.md
   - .github
   - vendor
-  - SEO-PLAN.md
