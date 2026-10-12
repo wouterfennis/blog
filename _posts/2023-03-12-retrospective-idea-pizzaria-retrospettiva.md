@@ -23,11 +23,11 @@ In this blog post I'll explain the retrospective from a digital point of view. H
 
 So how to bring pizza and self-reflection together? Well it might be easier than you think. First, draw a circle and use a background of a pizza with slight transparency as a background.
 
-![Blank pizza canvas for a Scrum retrospective in Miro]({{ '/assets/images/2023/02/retrospective-pizza-blank.png' | relative_url }})
+![Blank pizza canvas for a Scrum retrospective in Miro]({{ '/assets/images/2023/03/retrospective-pizza-blank.png' | relative_url }})
 
 The background will set the atmosphere and will be eye candy for colleagues used to a standard grid layout. As with any pizza before eating, we first have to slice it. So let's divide the background in a few sections where we can put our discussion topics that are relevant right now. These topics can of course be anything you want, but the example below can be used as inspiration.
 
-![Pizza retrospective canvas divided into slices with example cards]({{ '/assets/images/2023/02/retrospective-pizza-filled.png' | relative_url }})
+![Pizza retrospective canvas divided into slices with example cards]({{ '/assets/images/2023/03/retrospective-pizza-filled.png' | relative_url }})
 
 ## Start the retrospective
 

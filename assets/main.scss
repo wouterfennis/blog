@@ -515,3 +515,9 @@
   opacity: 0.85;
   padding: 0 0.6rem;
 }
+
+/* Images carry width/height attributes (layout stability); keep their aspect ratio when scaled down. */
+.post-content img,
+.page-content img {
+  height: auto;
+}

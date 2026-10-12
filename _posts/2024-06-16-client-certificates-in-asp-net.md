@@ -192,7 +192,7 @@ After the certificate has been generated we can extract the thumbprint and confi
 
 If we start up the API it will open the browser and, depending on your browser, a prompt will show asking for a Client Certificate to send along to the local running server. This is the first sign that our adjustment of the Kestrel server is actually working.
 
-![Browser prompt asking to select a client certificate for the ASP.NET API]({{ '/assets/images/2024/06/client-certificate-blog.png' | relative_url }})
+![Browser prompt asking to select a client certificate for the ASP.NET API]({{ '/assets/images/2024/06/image-edited.png' | relative_url }})
 
 The browser will look into your personal certificate store to see if there are any certificates suitable for client authentication. Because the PowerShell script has already loaded it in, you're able to select it. Making API calls from this point onwards will succeed because the browser will make sure the certificate is passed along.
 

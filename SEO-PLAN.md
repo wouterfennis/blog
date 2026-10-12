@@ -9,8 +9,8 @@ Delete this file when all points are done. Status: `[ ]` open, `[x]` done, `[-]`
 - [x] 3. Richer structured data: `social` config, author entity, remove duplicate microdata, `last_modified_at`
 - [x] 4. Write for AI extraction: summaries, key takeaways, question headings, FAQ sections
 - [x] 5. Tag pages
-- [ ] 6. About page: E-E-A-T and `Person` schema
-- [ ] 7. Image tuning: dimensions, lazy loading, WebP consistency
+- [x] 6. About page: E-E-A-T and `Person` schema
+- [x] 7. Image tuning: dimensions, lazy loading, WebP consistency
 - [ ] 8. `robots.txt` and sitemap tweaks
 - [ ] 9. Smaller content items: descriptions, cadence, cross-posting
 
@@ -56,3 +56,17 @@ Findings and decisions are added below as each point is worked.
 - `_plugins/tag_pages.rb` generates `/tags/<slug>/` for tags used by 2+ posts (16 pages), slug overrides for `.net`, `c#`, `asp.net`; exposes `site.tag_index` and `site.tag_urls`.
 - `/tags/` index (`tags.md`, `_layouts/tags.html`) lists all tags; single-use tags link to their post. Tag pages use `_layouts/tag.html`.
 - Tags are linked under the post title only (author choice); tag pages are in the sitemap automatically.
+
+### Point 6 (done)
+
+- `about.md`: added "Experience and expertise" (Info Support, 10+ years, Senior Software Engineer / Lead Developer / Scrum Master), "What I write about" (category and tag links, all verified) and "Certifications" (7 items, names only).
+- ProfilePage/Person JSON-LD with worksFor, sameAs, knowsAbout and hasCredential.
+- Left out on purpose: certificate numbers, expiry dates, the expired SpecFlow course and the Anthropic fundamentals course. Re-check the list when certifications change.
+
+### Point 7 (done, file-size part is report only)
+
+- `_plugins/image_attributes.rb` adds `width`/`height` from the file header (PNG, JPEG, GIF, WebP) and `loading="lazy" decoding="async"` to local images. The first image in a post and the first tile on listing pages stay eager; the home hero is never lazy.
+- CSS: `.post-content img, .page-content img { height: auto }` keeps aspect ratio.
+- Fixed three broken image links found on the way: two pizza images (path said 2023/02, files are in 2023/03) and the browser-prompt screenshot in the client certificates post (now `image-edited.png`).
+- Heaviest images (convert yourself, e.g. WebP quality about 80; a tool such as cwebp, Squoosh or sharp): `2026/03/featured-blog-migration.png` 2.1 MB, `2023/06/spin-the-wheel.gif` 1.1 MB (use MP4/WebM or animated WebP), `2023/03/Pizza-1024x483.png` 828 KB, `retrospective-pizza-filled.png` 652 KB, `archive-1024x577.png` 624 KB, `2025/11/banner-1024x534.png` 532 KB, `retrospective-pizza-blank.png` 436 KB, `2023/10/technorama-2023-2.jpg` 312 KB.
+- Converting means updating `image:` front matter and body references; `check:post` does not verify that files exist yet.
