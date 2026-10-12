@@ -8,7 +8,10 @@ layout: default
 
   {%- if page.hero_image -%}
   <div class="hero-image">
-    <img src="{{ page.hero_image | relative_url }}" alt="{{ page.hero_alt | default: site.title | escape }}">
+    <img class="hero-image__img--light" src="{{ page.hero_image | relative_url }}" alt="{{ page.hero_alt | default: site.title | escape }}" width="1536" height="330" fetchpriority="high">
+    {%- if page.hero_image_dark -%}
+    <img class="hero-image__img--dark" src="{{ page.hero_image_dark | relative_url }}" alt="" width="1536" height="331" loading="lazy">
+    {%- endif -%}
   </div>
   {%- endif -%}
 
@@ -26,8 +29,11 @@ layout: default
   <div class="featured-posts">
     <h2 class="latest-posts__heading">Featured articles</h2>
     <div class="post-tiles">
+      {%- assign featured_odd = featured.size | modulo: 2 -%}
       {%- for post in featured -%}
-      {%- include post-tile.html post=post heading_level="h3" -%}
+      {%- assign is_lead = false -%}
+      {%- if forloop.first and featured_odd == 1 -%}{%- assign is_lead = true -%}{%- endif -%}
+      {%- include post-tile.html post=post heading_level="h3" lead=is_lead -%}
       {%- endfor -%}
     </div>
   </div>
@@ -40,9 +46,7 @@ layout: default
       {%- for cp in category_pages -%}
       {%- assign topic_posts = site.posts | where_exp: "post", "post.categories contains cp.category" -%}
       <li class="home-topics__item">
-        <a class="home-topics__link" href="{{ cp.url | relative_url }}">{{ cp.title | escape }}</a>
-        <span class="home-topics__count">{{ topic_posts.size }} posts</span>
-        <span class="home-topics__description">{{ cp.description | escape }}</span>
+        <a class="badge badge--lg badge--{{ cp.category | slugify }}" href="{{ cp.url | relative_url }}" title="{{ cp.description | escape }}">{{ cp.title | escape }}<span class="badge__count">{{ topic_posts.size }} posts</span></a>
       </li>
       {%- endfor -%}
     </ul>

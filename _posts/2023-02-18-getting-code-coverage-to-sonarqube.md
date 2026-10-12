@@ -123,6 +123,8 @@ When reading the documentation of the [DotNetCoreCLI@2](https://learn.microsoft.
 
 Now this is interesting, when running the `dotnet test` command locally the TRX and Coverage files are stored at project level, but when using the DotNetCoreCLI task they can be put into a temporary directory. That explains why SonarQube, which will only look at the source directory, is not reading these files. Besides, the task already takes care of generating TRX files for us, so we don't have to include that in our arguments.
 
+> **Note:** The DotNetCoreCLI task writes the TRX and coverage files to `$(Agent.TempDirectory)` instead of the source directory. That is why SonarQube does not find them.
+
 There are two things we can do, either stop publishing to Azure DevOps and make sure the files are present in the source directory. Or we point SonarQube in the right direction and make a reference to the (unique) temporary directory. Personally I would like to keep using both features so pointing SonarQube to the right folder makes sense. Luckily SonarQube has just the sonar property settings we need:
 
 ```txt

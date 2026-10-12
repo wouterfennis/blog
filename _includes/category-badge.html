@@ -1,0 +1,6 @@
+{%- assign _cb_cat = include.category -%}
+{%- assign _cb_slug = _cb_cat | slugify -%}
+{%- if include.link -%}
+{%- assign _cb_page = site.pages | where: "category", _cb_cat | first -%}
+{%- endif -%}
+{%- if _cb_page -%}<a class="badge badge--{{ _cb_slug }}" href="{{ _cb_page.url | relative_url }}">{{ _cb_cat | escape }}</a>{%- else -%}<span class="badge badge--{{ _cb_slug }}">{{ _cb_cat | escape }}</span>{%- endif -%}

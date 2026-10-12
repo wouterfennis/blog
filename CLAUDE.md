@@ -73,7 +73,14 @@ Enable GitHub Pages in the repo settings under **Pages → Source → GitHub Act
 
 ## Theme
 
-Using the default **minima** theme (`~> 2.5`). Skin is set to `auto` (follows system dark/light preference). Social links (GitHub, LinkedIn) are configured in `_config.yml` under `minima.social_links`.
+Using the **minima** theme (`~> 2.5`) with a custom visual layer. Social links (GitHub, LinkedIn) are configured in `_config.yml` under `minima.social_links`.
+
+- Styles live in `assets/main.scss` (design tokens as CSS variables, base typography) and `_sass/components.scss` (header, badges, tiles, post extras).
+- Colours are CSS variables: change the indigo accent, surfaces and category tints once in the `:root` block (and `dark-tokens` mixin) of `assets/main.scss`. Use the `in-dark` mixin for rules that differ in dark mode.
+- Dark mode follows the OS and can be overridden with the header toggle (`assets/js/theme-toggle.js`, choice saved in `localStorage`, applied early by a script in `_includes/head.html`). The `skin: auto` setting in `_config.yml` has no effect with minima 2.5.
+- Fonts are system stacks (sans UI, serif article body); there are no web fonts to load.
+- Category badges use `_includes/category-badge.html`; a new category needs a tint in the `$categories` list and the `--cat-*` variables.
+- Posts get a reading-progress bar, a contents list and heading anchors from `assets/js/post-enhancements.js`.
 
 ## Content conventions
 

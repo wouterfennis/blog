@@ -1,11 +1,230 @@
 ---
 ---
 
-// Slightly darker than the minima defaults (#6b6b6b, #2a7ae2) to reach WCAG AA contrast (4.5:1).
-$grey-color: #6b6b6b;
-$brand-color: #1f66c6;
+// Minima compile-time defaults; colours are overridden at runtime with the custom properties below.
+$grey-color: #5b6470;
+$brand-color: #4338ca;
+$content-width: 960px;
 
 @import "minima";
+
+/* Design tokens: indigo accent, neutral greys, system font stacks. All pairs meet WCAG AA. */
+:root {
+  --accent: #4338ca;
+  --accent-soft: #eceafc;
+  --bg: #ffffff;
+  --background-color: var(--bg);
+  --surface: #f6f7f9;
+  --border: #e3e6ea;
+  --text: #1d2125;
+  --muted: #5b6470;
+  --font-ui: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-read: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  --measure: 42rem;
+  --shadow: 0 1px 2px rgba(16, 24, 40, 0.06), 0 1px 3px rgba(16, 24, 40, 0.08);
+  --shadow-hover: 0 4px 12px rgba(16, 24, 40, 0.12);
+  --header-bg: rgba(255, 255, 255, 0.92);
+  /* Category tints (badge background / text) */
+  --cat-programming-bg: #eceafc;
+  --cat-programming-fg: #4338ca;
+  --cat-architecture-bg: #dff3f0;
+  --cat-architecture-fg: #0f766e;
+  --cat-ci-cd-bg: #fdf0d5;
+  --cat-ci-cd-fg: #8a4b00;
+  --cat-scrum-bg: #fce8ee;
+  --cat-scrum-fg: #be123c;
+  color-scheme: light dark;
+}
+
+@mixin dark-tokens {
+  --accent: #a5b4fc;
+  --accent-soft: #25254a;
+  --bg: #14171a;
+  --surface: #1c2024;
+  --border: #2d333a;
+  --text: #e6e8eb;
+  --muted: #9aa4af;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 4px 14px rgba(0, 0, 0, 0.5);
+  --header-bg: rgba(20, 23, 26, 0.92);
+  --cat-programming-bg: #25254a;
+  --cat-programming-fg: #a5b4fc;
+  --cat-architecture-bg: #12332f;
+  --cat-architecture-fg: #5eead4;
+  --cat-ci-cd-bg: #3a2a0c;
+  --cat-ci-cd-fg: #fbbf24;
+  --cat-scrum-bg: #3b1623;
+  --cat-scrum-fg: #fda4af;
+}
+
+/* Dark follows the OS unless the visitor picked a theme with the header toggle. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    @include dark-tokens;
+  }
+}
+
+:root[data-theme="dark"] {
+  @include dark-tokens;
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+/* Wrap rules that differ in dark mode: applies for OS dark and for the manual toggle. */
+@mixin in-dark {
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) & {
+      @content;
+    }
+  }
+
+  :root[data-theme="dark"] & {
+    @content;
+  }
+}
+
+/* Base typography and colour */
+body {
+  font-family: var(--font-ui);
+  color: var(--text);
+  background-color: var(--bg);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text);
+  line-height: 1.25;
+}
+
+a,
+a:visited {
+  color: var(--accent);
+}
+
+a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.post-meta,
+.site-footer,
+.site-footer a,
+.breadcrumbs {
+  color: var(--muted);
+}
+
+.site-header,
+.site-footer,
+hr,
+th,
+td,
+table {
+  border-color: var(--border);
+}
+
+.site-title,
+.site-title:visited,
+.site-nav .page-link {
+  color: var(--text);
+}
+
+.site-nav .page-link:hover {
+  color: var(--accent);
+}
+
+.post-link {
+  color: var(--text);
+}
+
+.post-link:hover {
+  color: var(--accent);
+}
+
+/* Reading: comfortable measure and serif body text for articles */
+.post-content,
+.post-header,
+.related-posts,
+.faq,
+.category-nav {
+  max-width: var(--measure);
+}
+
+.post-content {
+  font-family: var(--font-read);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.post-content h2,
+.post-content h3,
+.post-content h4 {
+  font-family: var(--font-ui);
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.post-title {
+  font-size: 2.25rem;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+@media screen and (max-width: 600px) {
+  .post-title {
+    font-size: 1.75rem;
+  }
+
+  .post-content {
+    font-size: 1rem;
+  }
+}
+
+blockquote {
+  border-left: 3px solid var(--accent);
+  color: var(--muted);
+}
+
+/* Code: quiet inline pill, softer blocks */
+code,
+pre,
+.highlight {
+  background-color: var(--surface);
+}
+
+code {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.05rem 0.35rem;
+  font-size: 0.875em;
+}
+
+pre {
+  border-color: var(--border);
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+}
+
+pre code,
+.highlight code {
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.highlight {
+  border-radius: 8px;
+}
+
+table th {
+  background-color: var(--surface);
+}
+
+.post-tags__link {
+  color: var(--muted);
+}
 
 /* Mermaid diagram + modal */
 .mermaid { cursor: zoom-in; }
@@ -83,7 +302,7 @@ $brand-color: #1f66c6;
 .latest-posts__heading {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid var(--border);
   padding-bottom: 0.5rem;
 }
 
@@ -103,7 +322,7 @@ $brand-color: #1f66c6;
 
 /* Individual post tile */
 .post-tile {
-  border: 1px solid #e8e8e8;
+  border: 1px solid var(--border);
   border-radius: 4px;
   overflow: hidden;
   display: flex;
@@ -130,7 +349,7 @@ $brand-color: #1f66c6;
 
 .post-tile__meta {
   font-size: 0.85rem;
-  color: #6b6b6b;
+  color: var(--muted);
   display: block;
   margin-bottom: 0.5rem;
 }
@@ -151,7 +370,7 @@ $brand-color: #1f66c6;
 
 .post-tile__excerpt {
   font-size: 0.9rem;
-  color: #6b6b6b;
+  color: var(--muted);
   margin: 0;
   line-height: 1.5;
   flex: 1;
@@ -193,7 +412,7 @@ $brand-color: #1f66c6;
 .profile-sidebar {
   width: 260px;
   flex-shrink: 0;
-  background-color: #f0f0f0;
+  background-color: var(--surface);
   border-radius: 6px;
   padding: 1.5rem 1rem;
   text-align: center;
@@ -216,7 +435,7 @@ $brand-color: #1f66c6;
 
 .profile-sidebar__bio {
   font-size: 0.9rem;
-  color: #555;
+  color: var(--muted);
   margin: 0 0 1rem;
 }
 
@@ -259,15 +478,15 @@ $brand-color: #1f66c6;
   z-index: 10;
 }
 
-@media (prefers-color-scheme: dark) {
-  .code-copy-btn {
+.code-copy-btn {
+  @include in-dark {
     background: #3a3a3a;
     color: #e8e8e8;
     border-color: #555;
-  }
 
-  .code-copy-btn:active {
-    background: #555;
+    &:active {
+      background: #555;
+    }
   }
 }
 
@@ -277,14 +496,14 @@ $brand-color: #1f66c6;
 }
 
 .code-copy-btn:active {
-  background: #e8e8e8;
+  background: var(--border);
 }
 
 /* Category prev/next navigation */
 .category-nav {
   margin-top: 3rem;
   padding-top: 1.5rem;
-  border-top: 1px solid #e8e8e8;
+  border-top: 1px solid var(--border);
 }
 
 .category-nav__label {
@@ -292,7 +511,7 @@ $brand-color: #1f66c6;
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #6b6b6b;
+  color: var(--muted);
   margin-bottom: 0.75rem;
 }
 
@@ -323,7 +542,7 @@ $brand-color: #1f66c6;
 
 .category-nav__direction {
   flex-shrink: 0;
-  color: #6b6b6b;
+  color: var(--muted);
 }
 
 @media screen and (max-width: 600px) {
@@ -351,7 +570,7 @@ $brand-color: #1f66c6;
 }
 
 .projects-index__description {
-  color: #555;
+  color: var(--muted);
   margin-bottom: 2rem;
 }
 
@@ -371,7 +590,7 @@ $brand-color: #1f66c6;
 
 /* Individual project tile */
 .project-tile {
-  border: 1px solid #e8e8e8;
+  border: 1px solid var(--border);
   border-radius: 4px;
   padding: 1.25rem;
   display: flex;
@@ -386,7 +605,7 @@ $brand-color: #1f66c6;
 
 .project-tile p {
   font-size: 0.9rem;
-  color: #555;
+  color: var(--muted);
   margin: 0;
   flex: 1;
 }
@@ -399,7 +618,7 @@ $brand-color: #1f66c6;
 .project-header {
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid var(--border);
 }
 
 .project-title {
@@ -422,11 +641,11 @@ $brand-color: #1f66c6;
 }
 
 .project-tag {
-  background: #f0f0f0;
+  background: var(--surface);
   border-radius: 3px;
   padding: 0.2rem 0.6rem;
   font-size: 0.8rem;
-  color: #555;
+  color: var(--muted);
 }
 
 .project-content {
@@ -436,7 +655,7 @@ $brand-color: #1f66c6;
 .project-related-posts {
   margin-top: 2.5rem;
   padding-top: 1.5rem;
-  border-top: 1px solid #e8e8e8;
+  border-top: 1px solid var(--border);
 }
 
 .project-related-posts h2 {
@@ -447,19 +666,6 @@ $brand-color: #1f66c6;
 .project-related-posts ul {
   list-style: disc;
   padding-left: 1.5rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  .project-tag {
-    background: #3a3a3a;
-    color: #e8e8e8;
-  }
-
-  .projects-index__description,
-  .project-tile p,
-  .project-meta {
-    color: #aaa;
-  }
 }
 
 .related-posts {
@@ -514,7 +720,8 @@ $brand-color: #1f66c6;
 }
 
 .post-tags__item {
-  border: 1px solid currentColor;
+  border: 1px solid var(--border);
+  color: var(--muted);
   border-radius: 1rem;
   padding: 0 0.6rem;
 }
@@ -544,7 +751,7 @@ $brand-color: #1f66c6;
   align-items: center;
   gap: 0.6rem;
   padding: 0.5rem 1rem 0.5rem 0.75rem;
-  border: 1px solid #e8e8e8;
+  border: 1px solid var(--border);
   border-radius: 2rem;
   text-decoration: none;
 }
@@ -583,32 +790,6 @@ $brand-color: #1f66c6;
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-}
-
-.home-topics__item {
-  border: 1px solid #e8e8e8;
-  border-radius: 4px;
-  padding: 1rem;
-}
-
-.home-topics__link {
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.home-topics__count {
-  font-size: 0.85rem;
-  opacity: 0.7;
-  margin-left: 0.5rem;
-}
-
-.home-topics__description {
-  display: block;
-  margin-top: 0.4rem;
-  font-size: 0.9rem;
 }
 
 /* Accessibility: skip link, focus outlines, touch target size */
@@ -618,8 +799,8 @@ $brand-color: #1f66c6;
   top: -4rem;
   z-index: 100;
   padding: 0.5rem 1rem;
-  background: #fff;
-  border: 2px solid #1f66c6;
+  background: var(--bg);
+  border: 2px solid var(--accent);
   border-radius: 4px;
 }
 
@@ -631,7 +812,7 @@ a:focus-visible,
 button:focus-visible,
 pre:focus-visible,
 .nav-trigger:focus-visible + label {
-  outline: 3px solid #1f66c6;
+  outline: 3px solid var(--accent);
   outline-offset: 2px;
 }
 
@@ -648,3 +829,7 @@ pre:focus-visible,
 .highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s1, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .ss, .highlight .dl { color: #c4103d; }
 .highlight .nc, .highlight .nt, .highlight .nf, .highlight .no { color: #a31040; }
 .highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .mo, .highlight .il { color: #007a7a; }
+
+/* Components added by the visual refresh; imported last so they win over earlier rules. */
+@import "components";
+
