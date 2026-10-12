@@ -22,11 +22,16 @@ sitemap: false
     <ul>
       <li><a href="{{ '/' | relative_url }}">Home — latest posts</a></li>
       <li><a href="{{ '/archive/' | relative_url }}">Archive — every post</a></li>
-      <li><a href="{{ '/category/programming/' | relative_url }}">Programming</a></li>
-      <li><a href="{{ '/category/ci-cd/' | relative_url }}">CI/CD</a></li>
-      <li><a href="{{ '/category/scrum/' | relative_url }}">Scrum</a></li>
-      <li><a href="{{ '/category/architecture/' | relative_url }}">Architecture</a></li>
       <li><a href="{{ '/about/' | relative_url }}">About Wouter</a></li>
+    </ul>
+
+    <p>Or pick a topic:</p>
+
+    <ul class="chip-row">
+      {%- assign topics = "Programming,CI CD,Scrum,Architecture" | split: "," -%}
+      {%- for category in topics -%}
+      <li>{%- include category-badge.html category=category link=true -%}</li>
+      {%- endfor -%}
     </ul>
 
     <p>

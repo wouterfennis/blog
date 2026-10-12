@@ -1,0 +1,17 @@
+{%- comment -%}
+  Shown when the post sets `series: "Name"` in its front matter and at least two posts share that name.
+{%- endcomment -%}
+{%- if page.series -%}
+{%- assign _sb_posts = site.posts | where: "series", page.series | sort: "date" -%}
+{%- if _sb_posts.size > 1 -%}
+{%- for p in _sb_posts -%}{%- if p.url == page.url -%}{%- assign _sb_part = forloop.index -%}{%- endif -%}{%- endfor -%}
+<nav class="series-box" aria-label="Series: {{ page.series | escape }}">
+  <p class="series-box__title">Series: <strong>{{ page.series | escape }}</strong> · part {{ _sb_part }} of {{ _sb_posts.size }}</p>
+  <ol class="series-box__list">
+    {%- for p in _sb_posts -%}
+    <li>{% if p.url == page.url %}<span aria-current="page">{{ p.title | escape }}</span>{% else %}<a href="{{ p.url | relative_url }}">{{ p.title | escape }}</a>{% endif %}</li>
+    {%- endfor -%}
+  </ol>
+</nav>
+{%- endif -%}
+{%- endif -%}

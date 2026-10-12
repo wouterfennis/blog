@@ -17,4 +17,14 @@ document.querySelectorAll('pre > code').forEach(function(codeEl) {
   codeEl.parentElement.setAttribute('role', 'region');
   codeEl.parentElement.setAttribute('aria-label', 'Code sample');
   codeEl.parentElement.insertAdjacentElement('afterend', btn);
+
+  // Language label from the fenced block's identifier (language-csharp, language-yaml, ...).
+  var match = /language-([\w+#-]+)/.exec(codeEl.className);
+  if (match && ['mermaid', 'plaintext', 'text'].indexOf(match[1]) === -1) {
+    var label = document.createElement('span');
+    label.className = 'code-lang';
+    label.setAttribute('aria-hidden', 'true');
+    label.textContent = match[1];
+    btn.insertAdjacentElement('afterend', label);
+  }
 });

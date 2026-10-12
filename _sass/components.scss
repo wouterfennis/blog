@@ -100,6 +100,13 @@ h2, h3, h4 {
   fill: currentColor;
 }
 
+/* The GitHub mark is black; turn it white in dark mode */
+.social-link__icon[src$="github.svg"] {
+  @include in-dark {
+    filter: invert(1);
+  }
+}
+
 /* Footer: one quiet block instead of three floated columns */
 .site-footer {
   margin-top: 3rem;
@@ -169,6 +176,7 @@ h2, h3, h4 {
 
 /* Callouts: blockquote starting with **Note**, **Tip**, **Important** or **Warning** */
 .callout {
+  font-style: normal;
   padding: 0.75rem 1rem;
   color: var(--text);
   background: var(--surface);
@@ -190,6 +198,255 @@ h2, h3, h4 {
 .callout--tip > p:first-child > strong:first-child { color: var(--cat-architecture-fg); }
 .callout--important > p:first-child > strong:first-child { color: var(--cat-scrum-fg); }
 .callout--warning > p:first-child > strong:first-child { color: var(--cat-ci-cd-fg); }
+
+/* Article text: visible links, larger opening paragraph, selection colour */
+/* Minima paints rouge blocks #eef with a higher specificity; keep them on the theme surface. */
+div.highlighter-rouge,
+.highlighter-rouge .highlight,
+figure.highlight {
+  background: var(--surface);
+}
+
+.post-content a:not(.heading-anchor):not(.badge) {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in srgb, var(--accent) 50%, transparent);
+  text-underline-offset: 3px;
+}
+
+.post-content a:not(.heading-anchor):not(.badge):hover {
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--accent);
+}
+
+.post-content > p:first-child {
+  font-size: 1.2rem;
+  line-height: 1.65;
+}
+
+::selection {
+  color: var(--text);
+  background: color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+/* Images, diagrams and captions */
+.post-content img {
+  border-radius: 8px;
+}
+
+.post-content p:has(> em:only-child) {
+  margin-top: -0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--muted);
+}
+
+.highlight:has(pre.mermaid) {
+  padding: 1rem;
+  overflow-x: auto;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.highlight pre.mermaid {
+  margin: 0;
+  background: transparent;
+  border: 0;
+}
+
+/* Tables: zebra rows, scroll sideways instead of breaking the layout */
+.post-content table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.post-content tbody tr:nth-child(even) {
+  background-color: var(--surface);
+}
+
+/* Related posts and prev/next as cards */
+.related-posts__list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.related-posts__item {
+  position: relative;
+  margin: 0;
+  padding: 0.9rem 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.15s ease;
+}
+
+.related-posts__item:hover,
+.related-posts__item:focus-within {
+  box-shadow: var(--shadow-hover);
+}
+
+.related-posts__item .post-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.related-posts__description {
+  margin-top: 0.25rem;
+  color: var(--muted);
+  opacity: 1;
+}
+
+.category-nav__links {
+  align-items: stretch;
+}
+
+.category-nav__link {
+  flex: 0 1 48%;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.category-nav__link:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+@media screen and (max-width: 600px) {
+  .category-nav__link {
+    flex-basis: auto;
+  }
+}
+
+/* Series box */
+.series-box {
+  max-width: var(--measure);
+  margin: 0 0 1.5rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.series-box__title {
+  margin: 0 0 0.5rem;
+  color: var(--muted);
+}
+
+.series-box__list {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.series-box__list li {
+  margin-bottom: 0.2rem;
+}
+
+.series-box__list [aria-current="page"] {
+  font-weight: 600;
+}
+
+/* Code language label (added by code-copy.js); the copy button takes its place on hover */
+.code-lang {
+  position: absolute;
+  top: 0.45rem;
+  right: 0.75rem;
+  z-index: 5;
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.highlight:has(.code-lang) pre {
+  padding-top: 1.7rem;
+}
+
+.highlight:hover .code-lang,
+.highlight:focus-within .code-lang {
+  opacity: 0;
+}
+
+/* Tag pages and chips */
+.tag-archive .category-archive__heading {
+  padding-left: 0.75rem;
+  border-left: 4px solid var(--accent);
+}
+
+.post-tags__item:hover {
+  border-color: var(--accent);
+}
+
+.post-tags__item:hover .post-tags__link {
+  color: var(--accent);
+}
+
+/* 404 page: category chips */
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  list-style: none;
+}
+
+/* Print: light colours, no navigation, URLs after external links */
+@media print {
+  :root,
+  :root[data-theme="dark"],
+  :root:not([data-theme="light"]) {
+    --bg: #fff;
+    --surface: #fff;
+    --border: #ccc;
+    --text: #000;
+    --muted: #444;
+    --accent: #000;
+  }
+
+  .site-header,
+  .site-footer,
+  .reading-progress,
+  .toc,
+  .theme-toggle,
+  .code-copy-btn,
+  .code-lang,
+  .author-card,
+  .related-posts,
+  .category-nav,
+  .skip-link,
+  .hero-image {
+    display: none !important;
+  }
+
+  .post-content,
+  .post-header {
+    max-width: none;
+  }
+
+  .post-content a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    word-break: break-all;
+  }
+
+  pre,
+  img,
+  blockquote {
+    break-inside: avoid;
+  }
+}
 
 /* Heading anchors (added by post-enhancements.js) */
 .heading-anchor {
@@ -244,6 +501,10 @@ a.badge:visited {
   color: var(--accent);
   background: var(--accent-soft);
   border-radius: 1rem;
+}
+
+.badge {
+  font-family: var(--font-ui);
 }
 
 a.badge:hover {

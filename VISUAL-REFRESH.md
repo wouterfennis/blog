@@ -38,6 +38,29 @@ Decisions: indigo accent, system font stacks (sans UI, serif article body), bann
 - [ ] Contrast of muted text and category badges on the surface colour (WCAG AA)
 - [ ] Lighthouse thresholds from `lighthouserc.json` (CI runs them on the pull request)
 
+## Polish pass (all points picked)
+
+Quick polish:
+
+- [x] 1. Underlined links in article text (thin underline, offset, stronger on hover)
+- [x] 2. Captions and media: italic-only paragraphs styled as captions, soft surface and rounded corners for images and diagrams
+- [x] 3. Larger opening paragraph on posts and pages
+- [x] 4. `theme-color` meta for mobile browser bars (light and dark, follows the toggle)
+- [x] 5. Text selection colour in the accent
+- [x] 6. Tables: zebra rows and horizontal scroll on narrow screens
+
+Medium effort:
+
+- [x] 7. Related posts and prev/next as small cards
+- [x] 8. Series box (front matter `series`; shown when two or more posts share it)
+- [x] 9. Language label on code blocks
+- [x] 10. Tag pages: accent heading rule, chips react on hover
+
+Optional:
+
+- [x] 11. Print stylesheet (light colours, no navigation, URLs after links)
+- [x] 12. 404 page in the new style (category chips)
+
 ## Pending: housekeeping
 
 - [x] Mention the design tokens and the theme toggle in `CLAUDE.md` under Theme

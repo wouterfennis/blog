@@ -19,6 +19,10 @@
     window.setTimeout(function() { root.classList.remove('theme-transition'); }, 300);
     root.setAttribute('data-theme', next);
     try { localStorage.setItem('theme', next); } catch (e) { /* storage unavailable */ }
+    document.querySelectorAll('meta[name="theme-color"]').forEach(function(m) {
+      m.removeAttribute('media');
+      m.content = next === 'dark' ? '#14171a' : '#ffffff';
+    });
     sync();
     document.dispatchEvent(new CustomEvent('themechange', { detail: next }));
   });
