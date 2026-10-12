@@ -6,8 +6,8 @@ Status: `[ ]` open, `[x]` done, `[-]` skipped.
 ## Points (issue workstream in brackets)
 
 - [x] 1. Structured data gaps: BreadcrumbList with visible breadcrumbs, Blog entity, articleSection, publisher [3]
-- [ ] 2. Homepage: expertise, featured articles, featured projects, topics [13]
-- [ ] 3. Information architecture: topic and pillar pages, projects linked with articles [5, 6, 7, 12]
+- [x] 2. Homepage: expertise, featured articles, featured projects, topics [13]
+- [-] 3. Information architecture: topic and pillar pages, projects linked with articles [5, 6, 7, 12]
 - [ ] 4. Article structure and first-hand experience for the remaining posts [8, 9]
 - [ ] 5. Title and search-intent audit [10]
 - [ ] 6. Performance: measure, heavy images, JavaScript, fonts [17]
@@ -35,3 +35,12 @@ Findings and decisions are added below as each point is worked.
 - `_includes/breadcrumbs.html`: visible trail plus BreadcrumbList JSON-LD on posts (Home > first category > post), category pages and tag pages (Home > Tags > tag).
 - `_plugins/post_structured_data.rb` extends the seo-tag BlogPosting with `articleSection` (first category) and `publisher` (Wouter Fennis as Person, author's choice).
 - Not done on purpose: Blog entity on the home page (author skipped it).
+
+### Point 2 (done)
+
+- Home page: Featured articles (front matter `featured: true`; migrate and Copilot posts), Topics (the four categories with description and post count), Latest posts (excludes featured ones to avoid duplicates).
+- Not done on purpose: featured projects and an expertise list (author did not pick them).
+
+### Point 3 (skipped)
+
+- Author skipped topic and pillar pages for now (questions on pillars, location and linking were all answered "skip").

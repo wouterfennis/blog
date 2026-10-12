@@ -21,11 +21,39 @@ layout: default
     {%- include profile-sidebar.html -%}
   </div>
 
+  {%- assign featured = site.posts | where: "featured", true -%}
+  {%- if featured.size > 0 -%}
+  <div class="featured-posts">
+    <h2 class="latest-posts__heading">Featured articles</h2>
+    <div class="post-tiles">
+      {%- for post in featured -%}
+      {%- include post-tile.html post=post heading_level="h3" -%}
+      {%- endfor -%}
+    </div>
+  </div>
+  {%- endif -%}
+
+  <div class="home-topics">
+    <h2 class="latest-posts__heading">Topics</h2>
+    <ul class="home-topics__list">
+      {%- assign category_pages = site.pages | where_exp: "p", "p.category" | sort: "title" -%}
+      {%- for cp in category_pages -%}
+      {%- assign topic_posts = site.posts | where_exp: "post", "post.categories contains cp.category" -%}
+      <li class="home-topics__item">
+        <a class="home-topics__link" href="{{ cp.url | relative_url }}">{{ cp.title | escape }}</a>
+        <span class="home-topics__count">{{ topic_posts.size }} posts</span>
+        <span class="home-topics__description">{{ cp.description | escape }}</span>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+
   {%- if site.posts.size > 0 -%}
   <div class="latest-posts">
     <h2 class="latest-posts__heading">Latest posts</h2>
     <div class="post-tiles">
-      {%- for post in site.posts limit:4 -%}
+      {%- assign latest = site.posts | where_exp: "post", "post.featured != true" -%}
+      {%- for post in latest limit:4 -%}
       {%- include post-tile.html post=post heading_level="h3" -%}
       {%- endfor -%}
     </div>

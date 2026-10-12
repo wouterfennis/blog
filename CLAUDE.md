@@ -47,7 +47,7 @@ mermaid: true                   # only when the body contains a mermaid code blo
 ---
 ```
 
-- Optional: `last_modified_at: YYYY-MM-DD` (set on substantive updates; becomes `dateModified`) and `faq:` (list of `question`/`answer` pairs, rendered as a FAQ section with FAQPage JSON-LD).
+- Optional: `featured: true` (shows the post under Featured articles on the home page), `last_modified_at: YYYY-MM-DD` (set on substantive updates; becomes `dateModified`) and `faq:` (list of `question`/`answer` pairs, rendered as a FAQ section with FAQPage JSON-LD).
 - `description` is the search snippet and social preview: do not copy the opening paragraph verbatim.
 - Categories mirror the original WordPress categories exactly (capitalised as shown above).
   `CI CD` is used without a hyphen (matching the original site's `/category/cicd/` slug).

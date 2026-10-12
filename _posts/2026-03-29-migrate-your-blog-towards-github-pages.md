@@ -2,6 +2,7 @@
 layout: post
 title: "Migrate your blog towards GitHub Pages"
 date: 2026-03-29
+featured: true
 categories: [CI CD, Programming]
 image: /assets/images/2026/03/featured-blog-migration.png
 description: "A practical guide to migrating a self-hosted blog to GitHub Pages using Jekyll, covering the decisions, challenges, and lessons learned along the way."

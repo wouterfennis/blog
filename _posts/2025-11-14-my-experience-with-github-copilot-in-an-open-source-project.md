@@ -3,6 +3,7 @@ layout: post
 title: "My experience with GitHub Copilot in an open-source project"
 description: "My experience using GitHub Copilot agentic AI in an open-source project, acting as architect while Copilot agents write the code."
 date: 2025-11-14
+featured: true
 last_modified_at: 2026-10-12
 categories: [Architecture, Programming]
 image: /assets/images/2025/11/banner-1024x534.png
